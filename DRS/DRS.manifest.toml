@@ -1,0 +1,50 @@
+[standard]
+id = "drs"
+title = "Desktop Application Release Standard"
+abbreviation = "DRS"
+status = "active"
+maturity = "reference"
+version = "1.0.2"
+description = "Governs desktop application release notes, manifests, artifacts, hashes, verification, and release evidence."
+
+[governance]
+meta_standard = "SFDS"
+workspace_standard = "WGS"
+scope = "Desktop application release readiness and evidence."
+non_goals = ["Project proposal creation", "CLI command output contracts", "website deployment", "dataset provenance"]
+
+[artifacts]
+specification = "Desktop Application Release Standard.md"
+schema = "DesktopApplicationRelease.manifest.schema.toml"
+templates = "templates"
+examples = "examples"
+adoption_guide = "Adoption-Guide.md"
+validation_checklist = "Validation-Checklist.md"
+changelog = "CHANGELOG.md"
+validators = ["drs.ps1"]
+governance_notes = ["Governance-Boundary.md", "SFDS-Adoption-Note.md"]
+reference_examples = ["examples/MiniVault"]
+
+[adopter_artifacts]
+schemas = ["DesktopApplicationRelease.manifest.schema.toml"]
+manifest_templates = ["templates/ProjectName.manifest.toml"]
+document_templates = [
+  "templates/Release-Note.md",
+  "templates/Release-Checklist.md",
+  "templates/Trust-Security-Model.md",
+  "templates/Dependency-Provenance.md",
+  "templates/Build-Reproducibility-Guide.md",
+  "templates/Threat-Model.md",
+  "templates/Integrity-Validation-Matrix.md",
+  "templates/Data-Migration-Contract.md",
+  "templates/Withdrawn-Release.md"
+]
+
+[lifecycle]
+created = "2026-06-10"
+last_updated = "2026-06-11"
+maintainer = "Herb"
+
+[agent]
+read_first = ["README.md", "Desktop Application Release Standard.md", "DRS.manifest.toml", "SFDS-Adoption-Note.md"]
+notes = "DRS is the reference pattern for practical Aptlantis documentation suites under SFDS v1.0. Preserve DRS release behavior while using SFDS for suite governance."

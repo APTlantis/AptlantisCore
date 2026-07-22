@@ -1,0 +1,18 @@
+title = "WDS Site Manifest Schema"
+type = "object"
+required = ["site", "governance", "deployment"]
+
+[properties.site]
+required = ["id", "title", "status"]
+
+[properties.governance]
+required = ["standard", "workspace_standard"]
+
+[properties.deployment]
+required = ["environments", "rollback"]
+
+[properties.accessibility]
+required = ["target", "checks"]
+
+[properties.metadata]
+required = ["title", "description", "canonical"]

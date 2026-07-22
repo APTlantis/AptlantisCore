@@ -1,0 +1,16 @@
+title = "Aptlantis Project Proposal Manifest Schema"
+type = "object"
+required = ["proposal", "project", "criteria", "constraints"]
+
+[properties.proposal]
+required = ["id", "status", "created"]
+
+[properties.project]
+required = ["name", "type", "mission"]
+
+[properties.criteria]
+required = ["success", "failure"]
+
+[properties.constraints]
+required = ["technical", "scope"]
+

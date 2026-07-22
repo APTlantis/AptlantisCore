@@ -1,0 +1,128 @@
+[manifest]
+schema = "APTlantis Entity Manifest"
+schema_version = "2.4"
+manifest_type = "workspace"
+canonical_name = "Development.manifest.toml"
+last_updated = "2026-07-08"
+maintainer = "Herb"
+
+[entity]
+id = "development-drive"
+title = "D Drive Development Workspace"
+kind = "workspace"
+class = "workspace-root"
+status = "active"
+description = "Local development drive containing governed portfolios, projects, shared infrastructure, references, and canonical standards."
+tags = ["development", "workspace", "aptlantis"]
+
+[workspace]
+root = "D:\\"
+primary_governance = "WGS"
+city_hall = "D:\\.city_hall"
+index = "D:\\INDEX.md"
+instructions = "D:\\AGENTS.md"
+
+[policy]
+requires_directory_manifests = true
+requires_project_manifests = true
+requires_project_readmes = true
+requires_agent_instructions = true
+canonical_directory_manifest = "[DirectoryName].manifest.toml"
+canonical_project_manifest = "[ProjectName].manifest.toml"
+preserve_legacy_manifests_with_migration_notes = true
+manual_review_required_for_moves = true
+copy_canonical_standards_into_projects = false
+
+[standards]
+wgs = "D:\\.library\\aptlantis_core\\WGS"
+sfds = "D:\\.city_hall\\SFDS"
+pps = "D:\\.library\\aptlantis_core\\PPS"
+drs = "D:\\.library\\aptlantis_core\\DRS"
+cts = "D:\\.library\\aptlantis_core\\CTS"
+wds = "D:\\.library\\aptlantis_core\\WDS"
+dds = "D:\\.library\\aptlantis_core\\WGS"
+sis = "D:\\.library\\aptlantis_core\\WGS"
+ats = "D:\\.city_hall\\ATS"
+aas = "D:\\.city_hall\\AAS"
+arhs = "D:\\.library\\aptlantis_core\\AAMHS"
+aamhs = "D:\\.library\\aptlantis_core\\AAMHS"
+aadr = "D:\\.city_hall\\AADR"
+sesm = "D:\\.library\\aptlantis_core\\SESM"
+neonink = "D:\\.library\\aptlantis_core\\NeonInk"
+
+[[roots]]
+id = "city-hall"
+path = "D:\\.city_hall"
+kind = "standards-registry"
+role = "Canonical standards, frameworks, schemas, templates, and governance references."
+manifest = "D:\\.city_hall\\010-CITY-HALL.manifest.toml"
+
+[[roots]]
+id = "wds"
+path = "D:\\WDS"
+kind = "portfolio"
+role = "Website and web-application projects."
+governing_standard = "WDS"
+manifest = "D:\\WDS\\WDS.manifest.toml"
+
+[[roots]]
+id = "basic"
+path = "D:\\BASIC"
+kind = "portfolio"
+role = "BASIC-family workshop, projects, and reference sources."
+governing_standard = "WGS"
+manifest = "D:\\BASIC\\BASIC.manifest.toml"
+
+[[roots]]
+id = "cts"
+path = "D:\\CTS"
+kind = "portfolio"
+role = "Command tools, automation, APIs, and data-processing utilities."
+governing_standard = "CTS"
+manifest = "D:\\CTS\\CTS.manifest.toml"
+
+[[roots]]
+id = "data"
+path = "D:\\DATA"
+kind = "portfolio"
+role = "Shared datasets, source snapshots, and dataset-producing projects."
+governing_standard = "DDS"
+manifest = "D:\\DATA\\DATA.manifest.toml"
+
+[[roots]]
+id = "drs"
+path = "D:\\DRS"
+kind = "portfolio"
+role = "Desktop applications and related project groups."
+governing_standard = "DRS"
+manifest = "D:\\DRS\\DRS.manifest.toml"
+
+[[roots]]
+id = "dpw"
+path = "D:\\.dpw"
+kind = "shared-infrastructure"
+role = "Shared development runtimes, caches, tools, and infrastructure."
+governing_standard = "WGS"
+manifest = "D:\\.dpw\\.dpw.manifest.toml"
+
+[[roots]]
+id = "library"
+path = "D:\\.library"
+kind = "reference-library"
+role = "Shared reference, documentation, evaluation, and media library."
+governing_standard = "WGS"
+manifest = "D:\\.library\\.library.manifest.toml"
+
+[[roots]]
+id = "sonar"
+path = "D:\\.sonar"
+kind = "shared-runtime"
+role = "Shared SonarScanner CLI runtime."
+governing_standard = "SIS"
+manifest = "D:\\.sonar\\.sonar.manifest.toml"
+
+[agent]
+read_first = ["D:\\AGENTS.md", "D:\\INDEX.md", "D:\\.library\\aptlantis_core\\WGS\\Agent-Startup-Procedure.md"]
+authoritative_docs = ["D:\\Development.manifest.toml", "D:\\AGENTS.md"]
+known_gaps = ["Project build, test, artifact, and release posture remains explicitly unverified until reviewed per project.", "The former .agents root is absent and intentionally not registered."]
+notes = "Entity-named manifests govern the current layout. Superseded generic and historical records are preserved only in documented City Hall migration archives."

@@ -1,0 +1,14 @@
+[archive]
+id = "example-archive"
+title = "Example Archive"
+created = "YYYY-MM-DD"
+
+[hash_suite]
+primary = "sha256"
+additional = []
+
+[[files]]
+path = "example.bin"
+size_bytes = 0
+sha256 = ""
+

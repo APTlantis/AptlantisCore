@@ -1,0 +1,93 @@
+[manifest]
+schema = "APTlantis Entity Manifest"
+schema_version = "2.4"
+manifest_type = "project"
+canonical_name = "blue.slate.manifest.toml"
+last_updated = "2026-07-22"
+maintainer = "Herb"
+
+[entity]
+id = "blue-slate"
+title = "Blue Slate"
+kind = "project"
+class = "candidate-standard"
+status = "incubating"
+description = "Candidate Aptlantis visual system with design tokens, mockups, framework notes, and implementation starter packs."
+tags = ["design-system", "visual-language", "theme", "tokens", "candidate"]
+
+[project]
+type = "design-system"
+stage = "candidate"
+version = "0.1.0"
+
+[governance]
+primary_standard = "PPS"
+release_standard = ""
+additional_standards = ["WGS", "NeonInk", "SESM"]
+proposal_required = false
+promotion_authority = "D:\\.city_hall"
+promotion_target = "D:\\.library\\aptlantis_core"
+promoted = false
+
+[lifecycle]
+state = "incubating"
+created = "2026-07-22"
+last_updated = "2026-07-22"
+maintainer = "Herb"
+completion_percent = 35
+
+[paths]
+root = "D:\\.library\\aptlantis_core\\blue.slate"
+docs = "spec"
+source = "spec\\tokens\\BlueSlate.Tokens.json"
+artifacts = "starter-packs"
+data = "apps"
+
+[documentation]
+readme = "Project-README.md"
+proposal = ""
+roadmap = ""
+architecture = "spec\\BlueSlate.DesignSystem.md"
+release_notes = ""
+
+[runtime]
+platform = "design-system"
+language_primary = "JSON"
+languages_used = ["JSON", "CSS", "Markdown", "XAML", "HTML"]
+services = []
+storage = ["local-filesystem"]
+
+[relationships]
+depends_on_projects = []
+used_by_projects = []
+related_projects = ["D:\\.city_hall\\NeonInk", "D:\\.library\\aptlantis_core\\SESM"]
+external_dependencies = []
+
+[deliverables]
+source_of_truth = "D:\\.library\\aptlantis_core\\blue.slate\\spec\\tokens\\BlueSlate.Tokens.json"
+token_css = "D:\\.library\\aptlantis_core\\blue.slate\\spec\\tokens\\BlueSlate.Tokens.css"
+design_spec = "D:\\.library\\aptlantis_core\\blue.slate\\spec\\BlueSlate.DesignSystem.md"
+layout_patterns = "D:\\.library\\aptlantis_core\\blue.slate\\spec\\layout\\BlueSlate.LayoutPatterns.md"
+framework_notes = ["spec\\frameworks\\BlueSlate.Tailwind.md", "spec\\frameworks\\BlueSlate.TauriReact.md", "spec\\frameworks\\BlueSlate.WinUI.md", "spec\\frameworks\\BlueSlate.WPF.md"]
+starter_packs = ["starter-packs\\tailwind", "starter-packs\\tauri-react", "starter-packs\\winui", "starter-packs\\wpf"]
+visual_references = ["apps", "spec\\mockups"]
+
+[promotion]
+current_authority = "Candidate/incubating material stored under D:\\.library\\aptlantis_core\\blue.slate; not a drive-wide promoted visual standard unless City Hall records that promotion."
+promotion_requirement = "City Hall review, stable token schema, adoption guide, validation checklist, and explicit relationship to NeonInk lineage."
+active_governance_status = "Does not govern active projects by default."
+
+[state]
+stability = "experimental"
+active_development = true
+known_gaps = ["No adoption guide yet.", "No validation checklist yet.", "Relationship to NeonInk is not yet formalized.", "Token schema stability has not been reviewed for promotion."]
+technical_debt = "Candidate design-system records were onboarded before promotion review."
+
+[agent]
+read_first = ["blue.slate.manifest.toml", "AGENTS.md", "Project-README.md", "spec\\tokens\\BlueSlate.Tokens.json", "spec\\BlueSlate.DesignSystem.md"]
+governing_context = "Read D:\\AGENTS.md plus this project record; consult City Hall, NeonInk, and SESM before changing promotion status, design-system semantics, or visual metadata."
+safe_to_modify = true
+notes = "Keep Blue Slate explicitly candidate/incubating until City Hall promotion is recorded."
+
+
+

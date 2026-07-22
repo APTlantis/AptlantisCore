@@ -1,0 +1,43 @@
+[standard]
+id = "cts"
+title = "Command Tool Standard"
+abbreviation = "CTS"
+status = "active"
+maturity = "candidate"
+version = "0.2.1"
+description = "Governs CLI tools, command contracts, output schemas, exit codes, automation compatibility, and release verification."
+
+[governance]
+meta_standard = "SFDS"
+workspace_standard = "WGS"
+scope = "Command-line tools, automation utilities, command contracts, output streams, exit codes, and destructive command safety."
+non_goals = ["Desktop GUI release packaging", "website deployment", "dataset provenance"]
+
+[artifacts]
+specification = "Command Tool Standard.md"
+schema = "CommandOutput.schema.json"
+templates = "templates"
+examples = "examples"
+adoption_guide = "Adoption-Guide.md"
+validation_checklist = "Validation-Checklist.md"
+changelog = "CHANGELOG.md"
+validators = []
+governance_notes = []
+reference_examples = ["examples/CTS-Suite-Map.md", "examples/Manifest-Audit-Command-Contract.md"]
+
+[adopter_artifacts]
+schemas = ["CommandOutput.schema.json"]
+manifest_templates = []
+document_templates = [
+  "templates/Command-Contract.md",
+  "templates/CLI-Release-Checklist.md"
+]
+
+[lifecycle]
+created = "2026-06-10"
+last_updated = "2026-06-11"
+maintainer = "Herb"
+
+[agent]
+read_first = ["README.md", "Command Tool Standard.md", "CTS.manifest.toml"]
+notes = "Use CTS for ArchiveHasher, AnalyzeProjects, ScriptWriters, LangThemeGenerator, CloneCratesio, ClipboardFilter, and Llama tooling."

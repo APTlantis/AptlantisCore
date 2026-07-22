@@ -1,0 +1,43 @@
+[standard]
+id = "aamhs"
+title = "Aptlantis Archive Multi-Hash Standard"
+abbreviation = "AAMHS"
+status = "active"
+maturity = "candidate"
+version = "1.0.3"
+description = "Governs archive verification, preservation hash suites, manifest formats, detached signatures, validation procedures, and integrity records."
+
+[governance]
+meta_standard = "SFDS"
+workspace_standard = "WGS"
+scope = "Archival integrity, preservation hash manifests, detached signature policy, validation procedures, and archive integrity records."
+non_goals = ["UI design", "project proposal creation", "workspace root placement"]
+
+[artifacts]
+specification = "Aptlantis Archive Multi-Hash Standard.md"
+schema = "HashManifest.schema.toml"
+templates = "templates"
+examples = "examples"
+adoption_guide = "Adoption-Guide.md"
+validation_checklist = "Validation-Checklist.md"
+changelog = "CHANGELOG.md"
+validators = []
+governance_notes = ["references/APTlantis Release Hashing Standard.md"]
+reference_examples = [
+  "examples/AAMHS-Suite-Map.md",
+  "examples/Example-Archive-Integrity-Record.md"
+]
+
+[adopter_artifacts]
+schemas = ["HashManifest.schema.toml"]
+manifest_templates = ["templates/Hash-Manifest.toml"]
+document_templates = ["templates/Archive-Integrity-Record.md"]
+
+[lifecycle]
+created = "2026-06-10"
+last_updated = "2026-06-11"
+maintainer = "Herb"
+
+[agent]
+read_first = ["README.md", "Aptlantis Archive Multi-Hash Standard.md", "AAMHS.manifest.toml"]
+notes = "Normalize existing AAMHS material without moving source references. Use ARHS for minimum release-artifact hashes and AAMHS for richer archive preservation integrity records."

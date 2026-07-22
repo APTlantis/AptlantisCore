@@ -1,0 +1,16 @@
+title = "AAMHS Hash Manifest Schema"
+type = "object"
+required = ["archive", "hash_suite", "files"]
+
+[properties.archive]
+required = ["id", "title", "created"]
+
+[properties.hash_suite]
+required = ["primary", "additional"]
+
+[properties.files]
+type = "array"
+required = ["path", "size_bytes", "sha256"]
+
+[properties.signatures]
+required = ["detached_signatures_used"]

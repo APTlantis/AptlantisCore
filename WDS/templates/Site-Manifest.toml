@@ -1,0 +1,33 @@
+[site]
+id = "example-site"
+title = "Example Site"
+domain = "example.local"
+status = "draft"
+
+[governance]
+standard = "WDS"
+workspace_standard = "WGS"
+
+[build]
+framework = ""
+command = ""
+output = "dist"
+
+[deployment]
+target = ""
+record = "Deployment-Record.md"
+environment = "preview"
+rollback = ""
+
+[quality]
+accessibility_required = true
+seo_required = true
+monitoring_required = false
+
+[routes]
+required = ["/"]
+
+[metadata]
+title = ""
+description = ""
+structured_data = false
