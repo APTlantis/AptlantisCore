@@ -45,6 +45,12 @@ WGS treats the workspace as a governed ecosystem rather than a loose collection 
 `WGS.manifest.toml` describes WGS as a standard suite.
 The manifest templates in `templates/` describe workspace, directory, project, and standard records governed by WGS.
 
+## Validation Posture
+
+WGS is currently operational through its manifest model, templates, examples, validation checklist, and registered tools in `WGS.manifest.toml`. Those tools include workspace inventory, audit, scaffold, manifest normalization, and root-governance snapshot workflows.
+
+Future audit, dashboard, suite-completeness, and link-integrity work remains roadmap work, not missing baseline validation. Reviews should treat those items as planned deepening unless WGS claims a specific executable check that is absent.
+
 ## Core Model
 
 WGS organizes the workspace around four layers:

@@ -26,6 +26,12 @@ WDS governs websites and web applications as maintained projects rather than loo
 `WDS.manifest.toml` describes WDS as a standard suite.
 The templates in `templates/` describe site manifests and deployment records governed by WDS.
 
+## Validation Posture
+
+WDS is currently operational through `SiteManifest.schema.toml`, the site manifest template, the deployment record template, filled examples, the adoption guide, and the manual validation checklist. Automated website validation is future maturity work, not a blocker for WDS adoption today.
+
+The `validators` list in `WDS.manifest.toml` is intentionally empty until a real WDS validator exists. Reviews should record that as backlog only when useful and should not treat it as a broken current capability.
+
 ## Publication Rule
 
 A deployment without a deployment record is a file upload, not a governed website release.
