@@ -33,6 +33,21 @@ Do not make the README the only standard document unless the standard is explici
 If a standard predates SFDS and already works in practice, preserve its authoritative specification, examples, templates, and tools.
 Normalize it by adding SFDS metadata, clarifying governance boundaries, and separating suite validation from domain validation.
 
+## Known Adopters
+
+These standard suites currently use the SFDS suite model:
+
+| Standard | Adoption role | Evidence |
+| --- | --- | --- |
+| DRS | Reference implementation for mature release-standard suites | `DRS/DRS.manifest.toml`, `SFDS/examples/DRS-Reference-Suite.md` |
+| WGS | Candidate governance-standard suite using SFDS structure | `WGS/WGS.manifest.toml`, `SFDS/examples/WGS-Candidate-Suite.md` |
+| PPS | Candidate proposal-standard suite using SFDS structure | `PPS/PPS.manifest.toml` |
+| CTS | Candidate command-tool standard suite using SFDS structure | `CTS/CTS.manifest.toml` |
+| WDS | Candidate website standard suite using SFDS structure | `WDS/WDS.manifest.toml` |
+| AAMHS | Candidate archive-integrity standard suite using SFDS structure | `AAMHS/AAMHS.manifest.toml` |
+| SESM | Candidate metadata standard suite using SFDS structure | `SESM/SESM.manifest.toml` |
+| LDS | Candidate-active library standard suite using SFDS structure | `LDS/LDS.manifest.toml` |
+
 ## Adoption Complete
 
 Adoption is complete when a future agent can read the suite and know what the standard governs, how to apply it, how to validate it, and where its version history lives.

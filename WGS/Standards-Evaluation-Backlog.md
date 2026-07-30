@@ -53,16 +53,16 @@ This pass organizes work only. It does not complete the individual standards, ad
 **Current status:** Production | **Completion:** 90% | **Priority tier:** Tier 1
 
 **Blocking gaps:**
-- SFDS-specific validator scripts, validator notes, or manual validation procedures are not documented despite checklist guidance.
-- `validators` is empty and `governance_notes` has no content entries even though governance notes are listed as artifacts.
+- SFDS-specific manual validation procedures are documented in `SFDS-Validation-Guidance.md` and registered as validation support.
+- `validators` and `governance_notes` are populated in `SFDS.manifest.toml`.
 
 **Next implementation slice:**
-- Author and register explicit SFDS suite-conformance validation guidance.
-- Reference validation guidance from `Validation-Checklist.md`.
-- Populate governance notes with decision history or policy clarifications and register them in the manifest.
-- Add one or two additional adopter example suites beyond DRS.
-- Clarify compatibility policy in the primary specification.
-- Record known adopters in the manifest or adoption guide as adoption begins.
+- Author and register explicit SFDS suite-conformance validation guidance. Status: complete in SFDS validation guidance slice.
+- Reference validation guidance from `Validation-Checklist.md`. Status: complete in SFDS validation guidance slice.
+- Populate governance notes with decision history or policy clarifications and register them in the manifest. Status: complete in SFDS validation guidance slice.
+- Add one or two additional adopter example suites beyond DRS. Status: complete with `examples/WGS-Candidate-Suite.md`.
+- Clarify compatibility policy in the primary specification. Status: complete in SFDS validation guidance slice.
+- Record known adopters in the manifest or adoption guide as adoption begins. Status: complete in `SFDS/Adoption-Guide.md`.
 
 **Optional improvements:**
 - Add a lightweight executable validator for required suite files and `STANDARD.manifest.schema.toml` conformance.

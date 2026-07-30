@@ -21,9 +21,13 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = []
-governance_notes = []
-reference_examples = ["examples/DRS-Reference-Suite.md", "../DRS/examples/MiniVault"]
+validators = ["SFDS-Validation-Guidance.md"]
+governance_notes = ["Governance-Notes.md"]
+reference_examples = [
+  "examples/DRS-Reference-Suite.md",
+  "examples/WGS-Candidate-Suite.md",
+  "../DRS/examples/MiniVault"
+]
 
 [adopter_artifacts]
 schemas = ["STANDARD.manifest.schema.toml"]

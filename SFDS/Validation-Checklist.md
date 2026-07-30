@@ -12,6 +12,7 @@
 - [ ] Templates exist or are explicitly deferred.
 - [ ] Examples exist for candidate/reference maturity or are explicitly deferred for draft maturity.
 - [ ] Validator notes, scripts, or manual validation procedures are documented when compliance can be checked.
+- [ ] Manual SFDS suite validation follows `SFDS-Validation-Guidance.md` when no executable validator exists.
 - [ ] Maturity level is assigned.
 - [ ] Known gaps are recorded.
 - [ ] Existing mature standards preserve their authoritative domain rules and are normalized without unnecessary rewrites.

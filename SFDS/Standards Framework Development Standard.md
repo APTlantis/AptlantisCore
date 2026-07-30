@@ -178,9 +178,19 @@ For example, DRS suite validation checks whether the DRS standard directory is c
 
 ## Compatibility Policy
 
-Minor versions may add fields, examples, optional guidance, templates, and validator coverage without changing required meaning.
-Major versions may change required artifacts, required fields, conformance meanings, or validation gates.
+Minor versions may add fields, examples, optional guidance, templates, governance notes, and validator coverage without changing required meaning.
+Patch versions may clarify wording, register additional examples, fix broken links, or document validation procedures when those changes do not alter conformance requirements.
+Major versions may change required artifacts, required fields, conformance meanings, maturity semantics, or validation gates.
 Deprecated documents must remain discoverable or have migration notes.
+
+Machine-readable compatibility should be preserved for:
+
+- Suite manifest identity fields.
+- Required artifact keys under `[artifacts]`.
+- Adopter artifact group names under `[adopter_artifacts]`.
+- Maturity labels used by existing standard suites.
+
+When a compatibility-impacting change is unavoidable, the standard must record the change in `CHANGELOG.md`, preserve or migrate existing examples, and state whether older suites remain valid, require migration, or require revalidation.
 
 ## Stability Blockers
 

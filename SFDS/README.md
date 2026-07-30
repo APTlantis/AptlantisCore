@@ -19,6 +19,8 @@ DRS is the first reference implementation for this pattern. Use it to understand
 | --- | --- |
 | `Standards Framework Development Standard.md` | Primary specification. |
 | `STANDARD.manifest.schema.toml` | Machine-readable shape for standard manifests. |
+| `SFDS-Validation-Guidance.md` | Manual suite-conformance validation procedure for SFDS-governed standards. |
+| `Governance-Notes.md` | Policy clarifications for suite normalization, validators, and maturity claims. |
 | `templates/` | Reusable documents for every standard suite. |
 | `examples/` | Filled examples for future reference implementations. |
 | `Adoption-Guide.md` | How a project or standard adopts SFDS. |
