@@ -1,5 +1,12 @@
 # DRS Changelog
 
+## Unreleased
+
+- Added CI usage guidance for running `drs.ps1` from local automation and Windows CI.
+- Added troubleshooting, PowerShell 7 compatibility, and script trust guidance.
+- Added optional BLAKE3 support to `drs.ps1 hash` and `check-release` when `b3sum` or `blake3` is available.
+- Added a second filled adopter manifest example, `examples/FieldDesk/FieldDesk.manifest.toml`.
+
 ## 1.0.2 - 2026-06-11
 
 - Promoted DRS to SFDS reference maturity after SFDS v1.0 stabilization.

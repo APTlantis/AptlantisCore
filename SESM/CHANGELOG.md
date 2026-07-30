@@ -1,5 +1,13 @@
 # SESM Changelog
 
+## Unreleased
+
+- Added a specification version note clarifying the `SESM-v0.2.md` filename and current `0.3.0` suite packet.
+- Added validator JSON example output.
+- Added a lightweight conformance harness note for adopters.
+- Added sanitizer pipeline guidance for combining SESM checks with independent SVG sanitization.
+- Added `0.2.0` and `0.3.0` compatibility fixtures.
+
 ## 0.3.0 - 2026-06-11
 
 - Promoted the public-review candidate profile to v0.3.0 after the `llm.interpretation_hints` vocabulary change.

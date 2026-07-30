@@ -77,6 +77,8 @@ Example:
 python SESM\Validate-SESM-Safe.py SESM\fixtures\valid\basic-safe.svg --safe-profile --json
 ```
 
+Example JSON output is preserved at `examples/validator-json-basic-safe.json`.
+
 ## Exit Codes
 
 Recommended exit codes:

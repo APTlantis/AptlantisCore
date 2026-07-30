@@ -66,11 +66,14 @@ A validator claiming safe-profile support MUST distinguish:
 - `sesm-unsafe`
 - `sesm-unverified`
 
+A lightweight adopter harness is documented in `tests/CONFORMANCE-HARNESS.md`.
+
 ## Versioning
 
 The public SESM candidate suite version is currently `0.3.0`.
 
 The embedded `sesm_version` field identifies the metadata profile used by an SVG. Existing `0.2.0` metadata remains part of the candidate compatibility history, but new public-review examples SHOULD use `0.3.0` after the `llm.interpretation_hints` vocabulary update.
+Compatibility fixtures are preserved under `fixtures/compatibility/`.
 
 ## Extension Conformance
 

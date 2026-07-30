@@ -31,6 +31,9 @@ governance_notes = [
   "CONFORMANCE.md",
   "SECURITY.md",
   "VALIDATOR-RULES.md",
+  "Specification-Version-Note.md",
+  "SANITIZER-PIPELINE.md",
+  "tests/CONFORMANCE-HARNESS.md",
   "REFERENCE-IMPLEMENTATION.md",
   "SUBMISSION-PITCH.md",
   "CONTRIBUTING.md",
@@ -39,7 +42,10 @@ governance_notes = [
 ]
 reference_examples = [
   "examples/SESM-Suite-Map.md",
+  "examples/validator-json-basic-safe.json",
   "templates/SESM-Metadata-Example.json",
+  "fixtures/compatibility/v0.2-basic.svg",
+  "fixtures/compatibility/v0.3-basic.svg",
   "fixtures/valid/basic-safe.svg",
   "fixtures/valid/full-metadata.svg",
   "fixtures/invalid/script.svg",

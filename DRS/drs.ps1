@@ -11,7 +11,7 @@
     validate       Check that all required manifest fields are present
     verify-manifest  Check manifest field consistency without reading artifact files
     check-release  Full release readiness check (manifest + artifact + docs)
-    hash           Compute SHA-256 for a release artifact
+    hash           Compute SHA-256 for a release artifact; add --blake3 to also compute BLAKE3 when available
     init-docs      Copy all doc templates to docs/ with the project name applied
     help           Show this help
 
@@ -19,6 +19,7 @@
     .\drs.ps1 new MyApp
     .\drs.ps1 check-release
     .\drs.ps1 hash artifacts\installer\MyApp-1.0.0.0-win-x64.msi
+    .\drs.ps1 hash artifacts\installer\MyApp-1.0.0.0-win-x64.msi --blake3
     .\drs.ps1 verify-manifest
 #>
 
@@ -35,6 +36,7 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
+$script:DrsExitCode = 0
 
 # -----------------------------------------------------------------------------
 # OUTPUT HELPERS
@@ -76,6 +78,12 @@ function Write-Skip([string]$Label, [string]$Detail = '') {
     if ($Detail) { Write-Host "           $Detail" -ForegroundColor DarkGray }
 }
 
+function Set-DrsExitCode([int]$Code) {
+    if ($Code -gt $script:DrsExitCode) {
+        $script:DrsExitCode = $Code
+    }
+}
+
 function Write-DrsFooter {
     $passed = @($script:CheckResults | Where-Object { $_.Status -eq 'PASS' }).Count
     $failed = @($script:CheckResults | Where-Object { $_.Status -eq 'FAIL' }).Count
@@ -87,6 +95,7 @@ function Write-DrsFooter {
     if ($failed -gt 0) {
         Write-Host "  RESULT: $passed passed | $failed failed | $warned warnings" -ForegroundColor Red
         Write-Host "          Release is BLOCKED" -ForegroundColor Red
+        Set-DrsExitCode 1
     } elseif ($warned -gt 0) {
         Write-Host "  RESULT: $passed passed | $failed failed | $warned warnings" -ForegroundColor Yellow
         Write-Host "          Release is READY (with warnings)" -ForegroundColor Yellow
@@ -161,6 +170,7 @@ function Find-Manifest {
         Write-Host "  No *.manifest.toml found in current directory." -ForegroundColor Red
         Write-Host "  Run 'drs new <AppName>' to scaffold a new project." -ForegroundColor DarkGray
         Write-Host ''
+        Set-DrsExitCode 2
         return $null
     }
 
@@ -169,6 +179,7 @@ function Find-Manifest {
         Write-Host "  Multiple manifest files found. Specify one:" -ForegroundColor Yellow
         $manifests | ForEach-Object { Write-Host "    $($_.Name)" -ForegroundColor DarkGray }
         Write-Host ''
+        Set-DrsExitCode 2
         return $null
     }
 
@@ -181,18 +192,36 @@ function Get-TemplatesDir {
 
     Write-Host "  Templates directory not found at: $candidate" -ForegroundColor Red
     Write-Host "  Run drs.ps1 from the DRS standard directory (alongside templates/)." -ForegroundColor DarkGray
+    Set-DrsExitCode 2
     return $null
+}
+
+function Get-Blake3Tool {
+    $candidate = Get-Command b3sum -ErrorAction SilentlyContinue
+    if ($candidate) { return $candidate.Source }
+    $candidate = Get-Command blake3 -ErrorAction SilentlyContinue
+    if ($candidate) { return $candidate.Source }
+    return $null
+}
+
+function Get-Blake3Hash([string]$FilePath) {
+    $tool = Get-Blake3Tool
+    if (-not $tool) { return $null }
+    $output = & $tool $FilePath
+    if (-not $output) { return $null }
+    return (($output | Select-Object -First 1) -split '\s+')[0].ToUpperInvariant()
 }
 
 # -----------------------------------------------------------------------------
 # COMMAND: hash
 # -----------------------------------------------------------------------------
 
-function Invoke-DrsHash([string]$FilePath) {
+function Invoke-DrsHash([string]$FilePath, [string]$Mode = '') {
     if (-not $FilePath) {
         Write-Host ''
         Write-Host "  Usage: drs hash <path-to-artifact>" -ForegroundColor Yellow
         Write-Host ''
+        Set-DrsExitCode 2
         return
     }
 
@@ -200,21 +229,34 @@ function Invoke-DrsHash([string]$FilePath) {
         Write-Host ''
         Write-Host "  File not found: $FilePath" -ForegroundColor Red
         Write-Host ''
+        Set-DrsExitCode 1
         return
     }
 
     $item   = Get-Item $FilePath
     $sha256 = (Get-FileHash $FilePath -Algorithm SHA256).Hash
     $size   = $item.Length
+    $includeBlake3 = $Mode -eq '--blake3'
+    $blake3 = if ($includeBlake3) { Get-Blake3Hash $FilePath } else { $null }
 
     Write-Host ''
     Write-Host "  File:    $($item.Name)" -ForegroundColor Cyan
     Write-Host "  Size:    $size bytes"
     Write-Host "  SHA-256: $sha256" -ForegroundColor Green
+    if ($includeBlake3) {
+        if ($blake3) {
+            Write-Host "  BLAKE3:  $blake3" -ForegroundColor Green
+        } else {
+            Write-Host "  BLAKE3:  not computed - install b3sum or blake3 and rerun with --blake3" -ForegroundColor Yellow
+        }
+    }
     Write-Host ''
     Write-Host "  Manifest snippet:" -ForegroundColor DarkGray
     Write-Host "    size_bytes = $size"
     Write-Host "    sha256     = `"$sha256`""
+    if ($includeBlake3 -and $blake3) {
+        Write-Host "    blake3     = `"$blake3`""
+    }
     Write-Host ''
 }
 
@@ -274,6 +316,7 @@ function Invoke-DrsValidate {
         Write-Host "  All required fields are present." -ForegroundColor Green
     } else {
         Write-Host "  $missing required field(s) missing or empty." -ForegroundColor Red
+        Set-DrsExitCode 1
     }
     Write-Host ''
 }
@@ -386,6 +429,7 @@ function Invoke-DrsCheckRelease {
     $releaseStatus  = $m['release.status']
     $installerPath  = $m['release.installer.path']
     $sha256         = $m['release.installer.sha256']
+    $blake3         = $m['release.installer.blake3']
     $signing        = $m['release.installer.signing']
     $pkgVersion     = $m['release.installer.package_version']
     $relNotes       = $m['documentation.release_notes']
@@ -461,6 +505,21 @@ function Invoke-DrsCheckRelease {
         Write-Fail 'release.installer.sha256 is empty - hash is required'
     } elseif (-not $installerExists) {
         Write-Skip 'SHA-256 verification skipped (installer not found)'
+    }
+
+    if ($installerExists -and $blake3) {
+        $actualBlake3 = Get-Blake3Hash $installerPath
+        if ($actualBlake3) {
+            if ($actualBlake3 -eq $blake3.ToUpper()) {
+                Write-Pass 'BLAKE3 hash matches artifact' "$($blake3.Substring(0,8))...$($blake3.Substring($blake3.Length - 8))"
+            } else {
+                Write-Fail 'BLAKE3 hash mismatch - do not release' "Manifest: $blake3`n           Actual:   $actualBlake3"
+            }
+        } else {
+            Write-Warn 'BLAKE3 verification skipped' 'Install b3sum or blake3 to verify release.installer.blake3'
+        }
+    } elseif ($installerExists) {
+        Write-Skip 'BLAKE3 verification skipped' 'No release.installer.blake3 value recorded'
     }
 
     # -- SIGNING ---------------------------------------------------------------
@@ -575,6 +634,7 @@ function Invoke-DrsNew([string]$AppName) {
         Write-Host ''
         Write-Host "  Usage: drs new <AppName>" -ForegroundColor Yellow
         Write-Host ''
+        Set-DrsExitCode 2
         return
     }
 
@@ -586,6 +646,7 @@ function Invoke-DrsNew([string]$AppName) {
         Write-Host ''
         Write-Host "  Directory already exists: $projectDir" -ForegroundColor Red
         Write-Host ''
+        Set-DrsExitCode 1
         return
     }
 
@@ -701,6 +762,7 @@ function Show-Help {
     Write-Host '    verify-manifest    Check manifest field consistency'
     Write-Host '    check-release      Full release readiness check (manifest + artifact + docs)'
     Write-Host '    hash <path>        Compute SHA-256 for a release artifact'
+    Write-Host '    hash <path> --blake3  Compute SHA-256 plus BLAKE3 when b3sum or blake3 is available'
     Write-Host '    init-docs          Copy doc templates to docs/ with project name applied'
     Write-Host '    help               Show this help'
     Write-Host ''
@@ -709,6 +771,7 @@ function Show-Help {
     Write-Host '    .\drs.ps1 validate'
     Write-Host '    .\drs.ps1 check-release'
     Write-Host '    .\drs.ps1 hash artifacts\installer\MyApp-1.0.0.0-win-x64.msi'
+    Write-Host '    .\drs.ps1 hash artifacts\installer\MyApp-1.0.0.0-win-x64.msi --blake3'
     Write-Host '    .\drs.ps1 init-docs'
     Write-Host ''
     Write-Host '  Typical release workflow:' -ForegroundColor DarkGray
@@ -729,8 +792,10 @@ switch ($Command.ToLower()) {
     'validate'         { Invoke-DrsValidate }
     'verify-manifest'  { Invoke-DrsVerifyManifest }
     'check-release'    { Invoke-DrsCheckRelease }
-    'hash'             { Invoke-DrsHash $Arg1 }
+    'hash'             { Invoke-DrsHash $Arg1 $Arg2 }
     'init-docs'        { Invoke-DrsInitDocs }
     'help'             { Show-Help }
-    default            { Show-Help }
+    default            { Show-Help; Set-DrsExitCode 2 }
 }
+
+exit $script:DrsExitCode

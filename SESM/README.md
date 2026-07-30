@@ -15,6 +15,8 @@
 `SESM.manifest.toml` describes SESM as a standard suite.
 `svg_asset.schema.json`, `templates/SESM-Metadata-Example.json`, and the SESM tools describe SVG metadata artifacts governed by SESM.
 
+The current suite version is `0.3.0`. The primary specification filename remains `SESM-v0.2.md` for lineage continuity; `Specification-Version-Note.md` records the canonical public-review packet for adopters.
+
 ## Public Review Packet
 
 These files are the recommended first-read packet for external standards review:
@@ -28,6 +30,7 @@ These files are the recommended first-read packet for external standards review:
 7. `VALIDATOR-RULES.md`
 8. `REFERENCE-IMPLEMENTATION.md`
 9. `SUBMISSION-PITCH.md`
+10. `Specification-Version-Note.md`
 
 SESM metadata is untrusted input. SESM does not make arbitrary SVG safe. A SESM-safe SVG means non-executable SVG plus a valid SESM metadata block.
 
@@ -133,6 +136,7 @@ The validator reports:
 - `sesm-unverified`
 
 The fixture corpus under `fixtures/` contains valid, invalid, and warning examples for scripts, event handlers, JavaScript URLs, duplicate metadata, bad JSON, and remote references.
+Compatibility fixtures under `fixtures/compatibility/` demonstrate historical `0.2.0` and current `0.3.0` metadata behavior.
 
 ---
 

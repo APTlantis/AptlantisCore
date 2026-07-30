@@ -46,6 +46,8 @@ The README is the City Hall role/index for the DRS suite. `Desktop Application R
 |------|---------|
 | [`Desktop Application Release Standard.md`](Desktop%20Application%20Release%20Standard.md) | The full release standard. Read this first. |
 | [`DesktopApplicationRelease.manifest.schema.toml`](DesktopApplicationRelease.manifest.schema.toml) | Machine-readable schema defining all required and optional manifest fields. |
+| [`docs/CI-Usage.md`](docs/CI-Usage.md) | CI and local automation snippets for running `drs.ps1`. |
+| [`docs/Troubleshooting.md`](docs/Troubleshooting.md) | Common `drs.ps1` failures, runtime compatibility, and script trust guidance. |
 
 ### Templates
 
@@ -134,6 +136,7 @@ Aegis and FileCabinet operate at the Security-sensitive tier. Most tools can sta
 | `drs verify-manifest` | Field consistency (version match, hash format, status) |
 | `drs check-release` | Full gate: manifest + artifact hash + release note + checklist + publish docs |
 | `drs hash <path>` | SHA-256 + file size with copy-pasteable manifest snippet |
+| `drs hash <path> --blake3` | SHA-256 plus optional BLAKE3 when `b3sum` or `blake3` is installed |
 | `drs init-docs` | Copy all doc templates to `docs/` with project name applied |
 
 ---
@@ -193,6 +196,8 @@ If the release note, manifest, and checklist are not ready, the release is not r
 - `docs/MiniVault v0.1.0.md` — finished release note with hash, theme, design boundaries
 - `docs/MiniVault - Release Checklist.md` — checklist with completed per-version block
 - `docs/MiniVault - Trust and Security Model.md` — full trust model including crypto primitives, trust boundaries, and known limitations
+
+`examples/FieldDesk/FieldDesk.manifest.toml` shows a second filled adopter manifest with non-trivial dependency provenance, data migration, BLAKE3, and release verification fields.
 
 ---
 

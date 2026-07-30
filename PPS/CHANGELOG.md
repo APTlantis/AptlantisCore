@@ -1,5 +1,12 @@
 # PPS Changelog
 
+## Unreleased
+
+- Added `tools/pps_new.py` to generate proposal and entity-manifest skeletons.
+- Added PPS to WGS lifecycle mapping guidance.
+- Added a worked proposal-to-delivery handoff example.
+- Added archival proposal snapshots demonstrating readiness transition evidence.
+
 ## 0.2.2 - 2026-06-12
 
 - Added SIS to the delivery-standard guidance for service and infrastructure project proposals.

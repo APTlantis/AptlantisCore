@@ -14,8 +14,13 @@ WDS governs websites and web applications as maintained projects rather than loo
 | --- | --- |
 | `Website Development Standard.md` | Primary WDS specification. |
 | `WDS.manifest.toml` | Standard manifest. |
+| `SiteManifest.schema.toml` | Machine-readable site manifest shape. |
 | `templates/Site-Manifest.toml` | Site manifest template. |
 | `templates/Deployment-Record.md` | Deployment record template. |
+| `tools/wds_validate.py` | Lightweight site manifest validator. |
+| `tools/route_check.py` | Route availability smoke-check helper. |
+| `tools/accessibility_smoke.py` | HTML accessibility and metadata smoke-check helper. |
+| `Publication-Approval-Flow.md` | WGS registration and WDS publication approval flow. |
 | `examples/Example-Deployment-Record.md` | Filled deployment evidence example. |
 | `Adoption-Guide.md` | How web projects adopt WDS. |
 | `Validation-Checklist.md` | Site readiness checklist. |
@@ -28,9 +33,9 @@ The templates in `templates/` describe site manifests and deployment records gov
 
 ## Validation Posture
 
-WDS is currently operational through `SiteManifest.schema.toml`, the site manifest template, the deployment record template, filled examples, the adoption guide, and the manual validation checklist. Automated website validation is future maturity work, not a blocker for WDS adoption today.
+WDS is operational through `SiteManifest.schema.toml`, the site manifest template, the deployment record template, filled examples, the adoption guide, the manual validation checklist, and lightweight validators under `tools/`.
 
-The `validators` list in `WDS.manifest.toml` is intentionally empty until a real WDS validator exists. Reviews should record that as backlog only when useful and should not treat it as a broken current capability.
+The WDS tools provide smoke-check evidence. They do not replace full accessibility audits, browser compatibility review, or production monitoring.
 
 ## Publication Rule
 

@@ -21,8 +21,12 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = []
-governance_notes = []
+validators = [
+  "tools/wds_validate.py",
+  "tools/route_check.py",
+  "tools/accessibility_smoke.py"
+]
+governance_notes = ["Publication-Approval-Flow.md"]
 reference_examples = [
   "examples/WDS-Suite-Map.md",
   "examples/Example-Deployment-Record.md",

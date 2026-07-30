@@ -85,6 +85,7 @@ It allows:
 - `errors` for structured failures.
 
 Stable commands must document which fields inside `data` are automation-safe.
+Use `JSON-Data-Payload-Guidance.md` for recommended `data` payload shapes and stability rules.
 
 ## Exit Code Bands
 
@@ -120,6 +121,8 @@ The following require a major version, a compatibility note, or an explicit migr
 - Renaming, removing, or changing the type of a stable machine-readable field.
 - Changing default destructive behavior.
 - Making an offline command require network access.
+
+Use `Command-Versioning-Migration-Notes.md` for the recommended deprecation and migration record shape.
 
 ## Destructive Command Rules
 

@@ -1,5 +1,13 @@
 # CTS Changelog
 
+## Unreleased
+
+- Added `tools/cts_validate.py` as lightweight validation support for command contracts and JSON envelope examples.
+- Added JSON `data` payload guidance for command-specific result shapes.
+- Added command versioning and migration notes.
+- Added CI usage guidance for CTS checks.
+- Added successful and error JSON output examples for the manifest-audit example command.
+
 ## 0.2.1 - 2026-06-11
 
 - Added a reusable JSON output envelope schema for CTS-governed command tools.

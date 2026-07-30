@@ -86,11 +86,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - No explicit blocking gap was identified in the eval notes.
 
 **Next implementation slice:**
-- Publish a short CI snippet demonstrating `drs.ps1` usage, such as release checks and hashing.
-- Add optional BLAKE3 compute/verify mode to `drs.ps1` and document when to prefer it over SHA-256.
-- Provide one fully populated adopter manifest beyond MiniVault, covering non-trivial dependency provenance and data-migration fields.
-- Add troubleshooting guidance for common `drs.ps1` failures and expected exit codes.
-- Record exact PowerShell runtime compatibility and either sign `drs.ps1` or provide script-signature guidance.
+- Publish a short CI snippet demonstrating `drs.ps1` usage, such as release checks and hashing. Status: complete in `DRS/docs/CI-Usage.md`.
+- Add optional BLAKE3 compute/verify mode to `drs.ps1` and document when to prefer it over SHA-256. Status: complete via `drs hash <path> --blake3` and optional `check-release` verification.
+- Provide one fully populated adopter manifest beyond MiniVault, covering non-trivial dependency provenance and data-migration fields. Status: complete with `DRS/examples/FieldDesk/FieldDesk.manifest.toml`.
+- Add troubleshooting guidance for common `drs.ps1` failures and expected exit codes. Status: complete in `DRS/docs/Troubleshooting.md`.
+- Record exact PowerShell runtime compatibility and either sign `drs.ps1` or provide script-signature guidance. Status: complete in `DRS/docs/Troubleshooting.md`.
 
 **Optional improvements:**
 - Tighten manifest schema patterns and add machine-readable release-note metadata.
@@ -112,11 +112,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - No explicit blocking gap was identified in the eval notes, but spec filename/version visibility needs reconciliation before adopters rely on it.
 
 **Next implementation slice:**
-- Reconcile canonical spec filename and version visibility, especially `SESM-v0.2.md` versus suite version `0.3.0`.
-- Publish validator JSON exit-code matrix and a small JSON example output.
-- Add a lightweight conformance test harness example for `Validate-SESM-Safe.py` and fixtures.
-- Document recommended sanitizer or pipeline steps for pairing SESM safe-profile checks with independent SVG sanitization.
-- Add cross-version compatibility fixtures showing `0.2.0` to `0.3.0` migration behavior.
+- Reconcile canonical spec filename and version visibility, especially `SESM-v0.2.md` versus suite version `0.3.0`. Status: complete in `SESM/Specification-Version-Note.md`.
+- Publish validator JSON exit-code matrix and a small JSON example output. Status: complete in `SESM/VALIDATOR-RULES.md` and `SESM/examples/validator-json-basic-safe.json`.
+- Add a lightweight conformance test harness example for `Validate-SESM-Safe.py` and fixtures. Status: complete in `SESM/tests/CONFORMANCE-HARNESS.md`.
+- Document recommended sanitizer or pipeline steps for pairing SESM safe-profile checks with independent SVG sanitization. Status: complete in `SESM/SANITIZER-PIPELINE.md`.
+- Add cross-version compatibility fixtures showing `0.2.0` to `0.3.0` migration behavior. Status: complete in `SESM/fixtures/compatibility/`.
 
 **Optional improvements:**
 - Add a language-agnostic extraction/parsing library example in Rust, Go, or JavaScript.
@@ -140,11 +140,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - No explicit blocking gap was identified in the eval notes.
 
 **Next implementation slice:**
-- Register PPS suite location and lifecycle mapping in WGS.
-- Publish a lightweight proposal generator that creates proposal and entity-manifest skeletons from templates.
-- Document PPS readiness-level mapping to WGS lifecycle transitions.
-- Add a worked example showing proposal adoption and delivery-standard handoff.
-- Record archival proposal snapshots to demonstrate provenance and drift detection.
+- Register PPS suite location and lifecycle mapping in WGS. Status: complete with `PPS/WGS-Lifecycle-Mapping.md`.
+- Publish a lightweight proposal generator that creates proposal and entity-manifest skeletons from templates. Status: complete with `PPS/tools/pps_new.py`.
+- Document PPS readiness-level mapping to WGS lifecycle transitions. Status: complete in `PPS/WGS-Lifecycle-Mapping.md`.
+- Add a worked example showing proposal adoption and delivery-standard handoff. Status: complete in `PPS/examples/Proposal-To-Delivery-Handoff.md`.
+- Record archival proposal snapshots to demonstrate provenance and drift detection. Status: complete in `PPS/examples/proposal-snapshots/`.
 
 **Optional improvements:**
 - Add an optional reference validator for required manifest fields and structured diagnostics.
@@ -166,11 +166,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - No explicit blocking gap was identified in the eval notes.
 
 **Next implementation slice:**
-- Publish a small reference validator prototype for help output, exit-code table presence, and JSON envelope conformance.
-- Add complete human and JSON command-output examples for adopter tools.
-- Document semantic versioning and migration notes for command-contract field changes.
-- Add a CI snippet showing validation-checklist execution.
-- Clarify `data` payload expectations in `CommandOutput.schema.json` or provide command-specific schema guidance.
+- Publish a small reference validator prototype for help output, exit-code table presence, and JSON envelope conformance. Status: complete with `CTS/tools/cts_validate.py`.
+- Add complete human and JSON command-output examples for adopter tools. Status: complete with manifest-audit contract plus JSON success/error examples.
+- Document semantic versioning and migration notes for command-contract field changes. Status: complete in `CTS/Command-Versioning-Migration-Notes.md`.
+- Add a CI snippet showing validation-checklist execution. Status: complete in `CTS/CI-Usage.md`.
+- Clarify `data` payload expectations in `CommandOutput.schema.json` or provide command-specific schema guidance. Status: complete in `CTS/JSON-Data-Payload-Guidance.md`.
 
 **Optional improvements:**
 - Tighten `CommandOutput.schema.json` with recommended data-shape guidance and common error-code mappings.
@@ -193,11 +193,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Runnable route-check and accessibility smoke-check implementations are missing.
 
 **Next implementation slice:**
-- Implement an executable validator that consumes `SiteManifest.schema.toml` and checklist expectations.
-- Add a runnable route-check script and accessibility smoke-check wrapper referenced by deployment templates.
-- Add CI or local examples showing validation on deploy and `Deployment-Record.md` emission.
-- Expand `SiteManifest.schema.toml` with concrete example values and edge-case constraints.
-- Document WGS registration flow and publication approval steps before a site is marked `published`.
+- Implement an executable validator that consumes `SiteManifest.schema.toml` and checklist expectations. Status: complete with `WDS/tools/wds_validate.py`.
+- Add a runnable route-check script and accessibility smoke-check wrapper referenced by deployment templates. Status: complete with `WDS/tools/route_check.py` and `WDS/tools/accessibility_smoke.py`.
+- Add CI or local examples showing validation on deploy and `Deployment-Record.md` emission. Status: complete in `WDS/templates/Deployment-Record.md`.
+- Expand `SiteManifest.schema.toml` with concrete example values and edge-case constraints. Status: complete in `WDS/SiteManifest.schema.toml`.
+- Document WGS registration flow and publication approval steps before a site is marked `published`. Status: complete in `WDS/Publication-Approval-Flow.md`.
 
 **Optional improvements:**
 - Add a reference CLI that fills deployment records from CI artifacts and commit metadata.

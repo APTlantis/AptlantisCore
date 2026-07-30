@@ -42,9 +42,11 @@ Unreadable files, parse errors, and filesystem diagnostics go to stderr.
 | Code | Meaning |
 | --- | --- |
 | 0 | All checked manifests passed. |
+| 1 | General failure. |
 | 2 | Invalid arguments. |
 | 3 | Root path missing. |
 | 4 | One or more manifests failed validation. |
+| 5 | TOML parser or required external dependency unavailable. |
 
 ## Stability
 
@@ -66,4 +68,3 @@ manifest-audit D:\010-CITY-HALL
 ```text
 manifest-audit D:\010-CITY-HALL --json
 ```
-

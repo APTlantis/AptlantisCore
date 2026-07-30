@@ -18,7 +18,11 @@ PPS governs project creation before code boundaries are drawn. It is the north s
 | `ProjectProposal.manifest.schema.toml` | Machine-readable proposal manifest shape. |
 | `templates/Project-Proposal.md` | Proposal template. |
 | `templates/PROJECT.manifest.toml` | Generic v2.4 project-manifest template; real projects use entity-named manifests. |
+| `tools/pps_new.py` | Lightweight generator for proposal and entity-manifest skeletons. |
+| `WGS-Lifecycle-Mapping.md` | PPS readiness to WGS lifecycle mapping. |
 | `examples/Example-CLI-Project-Proposal.md` | Filled proposal example for a CTS-governed CLI tool. |
+| `examples/Proposal-To-Delivery-Handoff.md` | Worked example of PPS adoption through delivery-standard handoff. |
+| `examples/proposal-snapshots/` | Archival proposal snapshots showing readiness transition evidence. |
 | `Adoption-Guide.md` | How new projects adopt PPS. |
 | `Validation-Checklist.md` | Manual proposal readiness check. |
 | `CHANGELOG.md` | PPS version history. |
@@ -36,9 +40,9 @@ DRS, CTS, SIS, WDS, DDS, and other delivery standards govern execution after PPS
 
 ## Validation Posture
 
-PPS is currently operational through its proposal template, filled examples, adoption guide, schema, and manual validation checklist. Automated proposal validation is a future maturity item, not a blocker for using PPS today.
+PPS is operational through its proposal template, filled examples, adoption guide, schema, manual validation checklist, WGS lifecycle mapping, and `tools/pps_new.py` skeleton generator.
 
-The `validators` list in `PPS.manifest.toml` is intentionally empty until a real validator exists. Reviews should treat that as backlog work unless PPS starts claiming executable validation.
+`tools/pps_new.py` creates starting artifacts only. Proposal readiness remains a human review gate until a dedicated validator exists.
 
 ```mermaid
 flowchart LR

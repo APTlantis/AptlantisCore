@@ -1,5 +1,12 @@
 # WDS Changelog
 
+## Unreleased
+
+- Added lightweight WDS validators for site manifests, route checks, and accessibility/metadata smoke checks.
+- Expanded site manifest schema and template guidance for environments, rollback, and canonical metadata.
+- Added deployment-record command examples for validation evidence.
+- Added WGS registration and publication approval flow guidance.
+
 ## 0.2.1 - 2026-06-11
 
 - Added an accessibility and metadata check example.

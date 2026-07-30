@@ -17,5 +17,6 @@ This checklist validates proposal readiness under PPS. SFDS suite conformance fo
 - [ ] Operational personas are identified.
 - [ ] Technical direction is high-level and does not pretend implementation is complete.
 - [ ] WGS lifecycle state is recorded or queued for the project manifest.
+- [ ] PPS readiness maps to WGS lifecycle using `WGS-Lifecycle-Mapping.md`.
 - [ ] Broad implementation is blocked unless readiness is `ready`.
 - [ ] Drifted projects are marked `rework` until the proposal matches reality again.

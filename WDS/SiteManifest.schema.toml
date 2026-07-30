@@ -9,10 +9,26 @@ required = ["id", "title", "status"]
 required = ["standard", "workspace_standard"]
 
 [properties.deployment]
-required = ["environments", "rollback"]
+required = ["environment", "rollback"]
+
+[properties.deployment.properties.environment]
+enum = ["local", "preview", "production", "archived", "internal"]
+
+[properties.site.properties.status]
+enum = ["draft", "preview", "published", "maintained", "archived"]
 
 [properties.accessibility]
 required = ["target", "checks"]
 
 [properties.metadata]
 required = ["title", "description", "canonical"]
+
+[examples.local]
+site_status = "draft"
+deployment_environment = "local"
+rollback = "Delete local output and rebuild from source."
+
+[examples.production]
+site_status = "published"
+deployment_environment = "production"
+rollback = "Redeploy the previous signed build artifact or restore the previous static snapshot."

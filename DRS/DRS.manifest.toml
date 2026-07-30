@@ -22,8 +22,13 @@ adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
 validators = ["drs.ps1"]
-governance_notes = ["Governance-Boundary.md", "SFDS-Adoption-Note.md"]
-reference_examples = ["examples/MiniVault"]
+governance_notes = [
+  "Governance-Boundary.md",
+  "SFDS-Adoption-Note.md",
+  "docs/CI-Usage.md",
+  "docs/Troubleshooting.md"
+]
+reference_examples = ["examples/MiniVault", "examples/FieldDesk/FieldDesk.manifest.toml"]
 
 [adopter_artifacts]
 schemas = ["DesktopApplicationRelease.manifest.schema.toml"]

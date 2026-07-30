@@ -14,6 +14,16 @@ Copy-pasteable PowerShell commands for common release tasks. All commands assume
 
 Output is uppercase hex — paste directly into the manifest and release note.
 
+### Compute SHA-256 plus optional BLAKE3
+
+```powershell
+.\drs.ps1 hash ".\artifacts\installer\AppName-1.0.0.0-win-x64.msi" --blake3
+```
+
+DRS requires SHA-256 as the minimum integrity record.
+BLAKE3 is optional and useful for security-sensitive releases or internal archive workflows that already use a trusted BLAKE3 tool.
+Install `b3sum` or `blake3` before using this mode.
+
 ### Compute SHA-256 and display manifest snippet
 
 ```powershell

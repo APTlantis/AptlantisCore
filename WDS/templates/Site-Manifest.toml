@@ -16,8 +16,8 @@ output = "dist"
 [deployment]
 target = ""
 record = "Deployment-Record.md"
-environment = "preview"
-rollback = ""
+environment = "preview" # local | preview | production | archived | internal
+rollback = "Redeploy previous static snapshot or restore prior host deployment."
 
 [quality]
 accessibility_required = true
@@ -30,4 +30,5 @@ required = ["/"]
 [metadata]
 title = ""
 description = ""
+canonical = ""
 structured_data = false

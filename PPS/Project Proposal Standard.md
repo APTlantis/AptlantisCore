@@ -36,6 +36,8 @@ PPS decides whether the project intent is clear enough to create, revive, expand
 PPS normally governs the transition from WGS `concept` into `planning`, and from `planning` into `active`.
 If a project in `active`, `paused`, `archived`, or `superseded` no longer has recoverable intent, PPS is used to reconstruct or refresh the proposal boundary before broad work continues.
 
+`WGS-Lifecycle-Mapping.md` records the current operational mapping between PPS readiness levels and WGS lifecycle states.
+
 ## Relationship to Delivery Standards
 
 PPS is the north star.
