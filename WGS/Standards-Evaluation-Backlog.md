@@ -29,8 +29,8 @@ This pass organizes work only. It does not complete the individual standards, ad
 - A dedicated `Agent-Closeout-Procedure.md` artifact is still missing, even though closeout requirements appear in other WGS materials.
 
 **Next implementation slice:**
-- Author `Agent-Closeout-Procedure.md` with exact update steps for direct and extended documentation on agent task completion.
-- Define a dashboard or metrics schema that converts inventory and audit outputs into machine-readable records, such as JSONL or DuckDB-ready tables.
+- Author `Agent-Closeout-Procedure.md` with exact update steps for direct and extended documentation on agent task completion. Status: complete in first WGS slice.
+- Define a dashboard or metrics schema that converts inventory and audit outputs into machine-readable records, such as JSONL or DuckDB-ready tables. Status: complete in first WGS slice.
 - Add structured output modes to `city_hall_audit.py` and `workspace_inventory.py`.
 - Define where periodic audit and snapshot outputs should be recorded under governed audit history.
 - Add one additional filled `Workspace-Health-Record` example for another root.

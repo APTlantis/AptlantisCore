@@ -7,7 +7,7 @@ Detailed action items from the 2026-07-30 standards evaluation are tracked in `S
 
 | Standard | Current maturity | Suite status | Next action |
 | --- | --- | --- | --- |
-| WGS | Candidate v0.2.7 | Workspace constitution, lifecycle, metadata spine, manifest naming, audit tooling, SIS integration, and suite roadmap aligned | Use the City Hall audit before standards releases and after batch normalization. |
+| WGS | Candidate v0.2.7 | Workspace constitution, lifecycle, metadata spine, manifest naming, agent startup and closeout, audit tooling, SIS integration, dashboard data contract, and suite roadmap aligned | Add structured JSONL output modes to inventory and audit tooling. |
 | SFDS | Stable v1.0.0 | Governs suite structure and standard maturity | Add validators for suite completeness and link integrity. |
 | PPS | Candidate v0.2.2 | Project intent, proposal readiness, WGS lifecycle alignment, delivery-standard mapping, and cross-project examples deepened | Use examples to seed future project proposals. |
 | DRS | Reference v1.0.2 | Mature reference implementation | Keep DRS authoritative and use it as the reference pattern for validators. |

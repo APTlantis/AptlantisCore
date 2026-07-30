@@ -21,6 +21,8 @@ WGS treats the workspace as a governed ecosystem rather than a loose collection 
 | `Workspace-Inventory.md` | Current-state inventory. |
 | `Target-Directory-Map.md` | Proposed target state. |
 | `Manifest-Conventions.md` | Manifest naming and placement policy. |
+| `Agent-Closeout-Procedure.md` | Required closeout steps for agent changes in governed workspace roots. |
+| `Workspace-Audit-Dashboard-Spec.md` | Machine-readable audit and dashboard dataset contract for WGS tooling. |
 | `templates/AGENTS.root.md` | Root instruction template. |
 | `templates/AGENTS.directory.md` | Governed-directory instruction template. |
 | `templates/AGENTS.project.md` | Project and project-group instruction template. |
