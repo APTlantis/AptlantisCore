@@ -7,6 +7,7 @@
 - Added two completed-interface validation examples.
 - Added a simulated breaking-change cycle example.
 - Clarified that `render-manifest.crate` remains staged until real crate artifacts exist.
+- Added JSON-LD context mapping, semver/MSRV policy template, CI usage guidance, and lifecycle transition example.
 
 ## 0.2.0 - 2026-07-25
 

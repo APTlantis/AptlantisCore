@@ -6,6 +6,7 @@ maintainer = "Aptlantis"
 update_cadence = "example only"
 
 [hash_suite]
+version = "aamhs.hash-suite.v1"
 primary = "sha256"
 additional = []
 allowed_algorithms = ["sha256", "blake3", "kangarootwelve"]

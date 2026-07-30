@@ -6,6 +6,7 @@ maintainer = "Your Name"
 update_cadence = "on archive update"
 
 [hash_suite]
+version = "aamhs.hash-suite.v1"
 primary = "sha256"
 additional = []
 allowed_algorithms = ["sha256", "blake3", "kangarootwelve"]

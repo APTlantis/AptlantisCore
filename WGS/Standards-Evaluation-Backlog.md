@@ -226,11 +226,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Record maintainer contact and expected update cadence in the manifest. Status: complete in `AAMHS/AAMHS.manifest.toml`.
 
 **Optional improvements:**
-- Add JSON Schema or JSON-LD mapping for broader tool compatibility.
-- Add CI or automation snippets for generating and validating hash manifests.
-- Add a lightweight validator script or executable and register it as adopter-provided validation support.
-- Extend schema for pluggable algorithm lists and versioned hash-suite declarations.
-- Add a canonical signed archive integrity record example.
+- Add JSON Schema or JSON-LD mapping for broader tool compatibility. Status: complete with `AAMHS/HashManifest.schema.json`.
+- Add CI or automation snippets for generating and validating hash manifests. Status: complete in `AAMHS/CI-Usage.md`.
+- Add a lightweight validator script or executable and register it as adopter-provided validation support. Status: complete with `AAMHS/tools/aamhs_validate.py` and `AAMHS/tools/aamhs_signature_check.py`.
+- Extend schema for pluggable algorithm lists and versioned hash-suite declarations. Status: complete with `allowed_algorithms` and `version` in AAMHS hash manifest schemas, template, and example.
+- Add a canonical signed archive integrity record example. Status: complete in `AAMHS/examples/Signed-Archive-Integrity-Record.md`.
 
 **Dependency notes:**
 - AAMHS should coordinate with DRS and ARHS so release hashing and archive preservation hashing stay distinct.
@@ -258,11 +258,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Promote the `render-manifest.crate` example out of staging once concrete crate artifacts exist. Status: deferred honestly; concrete crate artifacts do not yet exist.
 
 **Optional improvements:**
-- Add JSON-LD mapping for `Library-Interface-Note`.
-- Add fully filled real-adopter examples showing lifecycle transitions.
-- Add optional CI snippets for missing-field checks.
-- Add a canonical semver and breaking-change policy template, including Rust MSRV notes.
-- Add a short validator-runner example for repository checklist checks.
+- Add JSON-LD mapping for `Library-Interface-Note`. Status: complete with `LDS/LibraryInterfaceNote.context.jsonld`.
+- Add fully filled real-adopter examples showing lifecycle transitions. Status: complete as an illustrative transition example in `LDS/examples/Library-Lifecycle-Transition.md`; real committed crate adopters remain future evidence.
+- Add optional CI snippets for missing-field checks. Status: complete in `LDS/CI-Usage.md`.
+- Add a canonical semver and breaking-change policy template, including Rust MSRV notes. Status: complete in `LDS/Semver-Breaking-Change-Policy.md`.
+- Add a short validator-runner example for repository checklist checks. Status: complete in `LDS/CI-Usage.md`.
 
 **Dependency notes:**
 - LDS maturity should follow foundation work because its schema and evidence conventions depend on SFDS and WGS patterns.

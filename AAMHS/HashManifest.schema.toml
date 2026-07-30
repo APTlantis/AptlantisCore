@@ -22,7 +22,11 @@ type = "string"
 type = "string"
 
 [properties.hash_suite]
-required = ["primary", "additional"]
+required = ["version", "primary", "additional"]
+
+[properties.hash_suite.properties.version]
+type = "string"
+pattern = "^aamhs\\.hash-suite\\.v[0-9]+$"
 
 [properties.hash_suite.properties.primary]
 type = "string"

@@ -22,16 +22,20 @@ adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
 validators = ["tools/lds_validate.py"]
-governance_notes = []
+governance_notes = [
+  "Semver-Breaking-Change-Policy.md",
+  "CI-Usage.md"
+]
 reference_examples = [
   "examples/render-manifest.crate-Library-Interface-Note.md",
   "examples/ManifestQuery.Core-Library-Interface-Note.md",
   "examples/HashSuite.Core-Library-Interface-Note.md",
-  "examples/Breaking-Change-Cycle.md"
+  "examples/Breaking-Change-Cycle.md",
+  "examples/Library-Lifecycle-Transition.md"
 ]
 
 [adopter_artifacts]
-schemas = ["LibraryInterfaceNote.schema.json"]
+schemas = ["LibraryInterfaceNote.schema.json", "LibraryInterfaceNote.context.jsonld"]
 manifest_templates = []
 document_templates = ["templates/Library-Interface-Note.md"]
 

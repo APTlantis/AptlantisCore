@@ -16,11 +16,15 @@ LDS is candidate active as of 2026-07-25. Projects may adopt it for library-shap
 | `Library Development Standard.md` | Primary LDS specification. |
 | `LDS.manifest.toml` | Standard manifest. |
 | `LibraryInterfaceNote.schema.json` | Machine-readable schema for interface note summaries. |
+| `LibraryInterfaceNote.context.jsonld` | JSON-LD context mapping for interface note fields. |
 | `templates/Library-Interface-Note.md` | Adopter template: public API surface, stability level, versioning policy, extension contracts, known consumers. |
+| `Semver-Breaking-Change-Policy.md` | Semver, breaking-change, and Rust MSRV policy template. |
+| `CI-Usage.md` | Local and CI snippets for LDS validator runs. |
 | `examples/render-manifest.crate-Library-Interface-Note.md` | First candidate adopter example. |
 | `examples/ManifestQuery.Core-Library-Interface-Note.md` | Completed public API validation example. |
 | `examples/HashSuite.Core-Library-Interface-Note.md` | Second independent library validation example. |
 | `examples/Breaking-Change-Cycle.md` | Simulated breaking-change cycle evidence. |
+| `examples/Library-Lifecycle-Transition.md` | Example lifecycle transition from experimental to reference. |
 | `tools/lds_validate.py` | Lightweight interface-note shape validator. |
 | `Adoption-Guide.md` | LDS adoption procedure. |
 | `Validation-Checklist.md` | Library readiness checklist. |
