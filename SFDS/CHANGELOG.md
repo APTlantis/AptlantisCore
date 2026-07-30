@@ -1,5 +1,10 @@
 # SFDS Changelog
 
+## Unreleased
+
+- Added executable SFDS suite validation support, CI usage guidance, compatibility vocabulary, and an LDS candidate-suite example.
+- Tightened standard manifest schema vocabulary for status, maturity, and promotion-state fields.
+
 ## 1.0.0 - 2026-07-25
 
 - Recorded promotion of the active-use SFDS copy into `D:\.library\aptlantis_core\SFDS`.

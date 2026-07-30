@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added machine-checkable JSON fixtures, progress-output compatibility notes, a contract stability linter, and a minimal Python reference implementation.
 - Added `tools/cts_validate.py` as lightweight validation support for command contracts and JSON envelope examples.
 - Added JSON `data` payload guidance for command-specific result shapes.
 - Added command versioning and migration notes.

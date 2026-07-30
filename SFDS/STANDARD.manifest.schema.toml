@@ -5,6 +5,14 @@ required = ["standard", "governance", "artifacts", "lifecycle"]
 [properties.standard]
 required = ["id", "title", "abbreviation", "status", "maturity", "version"]
 
+[properties.standard.properties.status]
+type = "string"
+enum = ["concept", "draft", "planned", "candidate-active", "active", "stable", "deprecated", "retired"]
+
+[properties.standard.properties.maturity]
+type = "string"
+enum = ["concept", "draft", "candidate", "stable", "reference-candidate", "reference"]
+
 [properties.governance]
 required = ["meta_standard", "scope"]
 
@@ -16,3 +24,7 @@ description = "Optional adopter-facing schemas, manifest templates, and document
 
 [properties.lifecycle]
 required = ["created", "last_updated", "maintainer"]
+
+[properties.promotion.properties.promotion_state]
+type = "string"
+enum = ["draft", "candidate-active-library-copy", "active-library-copy", "promoted", "deprecated"]

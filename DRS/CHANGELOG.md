@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added release-note metadata schema, JSON-LD template, companion integrity checker, release-gating workflow guidance, and a minimal release-folder verifier example.
 - Added CI usage guidance for running `drs.ps1` from local automation and Windows CI.
 - Added troubleshooting, PowerShell 7 compatibility, and script trust guidance.
 - Added optional BLAKE3 support to `drs.ps1 hash` and `check-release` when `b3sum` or `blake3` is available.

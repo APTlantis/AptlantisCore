@@ -17,6 +17,9 @@ This checklist validates workspace governance readiness under WGS. SFDS suite co
 - [ ] Agent closeout procedure requires direct and extended documentation updates before substantial tasks are complete.
 - [ ] Canonical standard links resolve under `D:\.city_hall`; no copied standard or Windows shortcut is a governance dependency.
 - [ ] Manifest physical paths and parent/child relationships match the current filesystem.
+- [ ] Manifest schema expectations are checked against `EntityManifest-v2.4.schema.json` when machine-schema compatibility is in scope.
+- [ ] Manifest changes are reviewed with `tools/manifest_diff.py` when field-level drift matters.
+- [ ] Local Markdown links are checked with `tools/link_integrity.py` for touched documentation scopes.
 - [ ] Agent read-first order is available from manifests or identity docs.
 - [ ] Direct records were updated for changed entities, or intentionally left unchanged with a reason.
 - [ ] Extended navigation records such as `D:\Development.manifest.toml`, `D:\INDEX.md`, parent manifests, responsibility matrices, inventories, and standards registries were updated when discovery or authority changed.

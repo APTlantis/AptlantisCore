@@ -2,6 +2,7 @@
 
 ## Unreleased - 2026-07-08
 
+- Added Entity Manifest v2.4 JSON Schema export, WGS CI usage guidance, manifest diff tooling, Markdown link integrity tooling, query-store reference notes, and a minimal static workspace-health dashboard example.
 - Reconciled `D:\Development.manifest.toml`, root/portfolio manifests, and `Workspace-Inventory.md` with the current physical `D:\` root layout; the read-only workspace inventory now passes for every registered root.
 - Added agent closeout requirements for direct and extended documentation updates, including `D:\Development.manifest.toml`, `D:\INDEX.md`, parent manifests, responsibility matrices, inventories, and standards registries when discovery or authority changes.
 - Updated `city_hall_audit.py` to audit portfolio paths registered in `Development.manifest.toml` instead of assuming every portfolio directory is the uppercase portfolio ID; this supports the canonical `D:\.data` root.

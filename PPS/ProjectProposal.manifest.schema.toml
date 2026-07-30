@@ -5,6 +5,21 @@ required = ["proposal", "project", "criteria", "constraints"]
 [properties.proposal]
 required = ["id", "status", "created"]
 
+[properties.proposal.properties.status]
+type = "string"
+enum = ["sketch", "draft", "ready", "approved", "deferred", "rejected", "archived"]
+
+[properties.proposal.properties.readiness]
+type = "string"
+enum = ["sketch", "ready-for-review", "approved-for-build", "blocked", "deferred"]
+
+[properties.proposal.properties.operational_personas]
+type = "array"
+
+[properties.proposal.properties.operational_personas.items]
+type = "string"
+enum = ["solo-maintainer", "operator", "agent", "reviewer", "adopter", "maintainer"]
+
 [properties.project]
 required = ["name", "type", "mission"]
 
@@ -13,4 +28,3 @@ required = ["success", "failure"]
 
 [properties.constraints]
 required = ["technical", "scope"]
-

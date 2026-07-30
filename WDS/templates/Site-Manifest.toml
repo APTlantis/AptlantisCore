@@ -28,7 +28,7 @@ monitoring_required = false
 required = ["/"]
 
 [metadata]
-title = ""
-description = ""
+title = "Example Site"
+description = "Short description of the site purpose and audience."
 canonical = ""
 structured_data = false

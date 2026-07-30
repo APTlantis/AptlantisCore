@@ -26,13 +26,17 @@ validators = [
   "tools/workspace_inventory.py",
   "tools/governance_scaffold.py",
   "tools/normalize_entity_manifests.py",
-  "tools/snapshot_root_governance.py"
+  "tools/snapshot_root_governance.py",
+  "tools/manifest_diff.py",
+  "tools/link_integrity.py"
 ]
 governance_notes = [
   "Manifest-Conventions.md",
   "Agent-Startup-Procedure.md",
   "Agent-Closeout-Procedure.md",
   "Workspace-Audit-Dashboard-Spec.md",
+  "Entity-Manifest-Query-Store.md",
+  "CI-Usage.md",
   "Documentation-Suite-Roadmap.md",
   "Governance-Responsibility-Matrix.md"
 ]
@@ -40,13 +44,14 @@ reference_examples = [
   "examples/WGS-Suite-Map.md",
   "examples/City-Hall-Health-Record.md",
   "examples/Library-Root-Health-Record.md",
+  "examples/Workspace-Health-Dashboard.html",
   "examples/City-Hall-Audit-2026-06-11.md",
   "examples/Workspace-Governance-Audit-2026-07-07.md",
   "examples/Workspace-Governance-Audit-2026-07-08.md"
 ]
 
 [adopter_artifacts]
-schemas = ["STANDARD.manifest.schema.toml"]
+schemas = ["STANDARD.manifest.schema.toml", "EntityManifest-v2.4.schema.json"]
 manifest_templates = [
   "templates/Development.manifest.toml",
   "templates/DirectoryName.manifest.toml",

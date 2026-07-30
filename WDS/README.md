@@ -20,8 +20,13 @@ WDS governs websites and web applications as maintained projects rather than loo
 | `tools/wds_validate.py` | Lightweight site manifest validator. |
 | `tools/route_check.py` | Route availability smoke-check helper. |
 | `tools/accessibility_smoke.py` | HTML accessibility and metadata smoke-check helper. |
+| `tools/fill_deployment_record.py` | Deployment-record filler for CI metadata and commit artifacts. |
 | `Publication-Approval-Flow.md` | WGS registration and WDS publication approval flow. |
+| `Route-Check-Harness.md` | Reusable preview and production route-check harness guidance. |
+| `Monitoring-Integration-Fields.md` | Optional vendor-neutral monitoring fields for site manifests. |
 | `examples/Example-Deployment-Record.md` | Filled deployment evidence example. |
+| `examples/SiteMetadata.jsonld` | Optional JSON-LD metadata example for WDS sites. |
+| `tests/CONFORMANCE.md` | Minimal conformance suite and example validator output. |
 | `Adoption-Guide.md` | How web projects adopt WDS. |
 | `Validation-Checklist.md` | Site readiness checklist. |
 | `CHANGELOG.md` | WDS version history. |

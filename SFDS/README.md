@@ -13,6 +13,8 @@ Every standard directory needs a README explaining that standard's role in the C
 
 DRS is the first reference implementation for this pattern. Use it to understand how a mature standard suite can include a primary specification, suite manifest, adopter-facing schema, templates, examples, validation guidance, and executable helpers without rewriting the domain standard from scratch.
 
+WGS and LDS provide additional non-DRS reference examples for governance-shaped and library-shaped standard suites.
+
 ## Document Suite
 
 | File | Purpose |
@@ -20,6 +22,9 @@ DRS is the first reference implementation for this pattern. Use it to understand
 | `Standards Framework Development Standard.md` | Primary specification. |
 | `STANDARD.manifest.schema.toml` | Machine-readable shape for standard manifests. |
 | `SFDS-Validation-Guidance.md` | Manual suite-conformance validation procedure for SFDS-governed standards. |
+| `tools/sfds_validate.py` | Lightweight executable validator for standard-suite manifest shape and registered artifacts. |
+| `Compatibility-Matrix.md` | Machine-readable vocabulary and compatibility policy for standard manifests. |
+| `CI-Usage.md` | Local and CI examples for running SFDS validation. |
 | `Governance-Notes.md` | Policy clarifications for suite normalization, validators, and maturity claims. |
 | `templates/` | Reusable documents for every standard suite. |
 | `examples/` | Filled examples for future reference implementations. |

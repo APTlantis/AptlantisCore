@@ -19,9 +19,14 @@ PPS governs project creation before code boundaries are drawn. It is the north s
 | `templates/Project-Proposal.md` | Proposal template. |
 | `templates/PROJECT.manifest.toml` | Generic v2.4 project-manifest template; real projects use entity-named manifests. |
 | `tools/pps_new.py` | Lightweight generator for proposal and entity-manifest skeletons. |
+| `tools/pps_validate.py` | Lightweight validator for proposal manifest fields and readiness vocabulary. |
 | `WGS-Lifecycle-Mapping.md` | PPS readiness to WGS lifecycle mapping. |
+| `CI-Usage.md` | Local and CI validation snippets for PPS proposal checks. |
+| `Proposal-Metadata-JSONL.md` | JSONL export shape for proposal indexing. |
+| `Delivery-Standard-Mapping.md` | PPS-to-delivery-standard handoff examples. |
 | `examples/Example-CLI-Project-Proposal.md` | Filled proposal example for a CTS-governed CLI tool. |
 | `examples/Proposal-To-Delivery-Handoff.md` | Worked example of PPS adoption through delivery-standard handoff. |
+| `examples/Example-Proposal.manifest.toml` | Machine-readable proposal manifest example for validator checks. |
 | `examples/proposal-snapshots/` | Archival proposal snapshots showing readiness transition evidence. |
 | `Adoption-Guide.md` | How new projects adopt PPS. |
 | `Validation-Checklist.md` | Manual proposal readiness check. |
@@ -40,9 +45,9 @@ DRS, CTS, SIS, WDS, DDS, and other delivery standards govern execution after PPS
 
 ## Validation Posture
 
-PPS is operational through its proposal template, filled examples, adoption guide, schema, manual validation checklist, WGS lifecycle mapping, and `tools/pps_new.py` skeleton generator.
+PPS is operational through its proposal template, filled examples, adoption guide, schema, manual validation checklist, WGS lifecycle mapping, `tools/pps_new.py` skeleton generator, and `tools/pps_validate.py` proposal-field checker.
 
-`tools/pps_new.py` creates starting artifacts only. Proposal readiness remains a human review gate until a dedicated validator exists.
+`tools/pps_new.py` creates starting artifacts only. `tools/pps_validate.py` checks required fields and vocabulary; proposal readiness remains a human review gate.
 
 ```mermaid
 flowchart LR

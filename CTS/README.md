@@ -18,12 +18,16 @@ CTS governs command-line tools and automation utilities. It makes CLI behavior s
 | `JSON-Data-Payload-Guidance.md` | Guidance for command-specific `data` payloads. |
 | `Command-Versioning-Migration-Notes.md` | Compatibility and migration policy for command changes. |
 | `CI-Usage.md` | Local and CI snippets for CTS validation support. |
+| `Progress-Output-Compatibility.md` | Compatibility notes for progress output, stderr, JSON stdout, and JSONL event mode. |
 | `templates/Command-Contract.md` | Command documentation template. |
 | `templates/CLI-Release-Checklist.md` | Release readiness template. |
 | `examples/Manifest-Audit-Command-Contract.md` | Filled command contract example. |
 | `examples/manifest-audit-output-ok.json` | Successful CTS JSON envelope example. |
 | `examples/manifest-audit-output-error.json` | Error CTS JSON envelope example. |
+| `examples/fixtures/` | Machine-checkable JSON envelope fixtures. |
+| `examples/reference-implementations/python_cli.py` | Minimal Python reference implementation. |
 | `tools/cts_validate.py` | Lightweight validator for command contracts and JSON envelope examples. |
+| `tools/cts_lint_contract.py` | Linter for command-contract stability risks. |
 | `Adoption-Guide.md` | How CLI projects adopt CTS. |
 | `Validation-Checklist.md` | Manual CTS readiness checks. |
 | `CHANGELOG.md` | CTS version history. |
@@ -41,7 +45,7 @@ Every stable command needs documented invocation, stdout/stderr behavior, exit c
 
 CTS is operational through `CommandOutput.schema.json`, the command-contract template, the CLI release checklist, filled examples, the adoption guide, the manual validation checklist, and `tools/cts_validate.py`.
 
-`tools/cts_validate.py` is intentionally lightweight. It validates command-contract document shape and JSON output envelope examples; it does not prove arbitrary CLI runtime behavior.
+`tools/cts_validate.py` is intentionally lightweight. It validates command-contract document shape and JSON output envelope examples; it does not prove arbitrary CLI runtime behavior. `tools/cts_lint_contract.py` flags common contract stability risks for reviewer attention.
 
 ```mermaid
 flowchart TB

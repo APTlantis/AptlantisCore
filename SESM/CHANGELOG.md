@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added JavaScript extraction example, strict ingestion profile, integrity endorsement guidance, CI/report capture guidance, and JSON-LD mapping notes.
 - Added a specification version note clarifying the `SESM-v0.2.md` filename and current `0.3.0` suite packet.
 - Added validator JSON example output.
 - Added a lightweight conformance harness note for adopters.

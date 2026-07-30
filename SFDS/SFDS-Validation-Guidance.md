@@ -59,11 +59,14 @@ For example:
 Use these as supporting evidence during manual review:
 
 ```powershell
+python SFDS/tools/sfds_validate.py SFDS WGS DRS CTS WDS PPS SESM AAMHS LDS --json
 python WGS/tools/city_hall_audit.py --root D:/.library/aptlantis_core
 python WGS/tools/city_hall_audit.py --root D:/.library/aptlantis_core --format jsonl
 ```
 
-The WGS audit can confirm file presence and manifest references, but it does not replace SFDS reviewer judgment about scope clarity, compatibility policy, adopter usability, or maturity evidence.
+The SFDS validator confirms required suite shape, manifest vocabulary, and registered artifact paths.
+The WGS audit can confirm broader City Hall file presence and manifest references.
+Neither executable check replaces SFDS reviewer judgment about scope clarity, compatibility policy, adopter usability, or maturity evidence.
 
 ## Pass Criteria
 

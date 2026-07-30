@@ -23,6 +23,9 @@ WGS treats the workspace as a governed ecosystem rather than a loose collection 
 | `Manifest-Conventions.md` | Manifest naming and placement policy. |
 | `Agent-Closeout-Procedure.md` | Required closeout steps for agent changes in governed workspace roots. |
 | `Workspace-Audit-Dashboard-Spec.md` | Machine-readable audit and dashboard dataset contract for WGS tooling. |
+| `EntityManifest-v2.4.schema.json` | JSON Schema export for the current entity manifest model. |
+| `Entity-Manifest-Query-Store.md` | Reference SQLite/DuckDB-style query-store shape for entity manifests and audit records. |
+| `CI-Usage.md` | Local, scheduled, and CI audit snippets for WGS checks. |
 | `templates/AGENTS.root.md` | Root instruction template. |
 | `templates/AGENTS.directory.md` | Governed-directory instruction template. |
 | `templates/AGENTS.project.md` | Project and project-group instruction template. |
@@ -38,6 +41,9 @@ WGS treats the workspace as a governed ecosystem rather than a loose collection 
 | `tools/workspace_inventory.py` | Read-only physical/registered drift report. |
 | `tools/governance_scaffold.py` | Dry-run-first entity scaffold and parent registration tool. |
 | `tools/snapshot_root_governance.py` | SHA-256 checked root-governance recovery snapshot tool. |
+| `tools/manifest_diff.py` | Read-only TOML manifest comparison helper. |
+| `tools/link_integrity.py` | Local Markdown link integrity checker. |
+| `examples/Workspace-Health-Dashboard.html` | Minimal static dashboard example for WGS audit records. |
 | `Documentation-Suite-Roadmap.md` | Standards documentation normalization tracker. |
 | `Governance-Responsibility-Matrix.md` | Ownership and collision rules across standards. |
 | `Reference-Index.md` | Preserved planning lineage and conversation references. |

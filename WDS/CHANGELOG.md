@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added deployment-record filler, JSON-LD metadata example, route-check harness guidance, monitoring integration fields, and minimal conformance suite notes.
 - Added lightweight WDS validators for site manifests, route checks, and accessibility/metadata smoke checks.
 - Expanded site manifest schema and template guidance for environments, rollback, and canonical metadata.
 - Added deployment-record command examples for validation evidence.

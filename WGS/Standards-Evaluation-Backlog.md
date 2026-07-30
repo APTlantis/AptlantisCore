@@ -37,11 +37,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Map manifest fields to dashboard metrics and register that mapping in `Documentation-Suite-Roadmap.md`. Status: complete in WGS audit history convention slice.
 
 **Optional improvements:**
-- Add stricter machine schema exports for manifest v2.4.
-- Add CI or scheduled audit snippets for structural regression checks.
-- Add manifest-diff and link-integrity tooling.
-- Publish a reference query store for entity manifests, such as DuckDB or SQLite.
-- Add a minimal static dashboard front end for workspace health signals.
+- Add stricter machine schema exports for manifest v2.4. Status: complete with `WGS/EntityManifest-v2.4.schema.json`.
+- Add CI or scheduled audit snippets for structural regression checks. Status: complete in `WGS/CI-Usage.md`.
+- Add manifest-diff and link-integrity tooling. Status: complete with `WGS/tools/manifest_diff.py` and `WGS/tools/link_integrity.py`.
+- Publish a reference query store for entity manifests, such as DuckDB or SQLite. Status: complete in `WGS/Entity-Manifest-Query-Store.md`.
+- Add a minimal static dashboard front end for workspace health signals. Status: complete with `WGS/examples/Workspace-Health-Dashboard.html`.
 
 **Dependency notes:**
 - This should lead the first implementation wave because WGS defines workspace orientation, closeout behavior, manifest truth, and audit/dashboard expectations used by later standards work.
@@ -65,11 +65,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Record known adopters in the manifest or adoption guide as adoption begins. Status: complete in `SFDS/Adoption-Guide.md`.
 
 **Optional improvements:**
-- Add a lightweight executable validator for required suite files and `STANDARD.manifest.schema.toml` conformance.
-- Add local, GitHub Actions, or Azure CI snippets for SFDS validation.
-- Tighten manifest schema enums for maturity, status, and promotion state.
-- Add machine-readable compatibility rules or a compatibility matrix.
-- Add a minimal non-DRS adopter manifest example.
+- Add a lightweight executable validator for required suite files and `STANDARD.manifest.schema.toml` conformance. Status: complete with `SFDS/tools/sfds_validate.py`.
+- Add local, GitHub Actions, or Azure CI snippets for SFDS validation. Status: complete in `SFDS/CI-Usage.md`.
+- Tighten manifest schema enums for maturity, status, and promotion state. Status: complete in `SFDS/STANDARD.manifest.schema.toml`.
+- Add machine-readable compatibility rules or a compatibility matrix. Status: complete in `SFDS/Compatibility-Matrix.md`.
+- Add a minimal non-DRS adopter manifest example. Status: complete with `SFDS/examples/LDS-Candidate-Suite.md`.
 
 **Dependency notes:**
 - SFDS should follow WGS in the first implementation wave because it governs the standard-suite shape used by the remaining backlog.
@@ -93,11 +93,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Record exact PowerShell runtime compatibility and either sign `drs.ps1` or provide script-signature guidance. Status: complete in `DRS/docs/Troubleshooting.md`.
 
 **Optional improvements:**
-- Tighten manifest schema patterns and add machine-readable release-note metadata.
-- Add companion validators for BLAKE3 and signature verification.
-- Add structured release-note metadata export, such as JSON-LD.
-- Publish CI workflows for continuous release gating.
-- Add a minimal GUI verifier for release folders.
+- Tighten manifest schema patterns and add machine-readable release-note metadata. Status: complete with existing DRS schema patterns plus `DRS/ReleaseNoteMetadata.schema.json`.
+- Add companion validators for BLAKE3 and signature verification. Status: complete with `DRS/tools/drs_integrity_check.py` for declared BLAKE3 and signing metadata checks.
+- Add structured release-note metadata export, such as JSON-LD. Status: complete with `DRS/templates/Release-Note.Metadata.jsonld`.
+- Publish CI workflows for continuous release gating. Status: complete in `DRS/docs/Release-Gating-Workflow.md`.
+- Add a minimal GUI verifier for release folders. Status: complete with `DRS/examples/Release-Folder-Verifier.html`.
 
 **Dependency notes:**
 - DRS remains the reference implementation pattern for validators and examples; use it to inform SFDS, CTS, WDS, and AAMHS automation style.
@@ -119,11 +119,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Add cross-version compatibility fixtures showing `0.2.0` to `0.3.0` migration behavior. Status: complete in `SESM/fixtures/compatibility/`.
 
 **Optional improvements:**
-- Add a language-agnostic extraction/parsing library example in Rust, Go, or JavaScript.
-- Add optional signature or integrity endorsements for SESM blocks.
-- Automate validator tests in CI and publish JSON reports.
-- Define a stricter ingestion profile for metadata size, remote references, and `llm` field limits.
-- Add a JSON-LD mapping guide for structured-data interoperability.
+- Add a language-agnostic extraction/parsing library example in Rust, Go, or JavaScript. Status: complete with `SESM/examples/extract-sesm.js`.
+- Add optional signature or integrity endorsements for SESM blocks. Status: complete in `SESM/INTEGRITY-ENDORSEMENTS.md`.
+- Automate validator tests in CI and publish JSON reports. Status: complete in `SESM/CI-Usage.md`.
+- Define a stricter ingestion profile for metadata size, remote references, and `llm` field limits. Status: complete in `SESM/STRICT-INGESTION-PROFILE.md`.
+- Add a JSON-LD mapping guide for structured-data interoperability. Status: complete in `SESM/JSON-LD-Mapping.md`.
 
 **Dependency notes:**
 - SESM work should stay aligned with its existing validator, fixtures, safe profile, and NeonInk-related references.
@@ -147,11 +147,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Record archival proposal snapshots to demonstrate provenance and drift detection. Status: complete in `PPS/examples/proposal-snapshots/`.
 
 **Optional improvements:**
-- Add an optional reference validator for required manifest fields and structured diagnostics.
-- Add schema enumerations for status, readiness, and operational personas.
-- Add local lint or CI examples for checklist execution.
-- Define a simple JSONL export format for proposal metadata.
-- Add normative PPS-to-delivery-standard mapping examples for DRS, CTS, SIS, WDS, and DDS.
+- Add an optional reference validator for required manifest fields and structured diagnostics. Status: complete with `PPS/tools/pps_validate.py`.
+- Add schema enumerations for status, readiness, and operational personas. Status: complete in `PPS/ProjectProposal.manifest.schema.toml`.
+- Add local lint or CI examples for checklist execution. Status: complete in `PPS/CI-Usage.md`.
+- Define a simple JSONL export format for proposal metadata. Status: complete in `PPS/Proposal-Metadata-JSONL.md`.
+- Add normative PPS-to-delivery-standard mapping examples for DRS, CTS, SIS, WDS, and DDS. Status: complete in `PPS/Delivery-Standard-Mapping.md`.
 
 **Dependency notes:**
 - PPS should use WGS lifecycle language and SFDS suite conventions after those foundation gaps are clarified.
@@ -173,11 +173,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Clarify `data` payload expectations in `CommandOutput.schema.json` or provide command-specific schema guidance. Status: complete in `CTS/JSON-Data-Payload-Guidance.md`.
 
 **Optional improvements:**
-- Tighten `CommandOutput.schema.json` with recommended data-shape guidance and common error-code mappings.
-- Add machine-checkable JSON fixtures.
-- Add cross-language reference implementation examples.
-- Add a command-contract linter for instability risks.
-- Add compatibility notes for progress output so machine output stays parseable.
+- Tighten `CommandOutput.schema.json` with recommended data-shape guidance and common error-code mappings. Status: complete with explicit `data` shape guidance and error `category` mappings.
+- Add machine-checkable JSON fixtures. Status: complete in `CTS/examples/fixtures/`.
+- Add cross-language reference implementation examples. Status: complete with `CTS/examples/reference-implementations/python_cli.py`.
+- Add a command-contract linter for instability risks. Status: complete with `CTS/tools/cts_lint_contract.py`.
+- Add compatibility notes for progress output so machine output stays parseable. Status: complete in `CTS/Progress-Output-Compatibility.md`.
 
 **Dependency notes:**
 - CTS validator and output-envelope work should borrow from the DRS reference style where practical.
@@ -200,11 +200,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - Document WGS registration flow and publication approval steps before a site is marked `published`. Status: complete in `WDS/Publication-Approval-Flow.md`.
 
 **Optional improvements:**
-- Add a reference CLI that fills deployment records from CI artifacts and commit metadata.
-- Add JSON-LD metadata examples.
-- Add reusable preview/production route-check harnesses.
-- Add optional monitoring integration fields.
-- Define a minimal conformance test suite and example validator outputs.
+- Add a reference CLI that fills deployment records from CI artifacts and commit metadata. Status: complete with `WDS/tools/fill_deployment_record.py`.
+- Add JSON-LD metadata examples. Status: complete with `WDS/examples/SiteMetadata.jsonld`.
+- Add reusable preview/production route-check harnesses. Status: complete in `WDS/Route-Check-Harness.md`.
+- Add optional monitoring integration fields. Status: complete in `WDS/Monitoring-Integration-Fields.md` and `WDS/SiteManifest.schema.toml`.
+- Define a minimal conformance test suite and example validator outputs. Status: complete in `WDS/tests/CONFORMANCE.md`.
 
 **Dependency notes:**
 - WDS publication states should line up with WGS registration and any SFDS validation conventions.

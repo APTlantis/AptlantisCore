@@ -21,18 +21,23 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = ["drs.ps1"]
+validators = ["drs.ps1", "tools/drs_integrity_check.py"]
 governance_notes = [
   "Governance-Boundary.md",
   "SFDS-Adoption-Note.md",
   "docs/CI-Usage.md",
-  "docs/Troubleshooting.md"
+  "docs/Troubleshooting.md",
+  "docs/Release-Gating-Workflow.md"
 ]
-reference_examples = ["examples/MiniVault", "examples/FieldDesk/FieldDesk.manifest.toml"]
+reference_examples = [
+  "examples/MiniVault",
+  "examples/FieldDesk/FieldDesk.manifest.toml",
+  "examples/Release-Folder-Verifier.html"
+]
 
 [adopter_artifacts]
-schemas = ["DesktopApplicationRelease.manifest.schema.toml"]
-manifest_templates = ["templates/ProjectName.manifest.toml"]
+schemas = ["DesktopApplicationRelease.manifest.schema.toml", "ReleaseNoteMetadata.schema.json"]
+manifest_templates = ["templates/ProjectName.manifest.toml", "templates/Release-Note.Metadata.jsonld"]
 document_templates = [
   "templates/Release-Note.md",
   "templates/Release-Checklist.md",

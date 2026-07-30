@@ -31,6 +31,9 @@ These files are the recommended first-read packet for external standards review:
 8. `REFERENCE-IMPLEMENTATION.md`
 9. `SUBMISSION-PITCH.md`
 10. `Specification-Version-Note.md`
+11. `STRICT-INGESTION-PROFILE.md`
+12. `INTEGRITY-ENDORSEMENTS.md`
+13. `JSON-LD-Mapping.md`
 
 SESM metadata is untrusted input. SESM does not make arbitrary SVG safe. A SESM-safe SVG means non-executable SVG plus a valid SESM metadata block.
 
@@ -138,6 +141,9 @@ The validator reports:
 The fixture corpus under `fixtures/` contains valid, invalid, and warning examples for scripts, event handlers, JavaScript URLs, duplicate metadata, bad JSON, and remote references.
 Compatibility fixtures under `fixtures/compatibility/` demonstrate historical `0.2.0` and current `0.3.0` metadata behavior.
 
+`examples/extract-sesm.js` shows a minimal JavaScript extraction path for systems that need a small reference implementation outside Python.
+`CI-Usage.md` describes how to run tests and capture validator JSON reports.
+
 ---
 
 ## 🔄 Conversion Tool: `Convert-to-SVG.py`
@@ -194,3 +200,5 @@ When feeding documentation to LLMs or local agents, scripts can extract `llm.sum
 
 ### 3. Archive Integrity Check
 Archivers can read the `integrity` object inside the SVG to confirm the content hashes match original database snapshots, enabling offline integrity audits.
+
+Integrity fields are endorsements only. `INTEGRITY-ENDORSEMENTS.md` explains how to cross-check them against DRS release notes or AAMHS hash manifests.

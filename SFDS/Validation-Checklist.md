@@ -12,7 +12,9 @@
 - [ ] Templates exist or are explicitly deferred.
 - [ ] Examples exist for candidate/reference maturity or are explicitly deferred for draft maturity.
 - [ ] Validator notes, scripts, or manual validation procedures are documented when compliance can be checked.
+- [ ] `tools/sfds_validate.py` passes for the suite or any warnings are intentionally documented for reviewer judgment.
 - [ ] Manual SFDS suite validation follows `SFDS-Validation-Guidance.md` when no executable validator exists.
+- [ ] Manifest status, maturity, and promotion-state vocabulary matches `Compatibility-Matrix.md` or the deviation is recorded before automation depends on it.
 - [ ] Maturity level is assigned.
 - [ ] Known gaps are recorded.
 - [ ] Existing mature standards preserve their authoritative domain rules and are normalized without unnecessary rewrites.

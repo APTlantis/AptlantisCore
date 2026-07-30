@@ -18,7 +18,15 @@
       "minLength": 1
     },
     "data": {
-      "description": "Command-specific result payload."
+      "description": "Command-specific result payload. Prefer an object with stable field names for non-trivial outputs; use null for error cases with no result payload.",
+      "oneOf": [
+        { "type": "object" },
+        { "type": "array" },
+        { "type": "string" },
+        { "type": "number" },
+        { "type": "boolean" },
+        { "type": "null" }
+      ]
     },
     "warnings": {
       "type": "array",
@@ -31,6 +39,10 @@
         "required": ["code", "message"],
         "properties": {
           "code": { "type": "string", "minLength": 1 },
+          "category": {
+            "type": "string",
+            "enum": ["usage", "input", "validation", "permission", "conflict", "runtime", "dependency", "unknown"]
+          },
           "message": { "type": "string", "minLength": 1 },
           "path": { "type": "string" },
           "details": {}

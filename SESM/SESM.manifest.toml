@@ -33,6 +33,10 @@ governance_notes = [
   "VALIDATOR-RULES.md",
   "Specification-Version-Note.md",
   "SANITIZER-PIPELINE.md",
+  "STRICT-INGESTION-PROFILE.md",
+  "INTEGRITY-ENDORSEMENTS.md",
+  "CI-Usage.md",
+  "JSON-LD-Mapping.md",
   "tests/CONFORMANCE-HARNESS.md",
   "REFERENCE-IMPLEMENTATION.md",
   "SUBMISSION-PITCH.md",
@@ -42,6 +46,7 @@ governance_notes = [
 ]
 reference_examples = [
   "examples/SESM-Suite-Map.md",
+  "examples/extract-sesm.js",
   "examples/validator-json-basic-safe.json",
   "templates/SESM-Metadata-Example.json",
   "fixtures/compatibility/v0.2-basic.svg",
@@ -59,7 +64,7 @@ reference_examples = [
 [adopter_artifacts]
 schemas = ["svg_asset.schema.json"]
 manifest_templates = []
-document_templates = ["templates/SESM-Metadata-Example.json"]
+document_templates = ["templates/SESM-Metadata-Example.json", "JSON-LD-Mapping.md"]
 legacy_project_manifests = ["references/legacy-project-manifests/SESM.project.manifest.toml"]
 
 [lifecycle]

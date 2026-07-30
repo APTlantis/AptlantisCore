@@ -24,19 +24,26 @@ changelog = "CHANGELOG.md"
 validators = [
   "tools/wds_validate.py",
   "tools/route_check.py",
-  "tools/accessibility_smoke.py"
+  "tools/accessibility_smoke.py",
+  "tools/fill_deployment_record.py"
 ]
-governance_notes = ["Publication-Approval-Flow.md"]
+governance_notes = [
+  "Publication-Approval-Flow.md",
+  "Route-Check-Harness.md",
+  "Monitoring-Integration-Fields.md",
+  "tests/CONFORMANCE.md"
+]
 reference_examples = [
   "examples/WDS-Suite-Map.md",
   "examples/Example-Deployment-Record.md",
-  "examples/Example-Accessibility-Metadata-Check.md"
+  "examples/Example-Accessibility-Metadata-Check.md",
+  "examples/SiteMetadata.jsonld"
 ]
 
 [adopter_artifacts]
 schemas = ["SiteManifest.schema.toml"]
 manifest_templates = ["templates/Site-Manifest.toml"]
-document_templates = ["templates/Deployment-Record.md"]
+document_templates = ["templates/Deployment-Record.md", "examples/SiteMetadata.jsonld"]
 
 [lifecycle]
 created = "2026-06-10"

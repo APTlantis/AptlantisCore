@@ -21,16 +21,17 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = ["SFDS-Validation-Guidance.md"]
-governance_notes = ["Governance-Notes.md"]
+validators = ["SFDS-Validation-Guidance.md", "tools/sfds_validate.py"]
+governance_notes = ["Governance-Notes.md", "Compatibility-Matrix.md", "CI-Usage.md"]
 reference_examples = [
   "examples/DRS-Reference-Suite.md",
   "examples/WGS-Candidate-Suite.md",
+  "examples/LDS-Candidate-Suite.md",
   "../DRS/examples/MiniVault"
 ]
 
 [adopter_artifacts]
-schemas = ["STANDARD.manifest.schema.toml"]
+schemas = ["STANDARD.manifest.schema.toml", "Compatibility-Matrix.md"]
 manifest_templates = ["templates/StandardName.manifest.toml"]
 document_templates = [
   "templates/Standard-Specification.md",

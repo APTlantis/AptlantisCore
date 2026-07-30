@@ -46,8 +46,10 @@ The README is the City Hall role/index for the DRS suite. `Desktop Application R
 |------|---------|
 | [`Desktop Application Release Standard.md`](Desktop%20Application%20Release%20Standard.md) | The full release standard. Read this first. |
 | [`DesktopApplicationRelease.manifest.schema.toml`](DesktopApplicationRelease.manifest.schema.toml) | Machine-readable schema defining all required and optional manifest fields. |
+| [`ReleaseNoteMetadata.schema.json`](ReleaseNoteMetadata.schema.json) | Machine-readable release-note metadata schema for JSON-LD or automation exports. |
 | [`docs/CI-Usage.md`](docs/CI-Usage.md) | CI and local automation snippets for running `drs.ps1`. |
 | [`docs/Troubleshooting.md`](docs/Troubleshooting.md) | Common `drs.ps1` failures, runtime compatibility, and script trust guidance. |
+| [`docs/Release-Gating-Workflow.md`](docs/Release-Gating-Workflow.md) | Continuous release-gating workflow using manifest, integrity, and release checks. |
 
 ### Templates
 
@@ -57,6 +59,7 @@ Copy each template into your project's `docs/` directory, rename it, and fill it
 |----------|---------|---------|
 | [`templates/ProjectName.manifest.toml`](templates/ProjectName.manifest.toml) | Concrete project manifest — machine-readable project state and release record | One per project; updated every release |
 | [`templates/Release-Note.md`](templates/Release-Note.md) | Release note — what shipped, what it does, the artifact hash | **Recurring** — every release |
+| [`templates/Release-Note.Metadata.jsonld`](templates/Release-Note.Metadata.jsonld) | Optional structured release-note metadata export | Recurring when automation or indexing needs structured release records |
 | [`templates/Release-Checklist.md`](templates/Release-Checklist.md) | Pre-release gate checklist with per-version verification blocks | One per project; appended every release |
 | [`templates/Trust-Security-Model.md`](templates/Trust-Security-Model.md) | How the application handles sensitive data and who it trusts | Before any security-relevant release |
 | [`templates/Dependency-Provenance.md`](templates/Dependency-Provenance.md) | Exact versions, sources, and build flags for every external dependency | Before any public release |
@@ -138,6 +141,8 @@ Aegis and FileCabinet operate at the Security-sensitive tier. Most tools can sta
 | `drs hash <path>` | SHA-256 + file size with copy-pasteable manifest snippet |
 | `drs hash <path> --blake3` | SHA-256 plus optional BLAKE3 when `b3sum` or `blake3` is installed |
 | `drs init-docs` | Copy all doc templates to `docs/` with project name applied |
+
+`tools/drs_integrity_check.py` is a companion checker for declared BLAKE3 and signing metadata. `examples/Release-Folder-Verifier.html` is a minimal local GUI-style verifier for release-folder evidence.
 
 ---
 

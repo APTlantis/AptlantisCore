@@ -21,17 +21,21 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = ["tools/cts_validate.py"]
+validators = ["tools/cts_validate.py", "tools/cts_lint_contract.py"]
 governance_notes = [
   "JSON-Data-Payload-Guidance.md",
   "Command-Versioning-Migration-Notes.md",
-  "CI-Usage.md"
+  "CI-Usage.md",
+  "Progress-Output-Compatibility.md"
 ]
 reference_examples = [
   "examples/CTS-Suite-Map.md",
   "examples/Manifest-Audit-Command-Contract.md",
   "examples/manifest-audit-output-ok.json",
-  "examples/manifest-audit-output-error.json"
+  "examples/manifest-audit-output-error.json",
+  "examples/fixtures/ok-envelope.json",
+  "examples/fixtures/error-envelope.json",
+  "examples/reference-implementations/python_cli.py"
 ]
 
 [adopter_artifacts]
