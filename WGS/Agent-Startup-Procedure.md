@@ -68,6 +68,23 @@ For project-level work:
 - Record mismatches instead of silently correcting them.
 - When creating new docs, include purpose, scope, required artifacts, and next action.
 
+## Agent Closeout Procedure
+
+An agent task is not complete merely because files, code, standards, or artifacts were changed.
+Before ending a substantial session, the agent must update the documents that let the next human or agent recover the new state.
+
+Closeout requires:
+
+1. Update the direct records for the changed entity: manifest, `AGENTS.md`, `Project-README.md`, README, changelog, validation checklist, release note, adoption note, or standard-specific record as applicable.
+2. Update the parent or controlling records when identity, lifecycle, location, authority, child lists, governing standard, or promotion state changed.
+3. Update extended navigation records when the change affects workspace discovery, including `D:\Development.manifest.toml`, `D:\INDEX.md`, City Hall README/workshop maps, WGS responsibility matrices, inventories, target maps, or standards registries.
+4. Record known gaps if an expected direct or extended document could not be updated.
+5. Verify that updated links, manifests, and machine-readable records parse or resolve where practical.
+6. Summarize what changed, what was intentionally left unchanged, and the next safe action.
+
+For small code-only changes inside an already governed project, the extended records may be unchanged.
+For root, standard, promotion, relocation, lifecycle, or governance changes, direct and extended documentation updates are part of the work, not a follow-up nicety.
+
 ## Handoff Notes
 
 Every substantial agent task should leave enough context for another agent to continue:
@@ -77,4 +94,5 @@ Every substantial agent task should leave enough context for another agent to co
 - What was intentionally left unchanged.
 - Which standard governs the work.
 - Which documents or manifests are missing.
+- Which direct and extended documentation records were updated or intentionally left unchanged.
 - What the next safe action is.

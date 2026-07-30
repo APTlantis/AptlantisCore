@@ -1,14 +1,15 @@
-# Blue Slate
+# Blue Slate Project Lineage
 
-Blue Slate is a candidate Aptlantis visual system and theme resource. It currently lives in `D:\.library\aptlantis_core\blue.slate` as canonical library material, while its governance status remains candidate/incubating until a City Hall promotion record says otherwise.
+Blue Slate began as a candidate Aptlantis visual system and theme resource.
+As of 2026-07-25, its active standard-suite front door is `README.md`, and the promoted active-use copy lives in `D:\.library\aptlantis_core\blue.slate`.
 
 Its current source of truth is `D:\.library\aptlantis_core\blue.slate\spec\tokens\BlueSlate.Tokens.json`.
 
 ## Current Role
 
-Blue Slate provides design tokens, color/style guidance, layout notes, visual references, and starter packs for pilot implementations. It is related to the NeonInk lineage in City Hall, but it does not replace NeonInk and does not govern active projects by default.
+Blue Slate provides design tokens, color/style guidance, layout notes, visual references, and starter packs for pilot and active implementations. It is related to the NeonInk lineage in City Hall, but it does not replace NeonInk or SESM.
 
-Projects may use Blue Slate only as an explicit pilot dependency until City Hall promotes it or a governing standard adopts it.
+Projects may use Blue Slate as an explicit candidate-active visual-system dependency. Each adopting project should record whether the adoption is `pilot`, `active`, or `project-profile`.
 
 ## Deliverables
 
@@ -22,28 +23,29 @@ Projects may use Blue Slate only as an explicit pilot dependency until City Hall
 | Starter packs | `starter-packs\tailwind`, `starter-packs\tauri-react`, `starter-packs\winui`, `starter-packs\wpf` |
 | Visual references | `apps`, `spec\mockups` |
 
-## Promotion Path
+## Promotion Record
 
-Promotion target: `D:\.library\aptlantis_core`.
+Promotion target: `D:\.library\aptlantis_core\blue.slate`.
 
 Promotion authority: `D:\.city_hall`.
 
-Before promotion, Blue Slate needs:
+Promotion state: candidate active as of 2026-07-25.
 
-- A stable token schema and compatibility notes.
-- An adoption guide for pilot and promoted use.
-- A validation checklist.
-- A formal relationship to NeonInk lineage and SESM.
-- At least one reviewed implementation path that can be repeated without project-specific guesswork.
+Remaining gaps:
+
+- More real adopter evidence is needed before stable maturity.
+- Automated token/profile validation is not yet provided.
+- NeonInk lineage is documented, but not fully merged into a single promoted visual-language standard.
 
 ## Governance
 
 Read these first before changing Blue Slate:
 
 1. `D:\AGENTS.md`
-2. `D:\.library\aptlantis_core\blue.slate\blue.slate.manifest.toml`
-3. `D:\.library\aptlantis_core\blue.slate\spec\tokens\BlueSlate.Tokens.json`
-4. `D:\.library\aptlantis_core\blue.slate\spec\BlueSlate.DesignSystem.md`
+2. `D:\.library\aptlantis_core\blue.slate\README.md`
+3. `D:\.library\aptlantis_core\blue.slate\blue.slate.manifest.toml`
+4. `D:\.library\aptlantis_core\blue.slate\spec\tokens\BlueSlate.Tokens.json`
+5. `D:\.library\aptlantis_core\blue.slate\spec\BlueSlate.DesignSystem.md`
 
-Current status: candidate/incubating.
+Current status: candidate active.
 

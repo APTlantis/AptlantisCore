@@ -55,7 +55,7 @@ Future audit, dashboard, suite-completeness, and link-integrity work remains roa
 
 WGS organizes the workspace around four layers:
 
-- Standards layer: WGS, SFDS, PPS, DRS, CTS, SIS, WDS, DDS, and specialized standards.
+- Standards layer: WGS, SFDS, PPS, DRS, CTS, SIS, WDS, DDS, LDS, Blue Slate, and specialized standards.
 - Projects layer: artifact-producing projects and technical systems.
 - Shared services layer: workspace-level services, caches, automation, and agent support.
 - Metadata layer: manifests, registries, relationship maps, inventories, and health records.

@@ -3,6 +3,7 @@
 ## Purpose
 
 This roadmap tracks documentation-suite normalization across Aptlantis standards.
+Detailed action items from the 2026-07-30 standards evaluation are tracked in `Standards-Evaluation-Backlog.md`; this roadmap remains the maturity and suite-status summary.
 
 | Standard | Current maturity | Suite status | Next action |
 | --- | --- | --- | --- |

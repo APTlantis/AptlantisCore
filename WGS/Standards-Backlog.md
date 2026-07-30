@@ -4,13 +4,14 @@
 
 This backlog orders standards work so the workspace can become self-describing in layers.
 The priority is to normalize existing strong patterns first, then draft missing standards, then automate compliance.
+Detailed follow-up from the 2026-07-30 standards evaluation is tracked in `Standards-Evaluation-Backlog.md`; this file remains the high-level standards roadmap.
 
 ## Active Standards
 
 | Standard | Purpose | Scope | Required docs | Next action |
 | --- | --- | --- | --- | --- |
-| WGS | Workspace Governance Standard | Drive layout, project registration, manifests, workspace services, lifecycle visibility, agent startup | Spec, directory map, manifest conventions, agent startup, workspace health model | Define workspace audit requirements and dashboard data from manifest truth. |
-| SFDS | Standards Framework Development Standard | Creation, maturity, validation, and preservation of standards | Spec, maturity levels, entity-named standard manifests, templates, examples, validator notes, changelog | Build suite completeness and link-integrity validators. |
+| WGS | Workspace Governance Standard | Drive layout, project registration, manifests, workspace services, lifecycle visibility, agent startup | Spec, directory map, manifest conventions, agent startup, workspace health model | Define agent closeout procedure plus workspace audit/dashboard data from manifest truth. |
+| SFDS | Standards Framework Development Standard | Creation, maturity, validation, and preservation of standards | Spec, maturity levels, entity-named standard manifests, templates, examples, validator notes, changelog | Register SFDS validation guidance and governance notes before deeper suite validators. |
 | PPS | Project Proposal Standard | Project creation before code boundaries | Proposal template, success criteria, failure criteria, constraints, roadmap, project manifest | Add filled examples for desktop, website, dataset, and standard projects. |
 | DRS | Desktop Release Standard | Desktop app releases and release evidence | Spec, manifest schema, templates, examples, release checker | Treat as the reference implementation pattern for validators and examples. |
 | CTS | Command Tool Standard | CLI tools and automation utilities | Spec, command contract, exit codes, output schemas, templates, validation checklist | Add JSON schema conventions for machine-readable command output. |
@@ -19,7 +20,7 @@ The priority is to normalize existing strong patterns first, then draft missing 
 | ATS | Agent Task Standard | Agent workflows, task recording, handoff, validation, replayability | Spec, task record, handoff template, validation record, lifecycle states | Add filled task and handoff examples. |
 | AAS | Aptlantis Analysis Standard | Local evaluation pipeline and credibility records | Spec, evaluation manifests, run records, examples, validator notes | Add filled evaluation run examples and metric-definition examples. |
 | ARHS | APTlantis Release Hashing Standard | Minimum release-artifact hashes | Spec, validation checklist, sample hashes | Add release hash record template and examples. |
-| AAMHS | Aptlantis Archive Multi-Hash Standard | Archive verification, hash suites, detached signatures, validation records | Spec, hash manifest, integrity record, examples, verifier notes | Add archive validator expectations and richer hash manifest examples. |
+| AAMHS | Aptlantis Archive Multi-Hash Standard | Archive verification, hash suites, detached signatures, validation records | Spec, hash manifest, integrity record, examples, verifier notes | Refine hash manifest schema and add concrete hash examples before validator automation. |
 | AADR | Application / architecture data representation | Emerging application-as-data framework | Spec, representation record, examples, adoption notes, changelog | Add filled representation examples and consumer/tool notes. |
 | SESM | SVG Embedded Semantic Metadata | SVG metadata, embedded semantics, validation | Spec, schema, examples, converter/validator notes, tests | Keep schema, tools, tests, and NeonInk references aligned. |
 | NeonInk | Semantic design language | Color semantics, visual intent, themes, UI language | Spec, palette contracts, component patterns, examples, assets, changelog | Deepen contract classification without flattening existing docs/assets. |

@@ -2,6 +2,9 @@
 
 ## Unreleased - 2026-07-08
 
+- Reconciled `D:\Development.manifest.toml`, root/portfolio manifests, and `Workspace-Inventory.md` with the current physical `D:\` root layout; the read-only workspace inventory now passes for every registered root.
+- Added agent closeout requirements for direct and extended documentation updates, including `D:\Development.manifest.toml`, `D:\INDEX.md`, parent manifests, responsibility matrices, inventories, and standards registries when discovery or authority changes.
+- Updated `city_hall_audit.py` to audit portfolio paths registered in `Development.manifest.toml` instead of assuming every portfolio directory is the uppercase portfolio ID; this supports the canonical `D:\.data` root.
 - Finalized entity-named manifests for the current `D:\` layout after a one-day fixed-name trial.
 - Archived conflicting live legacy records under `migration-notes/Legacy-Live-Manifests-20260708` before promotion.
 - Added metadata reconciliation, normalization, scaffold, inventory, duplicate-authority, holding, and shortcut validation tooling.

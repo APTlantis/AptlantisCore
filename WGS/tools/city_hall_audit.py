@@ -320,8 +320,12 @@ def audit_holding(directory: Path, expected_parent: Path) -> list[Finding]:
     return findings
 
 
-def audit_portfolio(workspace_root: Path, portfolio_name: str) -> list[Finding]:
-    directory = workspace_root / portfolio_name
+def audit_portfolio(
+    workspace_root: Path,
+    portfolio_name: str,
+    directory: Path | None = None,
+) -> list[Finding]:
+    directory = directory or workspace_root / portfolio_name
     findings: list[Finding] = []
     if not directory.is_dir():
         return [Finding(portfolio_name, "FAIL", f"portfolio directory is missing: {directory}")]
@@ -389,8 +393,21 @@ def audit_workspace(workspace_root: Path) -> dict[str, list[Finding]]:
                 if not manifest.exists():
                     root_findings.append(Finding("workspace", "FAIL", f"registered root manifest is missing: {manifest}"))
     findings["workspace:root"] = root_findings
-    for portfolio in WORKSPACE_PORTFOLIOS:
-        findings[f"portfolio:{portfolio}"] = audit_portfolio(workspace_root, portfolio)
+    registered_portfolios = [
+        root for root in development.get("roots", []) if root.get("kind") == "portfolio"
+    ]
+    if registered_portfolios:
+        for root in registered_portfolios:
+            portfolio_name = str(root.get("id") or windows_path(str(root.get("path", ""))).name)
+            portfolio_path = windows_path(str(root.get("path", "")))
+            findings[f"portfolio:{portfolio_name}"] = audit_portfolio(
+                workspace_root,
+                portfolio_name,
+                portfolio_path,
+            )
+    else:
+        for portfolio in WORKSPACE_PORTFOLIOS:
+            findings[f"portfolio:{portfolio}"] = audit_portfolio(workspace_root, portfolio)
     for root in development.get("roots", []):
         path = windows_path(str(root.get("path", "")))
         if root.get("kind") in {"shared-infrastructure", "reference-library", "shared-runtime"} and path.exists():

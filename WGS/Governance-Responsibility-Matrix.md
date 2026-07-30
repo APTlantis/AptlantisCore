@@ -17,11 +17,13 @@ When two standards seem relevant, use this file to decide which one owns the dec
 | How should a local service or workspace infrastructure component run? | SIS | WGS, PPS, CTS, AAMHS |
 | How is a website documented and deployed? | WDS | NeonInk, PPS |
 | How is a dataset described and validated? | DDS | AAMHS, ARHS, AAS |
+| How is a library, crate, package, or SDK consumed by other code governed? | LDS | PPS, WGS, CTS, SIS |
 | How is an agent task recorded or handed off? | ATS | WGS |
 | How is an evaluation run recorded? | AAS | DDS, ATS |
 | What hashes must accompany a release artifact? | ARHS | DRS, CTS, SIS, WDS, DDS |
 | How is archive preservation integrity proven? | AAMHS | DDS, DRS, CTS, SIS, ARHS |
 | How is semantic UI language expressed? | NeonInk | WDS, DRS, SESM |
+| How are Aptlantis visual-system tokens, operational layout patterns, and framework profiles applied? | blue.slate | NeonInk, SESM, WDS, DRS |
 | How is SVG metadata embedded and validated? | SESM | NeonInk, AAMHS |
 | How are application-as-data records represented? | AADR | SFDS, WGS |
 
@@ -30,10 +32,12 @@ When two standards seem relevant, use this file to decide which one owns the dec
 - WGS owns location and registration, not the internal rules of every project.
 - SFDS owns the shape of standards, not the domain policy inside each standard.
 - PPS owns project intent before implementation, not release readiness.
-- DRS, CTS, SIS, WDS, and DDS own project-class delivery rules.
+- DRS, CTS, SIS, WDS, DDS, and LDS own project-class delivery rules.
+- LDS owns code-consumed library surfaces; companion commands, services, websites, desktop shells, or datasets still use their own delivery standards.
 - ARHS owns minimum release-artifact hash requirements; it does not replace release, deployment, dataset, or archive readiness standards.
 - AAMHS owns archive preservation integrity records; it may include ARHS hashes but adds preservation manifests, validation records, signature policy, and known gaps.
 - NeonInk can support any visual interface, but it does not decide release, deployment, or workspace policy.
+- Blue Slate owns Aptlantis design tokens, layout patterns, and framework profiles only when a project explicitly adopts it.
 - ATS records agent work; it does not decide project scope.
 - AAS records analysis credibility; it does not replace DDS provenance, ATS task history, or the decision standard that uses the analysis.
 

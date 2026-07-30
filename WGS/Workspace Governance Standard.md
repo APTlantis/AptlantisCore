@@ -13,8 +13,8 @@ WGS governs the Aptlantis workspace as a first-class system: root directories, p
 
 ## Does Not Govern
 
-WGS does not define how desktop apps release, how command tools print output, how services run, how websites deploy, or how datasets are licensed.
-Those responsibilities belong to DRS, CTS, SIS, WDS, DDS, and related standards.
+WGS does not define how desktop apps release, how command tools print output, how services run, how websites deploy, how datasets are licensed, or how libraries manage public APIs.
+Those responsibilities belong to DRS, CTS, SIS, WDS, DDS, LDS, and related standards.
 
 ## Core Rule
 
@@ -59,7 +59,7 @@ WGS separates rules, working artifacts, services, and metadata so the workspace 
 
 | Layer | Primary function | Examples |
 | --- | --- | --- |
-| Standards layer | Defines behavior and meta-governance for projects, standards, and artifacts. | WGS, SFDS, PPS, DRS, CTS, SIS, WDS, DDS, AAMHS, AADR, ARHS, SESM, NeonInk, AAS, ATS |
+| Standards layer | Defines behavior and meta-governance for projects, standards, and artifacts. | WGS, SFDS, PPS, DRS, CTS, SIS, WDS, DDS, LDS, AAMHS, AADR, ARHS, SESM, NeonInk, blue.slate, AAS, ATS |
 | Projects layer | Produces functional artifacts, tools, websites, datasets, and technical systems. | FileCabinet, Aegis, Structra, ArchiveHasher, CloneCratesio |
 | Shared services layer | Provides workspace-level infrastructure used across projects. | `.agents`, `.evals`, `.sonar`, `.docs`, `.data`, `.start`, local caches, Docker storage |
 | Metadata layer | Describes the workspace as a self-aware system. | Workspace manifests, directory manifests, project manifests, registries, relationship maps, health records |
@@ -155,6 +155,17 @@ For workspace or project work, agents read:
 
 Agents must record missing entry-point documents before making broad changes.
 
+### Required Agent Closeout
+
+An agent leaving a substantial workspace, project, standard, promotion, relocation, or lifecycle task must update both direct and extended recovery records before treating the task as complete.
+
+Direct records are the documents beside the changed entity: manifest, `AGENTS.md`, `Project-README.md`, README, changelog, validation checklist, release note, adoption note, or standard-specific record.
+
+Extended records are the navigation and authority documents that make the changed entity discoverable from outside itself: `D:\Development.manifest.toml`, `D:\INDEX.md`, City Hall README/workshop maps, WGS responsibility matrices, workspace inventories, target maps, parent manifests, standards registries, or promotion notes.
+
+If the direct or extended records do not need changes, the handoff should say so.
+If they should change but cannot be updated in the current task, the gap must be recorded plainly.
+
 ### Agent Drift Rules
 
 - Do not infer project purpose from code alone when manifests or identity docs are available.
@@ -173,7 +184,7 @@ Other standards govern objects inside that environment.
 | --- | --- | --- |
 | Workspace constitution | WGS | Placement, registration, manifests, services, lifecycle visibility, agent orientation, workspace health. |
 | Meta-standards | SFDS, PPS | Standards formulation, project birth, intent boundaries, proposal readiness. |
-| Domain standards | DRS, CTS, SIS, WDS, DDS | Release, automation, service, deployment, and dataset rules for project classes. |
+| Domain standards | DRS, CTS, SIS, WDS, DDS, LDS | Release, automation, service, deployment, dataset, and library/API rules for project classes. |
 | Technical and specialized standards | AAMHS, ARHS, AAS, ATS, AADR, SESM, NeonInk | Integrity, analysis, task handoff, representation, metadata, and design language. |
 
 When standards overlap, use `Governance-Responsibility-Matrix.md`.
@@ -198,6 +209,7 @@ A WGS workspace is governed when:
 - Lifecycle state is explicit for governed projects.
 - Shared services are registered or intentionally excluded.
 - Drift is recorded before moves, renames, or deletions.
+- Direct and extended documentation records are updated before substantial tasks close.
 - Workspace health records identify next safe actions.
 
 ## Workspace Health Model

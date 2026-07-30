@@ -36,4 +36,4 @@ Reference files may inform tone and planning, but active implementation should f
 - WGS for workspace structure.
 - SFDS for standard authoring.
 - PPS for project proposals.
-- DRS, CTS, SIS, WDS, and DDS for project classes.
+- DRS, CTS, SIS, WDS, DDS, and LDS for project classes.
