@@ -10,6 +10,8 @@ This checklist validates archive integrity readiness under AAMHS. SFDS suite con
 - [ ] Signature policy is recorded when signatures are used.
 - [ ] File sizes are recorded when known.
 - [ ] Hash generation date and tool/command are recorded when practical.
+- [ ] Hash manifest passes `tools/aamhs_validate.py` or equivalent verification.
+- [ ] Detached signatures are checked with `tools/aamhs_signature_check.py` when signatures are used.
 - [ ] Integrity record states what archive or collection is covered.
 - [ ] Missing files, known gaps, or validation limits are documented.
 - [ ] ARHS is used separately for minimum release-artifact hashes when applicable.

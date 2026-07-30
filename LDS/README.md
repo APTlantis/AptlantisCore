@@ -15,8 +15,13 @@ LDS is candidate active as of 2026-07-25. Projects may adopt it for library-shap
 | --- | --- |
 | `Library Development Standard.md` | Primary LDS specification. |
 | `LDS.manifest.toml` | Standard manifest. |
+| `LibraryInterfaceNote.schema.json` | Machine-readable schema for interface note summaries. |
 | `templates/Library-Interface-Note.md` | Adopter template: public API surface, stability level, versioning policy, extension contracts, known consumers. |
 | `examples/render-manifest.crate-Library-Interface-Note.md` | First candidate adopter example. |
+| `examples/ManifestQuery.Core-Library-Interface-Note.md` | Completed public API validation example. |
+| `examples/HashSuite.Core-Library-Interface-Note.md` | Second independent library validation example. |
+| `examples/Breaking-Change-Cycle.md` | Simulated breaking-change cycle evidence. |
+| `tools/lds_validate.py` | Lightweight interface-note shape validator. |
 | `Adoption-Guide.md` | LDS adoption procedure. |
 | `Validation-Checklist.md` | Library readiness checklist. |
 | `CHANGELOG.md` | LDS version history. |
@@ -43,6 +48,8 @@ A single project can combine standards by crate: a core library crate under LDS,
 Candidate active (Level 2 per SFDS maturity levels): templates and a first candidate adopter example exist, and real projects can test adoption.
 
 `render-manifest.crate` (staged under `D:\.zoning`) remains the first candidate adopter. It proves the routing need for LDS, but does not yet prove stable library API maturity because no source code or public API exists.
+
+LDS now also includes two completed-interface validation examples and a simulated breaking-change cycle so the standard can be tested without pretending that `render-manifest.crate` has been promoted.
 
 ## Related Standards
 

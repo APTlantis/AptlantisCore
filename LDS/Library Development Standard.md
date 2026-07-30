@@ -97,6 +97,18 @@ An LDS-governed library is blocked from being called `interface-stable` or highe
 - Extension contracts exist but are undocumented.
 - Known consumers are untracked once a second consumer exists.
 
+## Candidate Evidence
+
+LDS includes:
+
+- a machine-readable interface-note schema;
+- a lightweight interface-note validator;
+- two completed-interface validation examples;
+- a simulated breaking-change cycle example.
+
+These examples validate the standard shape.
+They do not promote `render-manifest.crate` out of staging until real crate artifacts exist.
+
 ## Relationship to PPS and WGS
 
 PPS defines why the library exists, who needs it, and what success/failure look like. WGS registers the project, its lifecycle state, and workspace placement. LDS governs the library-specific delivery concerns — API stability, versioning, extension contracts, and consumer tracking — once PPS/WGS have established that the project is real and where it lives.

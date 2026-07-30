@@ -29,6 +29,15 @@ AAMHS governs richer archive preservation records.
 Use ARHS when publishing a release artifact.
 Use AAMHS when preserving archives, collections, datasets, evidence bundles, or release snapshots that need long-term verification, detached signatures, validation procedures, and preservation notes.
 
+Quick boundary:
+
+| Use case | Standard |
+| --- | --- |
+| Single release artifact hash in a release note | ARHS or DRS minimum hash rule |
+| Archive, collection, evidence bundle, or snapshot with multiple files | AAMHS |
+| Detached signature policy for preserved archive material | AAMHS |
+| Long-term revalidation procedure for preserved bytes | AAMHS |
+
 ## Hash Manifest Requirements
 
 AAMHS hash manifests should record:
@@ -42,6 +51,7 @@ AAMHS hash manifests should record:
 - Tool names or commands.
 - Maintainer or operator.
 - Related release, dataset, or archive records.
+- Expected update cadence.
 
 ## Integrity Record Requirements
 

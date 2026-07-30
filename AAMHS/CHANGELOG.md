@@ -1,5 +1,14 @@
 # AAMHS Changelog
 
+## Unreleased
+
+- Refined `HashManifest.schema.toml` with item-level fields, allowed hash algorithms, and signature fields.
+- Added a concrete hash manifest example with computed SHA-256.
+- Added lightweight hash and detached-signature validator scripts.
+- Clarified ARHS/AAMHS quick boundary guidance.
+- Recorded update cadence in the suite manifest.
+- Added JSON Schema mapping, CI usage guidance, and signed archive integrity record example.
+
 ## 1.0.3 - 2026-06-11
 
 - Added a filled archive integrity record example.

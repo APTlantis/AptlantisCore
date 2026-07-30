@@ -16,8 +16,15 @@ AAMHS is the preservation integrity standard. ARHS defines the minimum release-a
 | --- | --- |
 | `Aptlantis Archive Multi-Hash Standard.md` | Primary AAMHS specification wrapper. |
 | `AAMHS.manifest.toml` | Standard manifest. |
+| `HashManifest.schema.toml` | TOML-oriented hash manifest schema. |
+| `HashManifest.schema.json` | JSON Schema mapping for broader tool compatibility. |
 | `templates/Archive-Integrity-Record.md` | Archive integrity record template. |
 | `templates/Hash-Manifest.toml` | Hash manifest template. |
+| `CI-Usage.md` | Local and CI automation snippets for AAMHS validation. |
+| `tools/aamhs_validate.py` | Reference hash manifest validator and SHA-256 verifier. |
+| `tools/aamhs_signature_check.py` | Detached-signature presence checker. |
+| `examples/Example-Hash-Manifest.toml` | Concrete hash manifest with computed SHA-256. |
+| `examples/Signed-Archive-Integrity-Record.md` | Canonical signed archive integrity record shape. |
 | `Adoption-Guide.md` | AAMHS adoption procedure. |
 | `Validation-Checklist.md` | Archive integrity checklist. |
 | `CHANGELOG.md` | AAMHS version history. |

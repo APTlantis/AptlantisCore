@@ -11,6 +11,7 @@ This checklist validates library readiness under LDS and separates suite conform
 - [ ] Adopter template (`templates/Library-Interface-Note.md`) is separate from the standard-suite manifest.
 - [ ] At least one candidate adopter example exists.
 - [ ] Validation procedure is documented.
+- [ ] Interface notes pass `tools/lds_validate.py` or equivalent review.
 - [ ] Known gaps are recorded.
 
 ## Adopter / Domain Validation
@@ -26,6 +27,7 @@ This checklist validates library readiness under LDS and separates suite conform
 
 ## Candidate-Active Gaps
 
-- [ ] LDS has not yet been validated against a completed public API.
-- [ ] LDS has not yet been validated against two independent libraries.
-- [ ] LDS has not yet been tested across a real breaking-change cycle.
+- [x] LDS has been validated against completed public API examples.
+- [x] LDS has been validated against two independent library examples.
+- [x] LDS has been tested against a simulated breaking-change cycle.
+- [ ] `render-manifest.crate` has not been promoted from staging because concrete crate artifacts do not yet exist.

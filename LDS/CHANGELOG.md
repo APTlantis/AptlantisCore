@@ -1,5 +1,13 @@
 # LDS Changelog
 
+## Unreleased
+
+- Added `LibraryInterfaceNote.schema.json`.
+- Added `tools/lds_validate.py` for lightweight interface-note validation.
+- Added two completed-interface validation examples.
+- Added a simulated breaking-change cycle example.
+- Clarified that `render-manifest.crate` remains staged until real crate artifacts exist.
+
 ## 0.2.0 - 2026-07-25
 
 - Promoted LDS to candidate-active status.

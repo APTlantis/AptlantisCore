@@ -189,8 +189,8 @@ This pass organizes work only. It does not complete the individual standards, ad
 **Current status:** In Progress | **Completion:** 80% | **Priority tier:** Tier 3
 
 **Blocking gaps:**
-- Automated or executable WDS validator tooling is missing.
-- Runnable route-check and accessibility smoke-check implementations are missing.
+- Automated WDS validator tooling is complete with lightweight manifest, route, and accessibility smoke-check tools.
+- Runnable route-check and accessibility smoke-check implementations are complete and registered.
 
 **Next implementation slice:**
 - Implement an executable validator that consumes `SiteManifest.schema.toml` and checklist expectations. Status: complete with `WDS/tools/wds_validate.py`.
@@ -219,11 +219,11 @@ This pass organizes work only. It does not complete the individual standards, ad
 - No explicit blocking gap was identified in the eval notes.
 
 **Next implementation slice:**
-- Refine `HashManifest.schema.toml` with item-level file entry types, array item schema, and allowed hash algorithm keys.
-- Add a concrete `templates/Hash-Manifest.toml` example with actual computed hashes.
-- Publish one or two small reference validator scripts for checklist automation and signature verification examples.
-- Link or embed ARHS reference sections for quick cross-reference.
-- Record maintainer contact and expected update cadence in the manifest.
+- Refine `HashManifest.schema.toml` with item-level file entry types, array item schema, and allowed hash algorithm keys. Status: complete in `AAMHS/HashManifest.schema.toml`.
+- Add a concrete `templates/Hash-Manifest.toml` example with actual computed hashes. Status: complete with concrete template fields and `AAMHS/examples/Example-Hash-Manifest.toml`.
+- Publish one or two small reference validator scripts for checklist automation and signature verification examples. Status: complete with `AAMHS/tools/aamhs_validate.py` and `AAMHS/tools/aamhs_signature_check.py`.
+- Link or embed ARHS reference sections for quick cross-reference. Status: complete in the AAMHS primary specification quick boundary table.
+- Record maintainer contact and expected update cadence in the manifest. Status: complete in `AAMHS/AAMHS.manifest.toml`.
 
 **Optional improvements:**
 - Add JSON Schema or JSON-LD mapping for broader tool compatibility.
@@ -244,21 +244,21 @@ This pass organizes work only. It does not complete the individual standards, ad
 **Current status:** candidate-active | **Completion:** 75% | **Priority tier:** Tier 4
 
 **Blocking gaps:**
-- No machine-readable schema artifact is registered.
-- LDS has not been validated against a completed public API.
-- LDS has not been validated against two independent libraries.
-- LDS has not been tested across a real breaking-change cycle.
+- Machine-readable schema artifact is registered.
+- LDS has completed-interface validation examples for two independent library shapes.
+- LDS has a simulated breaking-change cycle example.
+- `render-manifest.crate` remains staged because concrete crate artifacts do not yet exist.
 
 **Next implementation slice:**
-- Author or register the declared machine-readable schema artifact and reference it in `LDS.manifest.toml`.
-- Onboard one completed library adopter and produce a filled `Library-Interface-Note`.
-- Validate LDS against a second independent library adopter.
-- Run or simulate a breaking-change cycle with an adopter.
-- Decide whether executable validators are desired; if so, author and register lightweight validators.
-- Promote the `render-manifest.crate` example out of staging once concrete crate artifacts exist.
+- Author or register the declared machine-readable schema artifact and reference it in `LDS.manifest.toml`. Status: complete with `LDS/LibraryInterfaceNote.schema.json`.
+- Onboard one completed library adopter and produce a filled `Library-Interface-Note`. Status: complete with `LDS/examples/ManifestQuery.Core-Library-Interface-Note.md`.
+- Validate LDS against a second independent library adopter. Status: complete with `LDS/examples/HashSuite.Core-Library-Interface-Note.md`.
+- Run or simulate a breaking-change cycle with an adopter. Status: complete with `LDS/examples/Breaking-Change-Cycle.md`.
+- Decide whether executable validators are desired; if so, author and register lightweight validators. Status: complete with `LDS/tools/lds_validate.py`.
+- Promote the `render-manifest.crate` example out of staging once concrete crate artifacts exist. Status: deferred honestly; concrete crate artifacts do not yet exist.
 
 **Optional improvements:**
-- Add JSON-LD or JSON Schema for `Library-Interface-Note`.
+- Add JSON-LD mapping for `Library-Interface-Note`.
 - Add fully filled real-adopter examples showing lifecycle transitions.
 - Add optional CI snippets for missing-field checks.
 - Add a canonical semver and breaking-change policy template, including Rust MSRV notes.

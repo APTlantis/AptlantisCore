@@ -21,15 +21,20 @@ examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = []
-governance_notes = ["references/APTlantis Release Hashing Standard.md"]
+validators = ["tools/aamhs_validate.py", "tools/aamhs_signature_check.py"]
+governance_notes = [
+  "references/APTlantis Release Hashing Standard.md",
+  "CI-Usage.md"
+]
 reference_examples = [
   "examples/AAMHS-Suite-Map.md",
-  "examples/Example-Archive-Integrity-Record.md"
+  "examples/Example-Archive-Integrity-Record.md",
+  "examples/Example-Hash-Manifest.toml",
+  "examples/Signed-Archive-Integrity-Record.md"
 ]
 
 [adopter_artifacts]
-schemas = ["HashManifest.schema.toml"]
+schemas = ["HashManifest.schema.toml", "HashManifest.schema.json"]
 manifest_templates = ["templates/Hash-Manifest.toml"]
 document_templates = ["templates/Archive-Integrity-Record.md"]
 
@@ -37,6 +42,7 @@ document_templates = ["templates/Archive-Integrity-Record.md"]
 created = "2026-06-10"
 last_updated = "2026-06-11"
 maintainer = "Herb"
+update_cadence = "Review when archive hash policy, signature practice, or supported hash algorithms change."
 
 [agent]
 read_first = ["README.md", "Aptlantis Archive Multi-Hash Standard.md", "AAMHS.manifest.toml"]

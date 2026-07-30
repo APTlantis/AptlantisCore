@@ -15,18 +15,23 @@ non_goals = ["CLI command contracts and exit codes", "service lifecycle and heal
 
 [artifacts]
 specification = "Library Development Standard.md"
-schema = ""
+schema = "LibraryInterfaceNote.schema.json"
 templates = "templates"
 examples = "examples"
 adoption_guide = "Adoption-Guide.md"
 validation_checklist = "Validation-Checklist.md"
 changelog = "CHANGELOG.md"
-validators = []
+validators = ["tools/lds_validate.py"]
 governance_notes = []
-reference_examples = ["examples/render-manifest.crate-Library-Interface-Note.md"]
+reference_examples = [
+  "examples/render-manifest.crate-Library-Interface-Note.md",
+  "examples/ManifestQuery.Core-Library-Interface-Note.md",
+  "examples/HashSuite.Core-Library-Interface-Note.md",
+  "examples/Breaking-Change-Cycle.md"
+]
 
 [adopter_artifacts]
-schemas = []
+schemas = ["LibraryInterfaceNote.schema.json"]
 manifest_templates = []
 document_templates = ["templates/Library-Interface-Note.md"]
 
