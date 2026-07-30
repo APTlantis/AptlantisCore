@@ -32,6 +32,7 @@ WGS treats the workspace as a governed ecosystem rather than a loose collection 
 | `templates/Project-README.md` | Internal project orientation and handoff template. |
 | `templates/Workspace-Health-Record.md` | Repeatable workspace health review template. |
 | `examples/City-Hall-Health-Record.md` | Filled health record for City Hall. |
+| `examples/Library-Root-Health-Record.md` | Filled health record for the governed library root. |
 | `Agent-Startup-Procedure.md` | Required read order for agents. |
 | `tools/city_hall_audit.py` | Entity-aware standards and workspace validator. |
 | `tools/workspace_inventory.py` | Read-only physical/registered drift report. |

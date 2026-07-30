@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
+import hashlib
 import json
 import sys
 import tomllib
@@ -19,6 +21,7 @@ REQUIRED_TOP_LEVEL = [
     "Validation-Checklist.md",
     "CHANGELOG.md",
 ]
+SCHEMA_VERSION = "wgs.audit.v1"
 
 
 @dataclass
@@ -151,6 +154,96 @@ def render_markdown(root: Path, findings_by_standard: dict[str, list[Finding]]) 
         lines.append(f"| {standard} | {status} | {message} |")
     lines.append("")
     return "\n".join(lines)
+
+
+def now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def jsonl_level(level: str) -> str:
+    return {
+        "FAIL": "error",
+        "WARN": "warning",
+        "INFO": "info",
+    }.get(level.upper(), "info")
+
+
+def finding_id(finding: Finding) -> str:
+    digest = hashlib.sha256(f"{finding.standard}|{finding.level}|{finding.message}".encode("utf-8")).hexdigest()
+    return digest[:16]
+
+
+def rule_id(message: str) -> str:
+    token = "".join(char.lower() if char.isalnum() else "-" for char in message.split(":", 1)[0])
+    return "wgs." + "-".join(part for part in token.split("-") if part)
+
+
+def standard_suite_record(root: Path, directory: Path, findings: list[Finding], run_id: str, generated_at: str) -> dict:
+    manifest_path = directory / f"{directory.name}.manifest.toml"
+    manifest, error = load_manifest(manifest_path) if manifest_path.exists() else ({}, "manifest missing")
+    artifacts = manifest.get("artifacts", {}) if not error else {}
+    required = REQUIRED_TOP_LEVEL[:]
+    specification = artifacts.get("specification", "")
+    if specification:
+        required.append(str(specification))
+    present = [rel_path for rel_path in required if (directory / rel_path).exists()]
+    missing = [rel_path for rel_path in required if not (directory / rel_path).exists()]
+    examples_rel = artifacts.get("examples", "examples")
+    examples_present: list[str] = []
+    if examples_rel and (directory / examples_rel).exists():
+        examples_present = [
+            str(path.relative_to(directory))
+            for path in sorted((directory / examples_rel).rglob("*"))
+            if path.is_file()
+        ]
+    return {
+        "schema_version": SCHEMA_VERSION,
+        "run_id": run_id,
+        "record_type": "standard_suite_coverage",
+        "workspace_root": str(root),
+        "path": str(directory),
+        "generated_at": generated_at,
+        "standard": directory.name,
+        "status": str(manifest.get("standard", {}).get("status", "unknown")),
+        "maturity": str(manifest.get("standard", {}).get("maturity", "unknown")),
+        "required_artifacts_present": present,
+        "required_artifacts_missing": missing,
+        "validators_registered": artifacts.get("validators", []) if isinstance(artifacts.get("validators", []), list) else [],
+        "examples_present": examples_present,
+        "finding_count": len(findings),
+    }
+
+
+def jsonl_records(root: Path, findings_by_standard: dict[str, list[Finding]]) -> list[dict]:
+    generated_at = now_iso()
+    run_id = generated_at.replace(":", "").replace("-", "").replace("Z", "Z")
+    records: list[dict] = []
+    standard_names = {path.name for path in standard_directories(root)}
+    for standard, findings in findings_by_standard.items():
+        if standard in standard_names:
+            records.append(standard_suite_record(root, root / standard, findings, run_id, generated_at))
+        for finding in findings:
+            records.append(
+                {
+                    "schema_version": SCHEMA_VERSION,
+                    "run_id": run_id,
+                    "record_type": "audit_finding",
+                    "workspace_root": str(root),
+                    "path": str(root / standard) if standard in standard_names else standard,
+                    "generated_at": generated_at,
+                    "finding_id": finding_id(finding),
+                    "rule_id": rule_id(finding.message),
+                    "severity": jsonl_level(finding.level),
+                    "message": finding.message,
+                    "evidence": {"scope": finding.standard, "level": finding.level},
+                    "recommended_action": finding.message,
+                }
+            )
+    return records
+
+
+def render_jsonl(records: list[dict]) -> str:
+    return "\n".join(json.dumps(record, sort_keys=True) for record in records)
 
 
 def windows_path(value: str) -> Path:
@@ -428,6 +521,7 @@ def main() -> int:
     parser.add_argument("--root", type=Path, default=Path.cwd(), help="City Hall workspace root.")
     parser.add_argument("--workspace-root", type=Path, help="Also audit the governed development workspace and portfolios.")
     parser.add_argument("--entity-root", type=Path, action="append", default=[], help="Audit an additional project or directory entity root.")
+    parser.add_argument("--format", choices=["markdown", "jsonl"], default="markdown")
     args = parser.parse_args()
 
     root = args.root.resolve()
@@ -455,7 +549,10 @@ def main() -> int:
             findings_by_standard[f"entity:{directory}"] = audit_project(directory, directory.parent)
         else:
             findings_by_standard[f"entity:{directory}"] = audit_directory_entity(directory, directory.parent, compare_children=True)
-    print(render_markdown(root, findings_by_standard))
+    if args.format == "jsonl":
+        print(render_jsonl(jsonl_records(root, findings_by_standard)))
+    else:
+        print(render_markdown(root, findings_by_standard))
 
     has_failures = any(
         finding.level == "FAIL"

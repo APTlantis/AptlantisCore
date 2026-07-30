@@ -4,12 +4,14 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import json
 import tomllib
 from pathlib import Path
 
 
 IGNORED = {".git", ".idea", ".vscode", "__pycache__", "node_modules"}
+SCHEMA_VERSION = "wgs.audit.v1"
 
 
 def load(path: Path) -> dict:
@@ -63,10 +65,77 @@ def markdown(results: list[dict]) -> str:
     return "\n".join(lines)
 
 
+def now_iso() -> str:
+    return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z")
+
+
+def coverage_status(item: dict) -> str:
+    findings = item.get("findings", [])
+    if "manifest missing" in findings:
+        return "missing"
+    authorities = [
+        finding for finding in findings
+        if finding.startswith("local entity authorities:")
+    ]
+    if authorities and not authorities[0].endswith(Path(item["manifest"]).name):
+        return "duplicate"
+    return "present"
+
+
+def jsonl_records(results: list[dict], workspace_root: Path) -> list[dict]:
+    generated_at = now_iso()
+    run_id = generated_at.replace(":", "").replace("-", "").replace("Z", "Z")
+    records: list[dict] = []
+    for item in results:
+        root_path = Path(item["path"])
+        manifest_path = Path(item["manifest"])
+        status = coverage_status(item)
+        records.append(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "run_id": run_id,
+                "record_type": "workspace_entity",
+                "workspace_root": str(workspace_root),
+                "path": str(root_path),
+                "generated_at": generated_at,
+                "entity_name": root_path.name,
+                "entity_type": "directory",
+                "lifecycle": "unknown",
+                "governing_standards": ["WGS"],
+                "manifest_path": str(manifest_path) if manifest_path.is_file() else "",
+                "readme_path": str(root_path / "README.md") if (root_path / "README.md").is_file() else "",
+                "inventory_status": item["status"],
+                "registered_children": item.get("registered_children", 0),
+                "physical_children": item.get("physical_children", 0),
+            }
+        )
+        records.append(
+            {
+                "schema_version": SCHEMA_VERSION,
+                "run_id": run_id,
+                "record_type": "manifest_coverage",
+                "workspace_root": str(workspace_root),
+                "path": str(root_path),
+                "generated_at": generated_at,
+                "expected_manifest_path": str(manifest_path),
+                "actual_manifest_path": str(manifest_path) if manifest_path.is_file() else "",
+                "coverage_status": status,
+                "naming_status": "canonical" if status == "present" else "unknown",
+                "parent_registered": True,
+                "findings": item.get("findings", []),
+            }
+        )
+    return records
+
+
+def render_jsonl(records: list[dict]) -> str:
+    return "\n".join(json.dumps(record, sort_keys=True) for record in records)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace-root", type=Path, default=Path("D:/"))
-    parser.add_argument("--format", choices=["markdown", "json"], default="markdown")
+    parser.add_argument("--format", choices=["markdown", "json", "jsonl"], default="markdown")
     args = parser.parse_args()
     workspace = args.workspace_root.resolve()
     development = load(workspace / "Development.manifest.toml")
@@ -75,7 +144,12 @@ def main() -> int:
         for root in development.get("roots", [])
         if root.get("kind") != "standards-registry"
     ]
-    print(json.dumps(results, indent=2) if args.format == "json" else markdown(results))
+    if args.format == "json":
+        print(json.dumps(results, indent=2))
+    elif args.format == "jsonl":
+        print(render_jsonl(jsonl_records(results, workspace)))
+    else:
+        print(markdown(results))
     return 1 if any(item["status"] != "pass" for item in results) else 0
 
 

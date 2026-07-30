@@ -25,16 +25,16 @@ This pass organizes work only. It does not complete the individual standards, ad
 **Current status:** active | **Completion:** 92% | **Priority tier:** Tier 1
 
 **Blocking gaps:**
-- Formal workspace-audit dashboard data specification is still missing.
-- A dedicated `Agent-Closeout-Procedure.md` artifact is still missing, even though closeout requirements appear in other WGS materials.
+- Formal workspace-audit dashboard data specification is complete in `Workspace-Audit-Dashboard-Spec.md`.
+- A dedicated `Agent-Closeout-Procedure.md` artifact is complete and registered in the WGS suite.
 
 **Next implementation slice:**
 - Author `Agent-Closeout-Procedure.md` with exact update steps for direct and extended documentation on agent task completion. Status: complete in first WGS slice.
 - Define a dashboard or metrics schema that converts inventory and audit outputs into machine-readable records, such as JSONL or DuckDB-ready tables. Status: complete in first WGS slice.
-- Add structured output modes to `city_hall_audit.py` and `workspace_inventory.py`.
-- Define where periodic audit and snapshot outputs should be recorded under governed audit history.
-- Add one additional filled `Workspace-Health-Record` example for another root.
-- Map manifest fields to dashboard metrics and register that mapping in `Documentation-Suite-Roadmap.md`.
+- Add structured output modes to `city_hall_audit.py` and `workspace_inventory.py`. Status: complete in WGS structured audit output slice.
+- Define where periodic audit and snapshot outputs should be recorded under governed audit history. Status: complete in WGS audit history convention slice.
+- Add one additional filled `Workspace-Health-Record` example for another root. Status: complete with `examples/Library-Root-Health-Record.md`.
+- Map manifest fields to dashboard metrics and register that mapping in `Documentation-Suite-Roadmap.md`. Status: complete in WGS audit history convention slice.
 
 **Optional improvements:**
 - Add stricter machine schema exports for manifest v2.4.

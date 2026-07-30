@@ -23,6 +23,13 @@ This spec does not require a dashboard front end, scheduled automation, CI integ
 
 The first supported output format should be JSONL because it is easy to append, diff, inspect, and load into DuckDB or SQLite.
 
+Generate structured records locally with:
+
+```powershell
+python WGS/tools/workspace_inventory.py --workspace-root D:/ --format jsonl
+python WGS/tools/city_hall_audit.py --root D:/.library/aptlantis_core --format jsonl
+```
+
 Recommended files for a single audit run:
 
 | File | Grain | Producer |
@@ -135,6 +142,29 @@ Initial dashboard metrics should be derived from the record types above:
 | Standards with registered validators | `standard_suite_coverage` | count with non-empty `validators_registered`. |
 | Standards missing required artifacts | `standard_suite_coverage` | count with non-empty `required_artifacts_missing`. |
 
+## Manifest Field Mapping
+
+Dashboard records should preserve the manifest fields that explain status and governance decisions, not only summary counts.
+
+| Manifest field | Dashboard field or metric | Notes |
+| --- | --- | --- |
+| `manifest.canonical_name` | `manifest_coverage.naming_status` | Compare the declared canonical name to the expected entity-named manifest. |
+| `manifest.manifest_type` | `workspace_entity.entity_type` | Use the manifest value when available; otherwise use a conservative derived type. |
+| `standard.status` | `standard_suite_coverage.status` | Applies to standard suites. |
+| `standard.maturity` | `standard_suite_coverage.maturity` | Applies to standard suites and maturity tracking. |
+| `standard.version` | `standard_suite_coverage.version` | Optional v1 extension for release and changelog checks. |
+| `entity.status` | `workspace_entity.lifecycle` | Use when project or directory manifests expose entity lifecycle state. |
+| `project.stage` | `workspace_entity.lifecycle` | Use as a fallback or companion lifecycle signal for project manifests. |
+| `governance.primary_standard_path` | `workspace_entity.governing_standards` | Resolve to WGS/SFDS/other governing standard labels when possible. |
+| `governance.additional_standard_paths` | `workspace_entity.governing_standards` | Preserve multiple governing standards for cross-standard projects. |
+| `relationships.parent` | `manifest_coverage.parent_registered` | Compare manifest parent to the parent registry or expected containing root. |
+| `relationships.child_projects` | Manifest coverage metrics | Use to detect missing registered children. |
+| `relationships.child_containers` | Manifest coverage metrics | Use to detect missing registered child containers. |
+| `structure.children` | Manifest coverage metrics | Compare registered children to physical directories. |
+| `artifacts.validators` | `standard_suite_coverage.validators_registered` | Count standards with runnable or documented validators. |
+| `artifacts.examples` | `standard_suite_coverage.examples_present` | Use for suite evidence coverage. |
+| `artifacts.reference_examples` | `standard_suite_coverage.examples_present` | Include reference examples when present. |
+
 ## Severity Semantics
 
 | Severity | Meaning |
@@ -144,7 +174,7 @@ Initial dashboard metrics should be derived from the record types above:
 | `error` | Structural issue that invalidates part of the workspace record. |
 | `blocker` | Issue that prevents reliable audit, migration, release, or promotion. |
 
-## Storage Convention
+## Governed Audit History
 
 Audit history should live under a governed WGS audit-history folder once created.
 Until that folder exists, generated datasets should be treated as local outputs and should not be committed unless a task explicitly asks to preserve a specific snapshot.
@@ -160,6 +190,9 @@ WGS/audit-history/
     audit-findings.jsonl
     standard-suite-coverage.jsonl
 ```
+
+Committed audit-history snapshots should be reserved for named reviews, migration checkpoints, release gates, or standards-health baselines.
+Routine generated outputs may remain local scratch data unless they are explicitly promoted into the governed history.
 
 ## Implementation Notes
 

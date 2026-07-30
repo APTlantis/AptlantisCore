@@ -31,12 +31,15 @@ validators = [
 governance_notes = [
   "Manifest-Conventions.md",
   "Agent-Startup-Procedure.md",
+  "Agent-Closeout-Procedure.md",
+  "Workspace-Audit-Dashboard-Spec.md",
   "Documentation-Suite-Roadmap.md",
   "Governance-Responsibility-Matrix.md"
 ]
 reference_examples = [
   "examples/WGS-Suite-Map.md",
   "examples/City-Hall-Health-Record.md",
+  "examples/Library-Root-Health-Record.md",
   "examples/City-Hall-Audit-2026-06-11.md",
   "examples/Workspace-Governance-Audit-2026-07-07.md",
   "examples/Workspace-Governance-Audit-2026-07-08.md"
