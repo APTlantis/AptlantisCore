@@ -93,7 +93,7 @@ package_version = "0.1.0.0"              # REQUIRED — four-part Windows versio
 size_bytes      = 0                       # file size in bytes
 sha256          = ""                      # REQUIRED — uppercase hex SHA-256, no separators
 blake3          = ""                      # optional — recommended for security-sensitive releases
-signing         = "unsigned"             # REQUIRED — 'self-signed CN=...' | 'code-signed by ...' | 'unsigned'
+signing         = "unsigned-internal"    # REQUIRED — microsoft-store-signed | self-signed-development | ca-signed | unsigned-internal | clear free text
 
 [release.verified]
 date            = "YYYY-MM-DD"            # REQUIRED — date verification was performed
@@ -146,6 +146,8 @@ consumes = []
 [distribution]
 packaged              = true
 package_formats       = ["msi"]           # msi | msix | exe
+channel               = "internal"        # microsoft-store-msix | msix-sideload-dev | direct-msi-exe | internal
+signing_authority     = "unsigned-internal"
 portable              = false
 offline_capable       = true
 requires_installation = true

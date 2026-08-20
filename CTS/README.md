@@ -8,6 +8,8 @@
 
 CTS governs command-line tools and automation utilities. It makes CLI behavior stable enough for humans, scripts, and agents to rely on.
 
+For release distribution, CTS-governed tools use the channel that fits their ecosystem: GitHub releases or package registries for cross-platform CLIs, ZIP/portable binaries or package managers for Windows CLIs, crates.io/PyPI/Go modules for language tools, and the simplest documented path for internal utilities. Publishable binary or archive artifacts should carry an ARHS `.hashmanifest.toml`; ArchiveHasher and `manifest-signer.exe` remain AAMHS archive-preservation signing tools.
+
 ## Document Suite
 
 | File | Purpose |

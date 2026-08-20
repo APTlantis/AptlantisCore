@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added CLI distribution guidance for GitHub releases, package ecosystems, Windows portable/package-manager distribution, and internal utilities.
+- Linked publishable CLI artifacts to ARHS `.hashmanifest.toml` release hash manifests.
+- Clarified that ArchiveHasher and `manifest-signer.exe` are AAMHS archive-preservation signing tools, not normal CLI release signing.
 - Added machine-checkable JSON fixtures, progress-output compatibility notes, a contract stability linter, and a minimal Python reference implementation.
 - Added `tools/cts_validate.py` as lightweight validation support for command contracts and JSON envelope examples.
 - Added JSON `data` payload guidance for command-specific result shapes.

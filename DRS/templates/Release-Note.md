@@ -60,10 +60,9 @@ SHA-256:
 
 * `[UPPERCASE HEX SHA-256 HASH — NO SEPARATORS]`
 
-[Optional: BLAKE3 hash if applicable.]
+[Optional: BLAKE3 hash if applicable. For publishable artifacts, attach the ARHS `.hashmanifest.toml`.]
 
-[Signing status statement — e.g. "This release is self-signed (CN=AppName). It has not undergone
-a third-party security review." Never omit the signing status.]
+[Distribution and signing/provenance statement — e.g. "Distribution: microsoft-store-msix. Signing: microsoft-store-signed." For development builds, state that sideloaded self-signed MSIX packages are non-production.]
 
 ---
 
@@ -79,7 +78,7 @@ Before publishing this release note, confirm:
 - [ ] Release Artifact section contains the exact installer filename
 - [ ] SHA-256 hash is present, uppercase, no separators
 - [ ] SHA-256 hash matches the artifact file on disk
-- [ ] Signing status is stated explicitly
+- [ ] Distribution and signing/provenance status are stated explicitly
 - [ ] This file is in `docs/` and included in the build publish output
 
 > Remove this checklist section before publishing.

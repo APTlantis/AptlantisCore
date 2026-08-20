@@ -231,11 +231,11 @@ description = "SHA-256 hash of the installer artifact — uppercase hex, no sepa
 
 [properties.release.properties.installer.properties.blake3]
 type = "string"
-description = "Optional BLAKE3 hash — preferred for security-sensitive releases"
+description = "Optional BLAKE3 hash. Publishable releases should also use an ARHS .hashmanifest.toml with SHA256, BLAKE3-256, and KT128."
 
 [properties.release.properties.installer.properties.signing]
 type = "string"
-description = "Signing status statement: 'self-signed CN=...', 'code-signed by ...', or 'unsigned'. Never omit."
+description = "Signing/provenance status statement. Examples: 'microsoft-store-signed', 'self-signed-development', 'ca-signed', 'unsigned-internal', or another clear free-text statement. Never omit."
 
 [properties.release.properties.verified]
 type = "object"
@@ -599,6 +599,7 @@ type = "boolean"
 
 [properties.distribution]
 type = "object"
+description = "Distribution posture. Public Windows GUI releases default to Microsoft Store MSIX; sideloaded self-signed MSIX is development/test only."
 
 [properties.distribution.properties.packaged]
 type = "boolean"
@@ -608,6 +609,14 @@ type = "array"
 
 [properties.distribution.properties.package_formats.items]
 type = "string"
+
+[properties.distribution.properties.channel]
+type = "string"
+description = "Distribution channel, e.g. microsoft-store-msix, msix-sideload-dev, direct-msi-exe, internal, github-release, package-manager."
+
+[properties.distribution.properties.signing_authority]
+type = "string"
+description = "Distribution signing or provenance authority, e.g. microsoft-store-signed, self-signed-development, ca-signed, unsigned-internal."
 
 [properties.distribution.properties.portable]
 type = "boolean"

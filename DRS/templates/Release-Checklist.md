@@ -55,7 +55,9 @@ These gates apply to every release. Every unchecked item is a release blocker.
 - [ ] SHA-256 hash is computed from the final artifact (not the publish directory)
 - [ ] SHA-256 hash is recorded in the release note
 - [ ] SHA-256 hash is recorded in the project manifest (`release.installer.sha256`)
-- [ ] Signing status is documented explicitly — never implicit
+- [ ] ARHS `.hashmanifest.toml` is generated for publishable artifacts
+- [ ] Distribution channel is documented explicitly
+- [ ] Signing/provenance status is documented explicitly — never implicit
 - [ ] Release note is in `docs/` and included in the build publish output
 - [ ] `docs/` folder is present in the publish output and installer package
 - [ ] Current release note is present inside the installed application's `docs/` folder (verified after install)
@@ -97,7 +99,8 @@ Append one block per release. Newest at the bottom. Do not edit past blocks.
 * Package target:  `[path/to/AppName-X.Y.Z.0-win-x64.msi]`
 * Package size:    `[N]` bytes
 * SHA-256:         `[UPPERCASE HEX HASH]`
-* Signing:         [self-signed CN=... / code-signed by ... / unsigned]
+* Distribution:    [microsoft-store-msix / msix-sideload-dev / direct-msi-exe / internal]
+* Signing:         [microsoft-store-signed / self-signed-development / ca-signed / unsigned-internal / other clear statement]
 * Build result:    Release x64 build completed on [YYYY-MM-DD]
 * Test result:     [runner] passed [N] tests on [YYYY-MM-DD]
 * Install result:  installed, launched with title `[window title]`, uninstalled successfully on [YYYY-MM-DD]

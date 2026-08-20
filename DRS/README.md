@@ -21,7 +21,7 @@ DRS conforms to SFDS at the standard-suite governance layer and is the first ref
 | Versioning | Semantic versioning rules, when to increment, version source of truth |
 | Release documents | Required structure, prohibited content, required fields |
 | Artifact naming | Deterministic, parseable filename conventions |
-| Artifact integrity | SHA-256 (minimum), BLAKE3 (preferred for security-sensitive releases) |
+| Artifact integrity | SHA-256 in DRS records; ARHS `.hashmanifest.toml` for release hash manifests |
 | Build verification | What must be tested and recorded for every release |
 | Project manifests | Machine-readable project state and release record |
 | Documentation delivery | What ships with the build and why |
@@ -107,7 +107,7 @@ Not every project needs every document immediately. Use the tier that matches yo
 | **Minimal** | Small utility, no sensitive data | README, Manifest, Release Note, Release Checklist |
 | **Standard** | Local-first app with persistent user data | + Build Reproducibility Guide, Dependency Provenance |
 | **Security-sensitive** | Vaults, encryption, credentials, key management | + Trust/Security Model, Threat Model, Integrity Validation Matrix |
-| **Distribution-grade** | Public installers, code signing, auto-update | + SBOM, Withdrawn Release policy, Data Migration Contracts |
+| **Distribution-grade** | Microsoft Store MSIX, documented direct distribution, signing/provenance, auto-update | + SBOM, Withdrawn Release policy, Data Migration Contracts |
 
 Aegis and FileCabinet operate at the Security-sensitive tier. Most tools can start at Minimal and promote as they mature.
 
@@ -143,6 +143,16 @@ Aegis and FileCabinet operate at the Security-sensitive tier. Most tools can sta
 | `drs init-docs` | Copy all doc templates to `docs/` with project name applied |
 
 `tools/drs_integrity_check.py` is a companion checker for declared BLAKE3 and signing metadata. `examples/Release-Folder-Verifier.html` is a minimal local GUI-style verifier for release-folder evidence.
+
+## Distribution Policy
+
+For public Windows GUI applications, the default DRS distribution path is MSIX submitted through the Microsoft Store. The Microsoft Store signs accepted Store packages; the project release record should state `distribution = "microsoft-store-msix"` and `signing = "microsoft-store-signed"` or an equally clear statement.
+
+Development and tester builds may use sideloaded MSIX packages signed with a self-signed development certificate. These records must state that the build is non-production, for example `signing = "self-signed-development"`.
+
+Direct MSI/EXE or non-Store distribution is allowed only when the release record explains why that channel is being used. Public direct distribution should use CA-backed signing or Microsoft Trusted Signing where appropriate; internal/private direct distribution may be explicitly `unsigned-internal` or self-signed when that is the real trust model.
+
+DRS records the desktop release evidence. ARHS records the release hash manifest. AAMHS records archive-preservation integrity and detached signatures when the release or evidence bundle is preserved as an archive.
 
 ---
 
@@ -183,7 +193,7 @@ A release is not complete until someone who did not build it can understand what
 Name the release before writing code. If the work does not match the name, either the name was wrong or the scope drifted. Catch this before writing the release note.
 
 **The artifact hash is the release.**
-Publishing an installer without a SHA-256 hash in the release document is a file drop, not a release.
+Publishing an installer without a SHA-256 hash in the release document, and an ARHS hash manifest when the artifact is publishable, is a file drop, not a release.
 
 **Detect before mutating.**
 Any system that changes state should make the change visible before it happens. Irreversible actions require explicit operator approval.

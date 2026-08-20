@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Added Microsoft Store MSIX as the default public Windows GUI application distribution path.
+- Clarified that Store-submitted MSIX packages are signed by Microsoft, while sideloaded self-signed MSIX packages are development/test builds only.
+- Added direct MSI/EXE distribution guidance requiring documented rationale and appropriate signing/provenance.
+- Linked publishable desktop artifacts to ARHS `.hashmanifest.toml` release hash manifests.
 - Added release-note metadata schema, JSON-LD template, companion integrity checker, release-gating workflow guidance, and a minimal release-folder verifier example.
 - Added CI usage guidance for running `drs.ps1` from local automation and Windows CI.
 - Added troubleshooting, PowerShell 7 compatibility, and script trust guidance.
