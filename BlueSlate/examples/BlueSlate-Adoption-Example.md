@@ -7,10 +7,10 @@ This example shows the minimum documentation footprint for a project adopting Bl
 ```toml
 [governance.visual_system]
 standard = "Blue Slate"
-standard_path = "D:\\.library\\aptlantis_core\\blue.slate\\README.md"
+standard_path = "D:\\.library\\aptlantis_core\\BlueSlate\\README.md"
 adoption_level = "candidate-active"
 profile = "desktop-product"
-token_source = "D:\\.library\\aptlantis_core\\blue.slate\\spec\\tokens\\BlueSlate.Tokens.json"
+token_source = "D:\\.library\\aptlantis_core\\BlueSlate\\spec\\tokens\\BlueSlate.Tokens.json"
 ```
 
 ## Project README Note

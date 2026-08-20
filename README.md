@@ -10,8 +10,8 @@ It holds the standards, templates, maps, and adopted governance reference materi
 City Hall remains the development workshop for standards: incubation, experiments, promotion review, historical lineage, and preserved planning records live under `D:\.city_hall`.
 City Hall-only drafts do not govern active projects until they are deliberately promoted here or explicitly adopted by a governing standard.
 
-The root drive manifest, `D:\Development.manifest.toml`, is currently absent.
-Until a dedicated root-governance pass restores or replaces it, agents should record that drift and use `D:\AGENTS.md`, `D:\INDEX.md`, this library README, and the relevant active suite manifests as the practical recovery path.
+The root drive manifest, `D:\Development.manifest.toml`, was restored on 2026-08-20 as the machine-readable root registry.
+If it is missing in a future pass, agents should record that drift and use `D:\AGENTS.md`, `D:\INDEX.md`, this library README, and the relevant active suite manifests as the practical recovery path.
 
 ## Start Here
 
@@ -47,6 +47,7 @@ For standards incubation, historical comparison, or promotion review, use `D:\.c
 The following overview materials are maintained here because they describe active, adopted Aptlantis governance rather than City Hall-only experimentation:
 
 - `WORKSHOP-MAP.md` - guided map of active standards, related project areas, and reading paths.
+- `City Hall Operational Case Study.md` - maintainable source for the revised library-facing case study.
 - `City Hall Operational Case Study.pdf` - adopted evidence record showing the governance system operating end to end.
 
 City Hall may keep reference copies or pointers for workshop continuity, but the library copy is the active navigation target for agents looking for solid standards.

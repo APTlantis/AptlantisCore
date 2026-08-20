@@ -6,7 +6,7 @@ This checklist separates Blue Slate suite validation from adopter validation.
 
 - [ ] `README.md` explains the standard's role and read path.
 - [ ] `spec/BlueSlate.DesignSystem.md` is the primary specification.
-- [ ] `blue.slate.manifest.toml` describes the standard suite.
+- [ ] `BlueSlate.manifest.toml` describes the standard suite.
 - [ ] `Adoption-Guide.md` exists.
 - [ ] `Validation-Checklist.md` exists.
 - [ ] `CHANGELOG.md` records version and promotion history.

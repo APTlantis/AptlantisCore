@@ -1,5 +1,10 @@
 # Blue Slate Changelog
 
+## Unreleased - 2026-08-20
+
+- Normalized the active library manifest to `BlueSlate.manifest.toml` with SFDS-required `[standard]` and `[governance]` metadata while preserving the Blue Slate / blue.slate product identity.
+- Removed the nonexistent `apps` artifact reference from the active manifest and kept `spec/mockups` as the visual-reference artifact.
+
 ## 0.2.0 - 2026-07-25
 
 - Promoted Blue Slate to candidate-active standard-suite status.

@@ -1,9 +1,9 @@
 # Blue Slate Project Lineage
 
 Blue Slate began as a candidate Aptlantis visual system and theme resource.
-As of 2026-07-25, its active standard-suite front door is `README.md`, and the promoted active-use copy lives in `D:\.library\aptlantis_core\blue.slate`.
+As of 2026-07-25, its active standard-suite front door is `README.md`, and the promoted active-use copy lives in `D:\.library\aptlantis_core\BlueSlate`.
 
-Its current source of truth is `D:\.library\aptlantis_core\blue.slate\spec\tokens\BlueSlate.Tokens.json`.
+Its current source of truth is `D:\.library\aptlantis_core\BlueSlate\spec\tokens\BlueSlate.Tokens.json`.
 
 ## Current Role
 
@@ -25,7 +25,7 @@ Projects may use Blue Slate as an explicit candidate-active visual-system depend
 
 ## Promotion Record
 
-Promotion target: `D:\.library\aptlantis_core\blue.slate`.
+Promotion target: `D:\.library\aptlantis_core\BlueSlate`.
 
 Promotion authority: `D:\.city_hall`.
 
@@ -42,10 +42,10 @@ Remaining gaps:
 Read these first before changing Blue Slate:
 
 1. `D:\AGENTS.md`
-2. `D:\.library\aptlantis_core\blue.slate\README.md`
-3. `D:\.library\aptlantis_core\blue.slate\blue.slate.manifest.toml`
-4. `D:\.library\aptlantis_core\blue.slate\spec\tokens\BlueSlate.Tokens.json`
-5. `D:\.library\aptlantis_core\blue.slate\spec\BlueSlate.DesignSystem.md`
+2. `D:\.library\aptlantis_core\BlueSlate\README.md`
+3. `D:\.library\aptlantis_core\BlueSlate\BlueSlate.manifest.toml`
+4. `D:\.library\aptlantis_core\BlueSlate\spec\tokens\BlueSlate.Tokens.json`
+5. `D:\.library\aptlantis_core\BlueSlate\spec\BlueSlate.DesignSystem.md`
 
 Current status: candidate active.
 

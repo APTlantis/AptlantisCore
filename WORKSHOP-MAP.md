@@ -83,9 +83,8 @@ For releases and integrity:
 
 ## Root Governance Drift
 
-`D:\Development.manifest.toml` is referenced by older governance records but is currently absent.
-Do not recreate it casually during unrelated standards work.
-Record the gap, use `D:\AGENTS.md` and `D:\INDEX.md` as the root recovery path, and restore the manifest only through an explicit root-governance pass.
+`D:\Development.manifest.toml` was restored on 2026-08-20 as the machine-readable root registry.
+If it is missing in a future pass, record the gap, use `D:\AGENTS.md` and `D:\INDEX.md` as the root recovery path, and restore the manifest only through an explicit root-governance pass.
 
 ## Operating Taste
 

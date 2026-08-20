@@ -19,6 +19,7 @@ tags = ["development", "workspace"]
 root = "D:\\"
 primary_governance = "WGS"
 city_hall = "D:\\.city_hall"
+active_standards_library = "D:\\.library\\aptlantis_core"
 index = "D:\\INDEX.md"
 instructions = "D:\\AGENTS.md"
 
@@ -35,13 +36,17 @@ copy_canonical_standards_into_projects = false
 
 [standards]
 wgs = "D:\\.library\\aptlantis_core\\WGS"
-sfds = "D:\\.city_hall\\SFDS"
+sfds = "D:\\.library\\aptlantis_core\\SFDS"
 pps = "D:\\.library\\aptlantis_core\\PPS"
+lds = "D:\\.library\\aptlantis_core\\LDS"
 drs = "D:\\.library\\aptlantis_core\\DRS"
 cts = "D:\\.library\\aptlantis_core\\CTS"
 wds = "D:\\.library\\aptlantis_core\\WDS"
-dds = "D:\\.library\\aptlantis_core\\WGS"
-sis = "D:\\.library\\aptlantis_core\\WGS"
+arhs = "D:\\.library\\aptlantis_core\\ARHS"
+aamhs = "D:\\.library\\aptlantis_core\\AAMHS"
+sesm = "D:\\.library\\aptlantis_core\\SESM"
+blue_slate = "D:\\.library\\aptlantis_core\\BlueSlate"
+blanks = "D:\\.library\\aptlantis_core\\Blanks"
 
 [[roots]]
 id = "example-portfolio"
@@ -53,6 +58,6 @@ manifest = "D:\\EXAMPLE\\EXAMPLE.manifest.toml"
 
 [agent]
 read_first = ["D:\\AGENTS.md", "D:\\INDEX.md", "D:\\.library\\aptlantis_core\\WGS\\Agent-Startup-Procedure.md"]
-authoritative_docs = ["D:\\Development.manifest.toml", "D:\\AGENTS.md"]
+authoritative_docs = ["D:\\Development.manifest.toml", "D:\\AGENTS.md", "D:\\INDEX.md", "D:\\.library\\aptlantis_core\\README.md"]
 known_gaps = ["Replace example root and all placeholder values before adoption."]
 notes = "Template only until all placeholders are replaced."

@@ -1,6 +1,6 @@
 # Blue Slate Instructions
 
-Inherit [drive instructions](D:/AGENTS.md), then read `README.md`, `blue.slate.manifest.toml`, and `Project-README.md` before changing Blue Slate material. Consult City Hall records before changing promotion status.
+Inherit [drive instructions](D:/AGENTS.md), then read `README.md`, `BlueSlate.manifest.toml`, and `Project-README.md` before changing Blue Slate material. Consult City Hall records before changing promotion status.
 
 ## Role
 

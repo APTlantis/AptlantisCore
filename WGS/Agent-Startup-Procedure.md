@@ -14,7 +14,7 @@ When entering the workspace or a project, read in this order:
 
 1. `D:\AGENTS.md`
 2. `D:\INDEX.md`
-3. `D:\Development.manifest.toml`, when present
+3. `D:\Development.manifest.toml`
 4. each nearer `AGENTS.md` from the drive root toward the target
 5. nearest entity-named manifest matching its containing directory
 6. `Project-README.md`, when entering a project or group
@@ -32,8 +32,8 @@ The governing standard establishes the rules of engagement.
 For workspace-level work:
 
 1. Read `D:\AGENTS.md` and `D:\INDEX.md`.
-2. Read `D:\Development.manifest.toml` if present.
-3. If `D:\Development.manifest.toml` is absent, record the root-governance drift and continue from the active library records unless the task requires reconstructing the root manifest.
+2. Read `D:\Development.manifest.toml`.
+3. If `D:\Development.manifest.toml` is absent in a future pass, record the root-governance drift and continue from the active library records unless the task requires reconstructing the root manifest.
 4. Read `D:\.library\aptlantis_core\README.md`, `D:\.library\aptlantis_core\WORKSHOP-MAP.md`, and the relevant active suite.
 5. Use `D:\.city_hall` only when the task concerns standards incubation, promotion history, lineage, or workshop material.
 6. Identify affected root directory.
@@ -56,7 +56,7 @@ For project-level work:
 | Missing item | Agent behavior |
 | --- | --- |
 | Root `AGENTS.md` | Stop workspace-wide changes and report the blocker. |
-| `D:\Development.manifest.toml` | Record root-governance drift and use `D:\INDEX.md` plus `D:\.library\aptlantis_core` as the current recovery path; restore the manifest only through an explicit root-governance pass. |
+| `D:\Development.manifest.toml` | Record root-governance drift and use `D:\INDEX.md` plus `D:\.library\aptlantis_core` as the recovery path; restore the manifest only through an explicit root-governance pass. |
 | Directory manifest | Continue only for read-only discovery; record missing directory manifest. |
 | Project manifest | Continue only if the task is small or explicitly requested; recommend `[ProjectName].manifest.toml` creation. |
 | `Project-README.md` | Avoid scope-expanding changes; use existing README/docs as fallback. |
@@ -82,7 +82,7 @@ Closeout requires:
 
 1. Update the direct records for the changed entity: manifest, `AGENTS.md`, `Project-README.md`, README, changelog, validation checklist, release note, adoption note, or standard-specific record as applicable.
 2. Update the parent or controlling records when identity, lifecycle, location, authority, child lists, governing standard, or promotion state changed.
-3. Update extended navigation records when the change affects workspace discovery, including `D:\INDEX.md`, `D:\Development.manifest.toml` when present, library README/maps, City Hall README/workshop maps, WGS responsibility matrices, inventories, target maps, or standards registries.
+3. Update extended navigation records when the change affects workspace discovery, including `D:\Development.manifest.toml`, `D:\INDEX.md`, library README/maps, City Hall README/workshop maps, WGS responsibility matrices, inventories, target maps, or standards registries.
 4. Record known gaps if an expected direct or extended document could not be updated.
 5. Verify that updated links, manifests, and machine-readable records parse or resolve where practical.
 6. Summarize what changed, what was intentionally left unchanged, and the next safe action.

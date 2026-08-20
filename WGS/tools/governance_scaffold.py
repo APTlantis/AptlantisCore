@@ -13,7 +13,10 @@ import tomllib
 from datetime import date
 from pathlib import Path
 
-import tomli_w
+try:
+    import tomli_w
+except ModuleNotFoundError:
+    import toml_write
 
 
 CLASSIFICATION = {
@@ -26,8 +29,8 @@ CLASSIFICATION = {
 }
 PROJECT_KINDS = {"project", "project-group", "dataset"}
 STANDARD_PATHS = {
-    name: f"D:\\.city_hall\\{name}\\README.md"
-    for name in ["WGS", "PPS", "CTS", "DRS", "WDS", "DDS", "SIS"]
+    name: f"D:\\.library\\aptlantis_core\\{name}\\README.md"
+    for name in ["WGS", "PPS", "LDS", "CTS", "DRS", "WDS", "ARHS", "AAMHS", "SESM"]
 }
 
 
@@ -37,7 +40,11 @@ def load(path: Path) -> dict:
 
 
 def write_toml(path: Path, value: dict) -> None:
-    path.write_bytes(tomli_w.dumps(value, multiline_strings=True).encode("utf-8"))
+    if "tomli_w" in globals():
+        rendered = tomli_w.dumps(value, multiline_strings=True)
+    else:
+        rendered = toml_write.dumps(value)
+    path.write_bytes(rendered.encode("utf-8"))
 
 
 def entity_manifest(directory: Path) -> Path:

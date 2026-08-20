@@ -3,7 +3,7 @@
 This checklist validates workspace governance readiness under WGS. SFDS suite conformance for WGS is tracked by `WGS.manifest.toml` and the WGS suite map.
 
 - [ ] `D:\AGENTS.md` and `D:\INDEX.md` exist.
-- [ ] `D:\Development.manifest.toml` exists, or its absence is recorded as root-governance drift with a dedicated restoration path.
+- [ ] `D:\Development.manifest.toml` exists and parses, or its absence is recorded as root-governance drift with a dedicated restoration path.
 - [ ] Root inventory is current.
 - [ ] Target directory map is separate from current state.
 - [ ] Governed portfolios and containers have `AGENTS.md` and `[DirectoryName].manifest.toml`.
@@ -23,7 +23,7 @@ This checklist validates workspace governance readiness under WGS. SFDS suite co
 - [ ] Local Markdown links are checked with `tools/link_integrity.py` for touched documentation scopes.
 - [ ] Agent read-first order is available from manifests or identity docs.
 - [ ] Direct records were updated for changed entities, or intentionally left unchanged with a reason.
-- [ ] Extended navigation records such as `D:\INDEX.md`, `D:\Development.manifest.toml` when present, library README/maps, City Hall README/maps, parent manifests, responsibility matrices, inventories, and standards registries were updated when discovery or authority changed.
+- [ ] Extended navigation records such as `D:\Development.manifest.toml`, `D:\INDEX.md`, library README/maps, City Hall README/maps, parent manifests, responsibility matrices, inventories, and standards registries were updated when discovery or authority changed.
 - [ ] Workspace health state is recorded for reviewed roots.
 - [ ] Drift between current state and target state is recorded before moves or renames.
 - [ ] Next safe action is documented for blocked or drifted roots.

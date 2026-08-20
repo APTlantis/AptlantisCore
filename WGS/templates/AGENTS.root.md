@@ -6,7 +6,8 @@ This file governs `{{ROOT_PATH}}` and all descendants. Read instructions from th
 
 - Operator instructions for the current task take precedence.
 - The nearest applicable `AGENTS.md` specializes parent instructions.
-- Canonical governance lives at `{{GOVERNANCE_ROOT}}`.
+- Canonical active standards and adopted governance overview records live at `D:\.library\aptlantis_core`.
+- City Hall material is workshop, sandbox, historical lineage, or promotion material until promoted or explicitly adopted.
 - Link to canonical standards; do not copy their text into projects.
 - Templates, references, generated records, and historical copies are not authority.
 

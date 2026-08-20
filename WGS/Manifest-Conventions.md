@@ -19,8 +19,8 @@ Every v2.4 manifest starts with:
 | Project or project group | `[ProjectName].manifest.toml` | `D:\CTS\CloneCratesio\CloneCratesio.manifest.toml` |
 | Standard suite | `[StandardName].manifest.toml` | `D:\.library\aptlantis_core\WGS\WGS.manifest.toml` |
 
-`D:\Development.manifest.toml` is the intended drive-root manifest name, but the file is currently absent.
-Record that as root-governance drift and restore it only through an explicit root-governance pass.
+`D:\Development.manifest.toml` was restored on 2026-08-20 as the drive-root manifest.
+If it is missing in a future pass, record that as root-governance drift and restore it only through an explicit root-governance pass.
 
 The entity name is the exact containing directory name, preserving casing and punctuation. A hidden directory therefore uses names such as `.dpw.manifest.toml` or `.cts_holding.manifest.toml`.
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Back up root governance records inside the version-controlled City Hall repo.
+"""Back up root governance records inside the active WGS suite.
 
 The snapshot is explicitly non-authoritative. Run without --apply to compare
 hashes; --apply refreshes the controlled backup and its SHA-256 inventory.
@@ -13,7 +13,10 @@ import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 
-import tomli_w
+try:
+    import tomli_w
+except ModuleNotFoundError:
+    import toml_write
 
 
 FILES = ("AGENTS.md", "Development.manifest.toml", "INDEX.md")
@@ -30,7 +33,7 @@ def sha256(path: Path) -> str:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--workspace-root", type=Path, default=Path("D:/"))
-    parser.add_argument("--snapshot-root", type=Path, default=Path("D:/.city_hall/WGS/workspace-root-snapshot"))
+    parser.add_argument("--snapshot-root", type=Path, default=Path("D:/.library/aptlantis_core/WGS/workspace-root-snapshot"))
     parser.add_argument("--apply", action="store_true")
     args = parser.parse_args()
     workspace = args.workspace_root.resolve()
@@ -62,7 +65,11 @@ def main() -> int:
             }
         }
         snapshot.mkdir(parents=True, exist_ok=True)
-        (snapshot / "SNAPSHOT.toml").write_bytes(tomli_w.dumps(metadata).encode("utf-8"))
+        if "tomli_w" in globals():
+            rendered = tomli_w.dumps(metadata)
+        else:
+            rendered = toml_write.dumps(metadata)
+        (snapshot / "SNAPSHOT.toml").write_bytes(rendered.encode("utf-8"))
         (snapshot / "README.md").write_text(
             "# Workspace Root Governance Snapshot\n\n"
             "This directory is a version-controlled recovery copy of `D:\\AGENTS.md`, "

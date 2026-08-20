@@ -14,7 +14,7 @@ It is candidate active: projects may adopt it deliberately, but each adoption sh
 | File | Purpose |
 | --- | --- |
 | `spec/BlueSlate.DesignSystem.md` | Primary visual-system specification. |
-| `blue.slate.manifest.toml` | Standard suite manifest. |
+| `BlueSlate.manifest.toml` | Standard suite manifest. |
 | `Adoption-Guide.md` | How projects adopt Blue Slate. |
 | `Validation-Checklist.md` | Suite and adopter validation checklist. |
 | `CHANGELOG.md` | Version and promotion history. |
