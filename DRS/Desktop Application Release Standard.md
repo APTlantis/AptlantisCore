@@ -262,10 +262,14 @@ Do not use `published` for a package that only exists as a local validation arti
 | --- | --- | --- |
 | Public Windows GUI app | MSIX submitted through Microsoft Store | Microsoft Store signs the accepted package |
 | Development/test Windows GUI app | MSIX sideload | Self-signed development certificate; non-production |
+| Cross-platform GUI app on Windows | MSIX submitted through Microsoft Store for the Windows build | Microsoft Store signs the accepted Windows package |
+| Cross-platform GUI app on non-Windows targets | Native or ecosystem package flow such as NSIS, DMG, AppImage, deb/rpm, or package manager | Platform-appropriate signing/provenance |
 | Direct public Windows installer | MSI/EXE with documented reason | CA-backed code signing or Microsoft Trusted Signing where appropriate |
 | Internal Windows utility | Simplest appropriate channel | `unsigned-internal` or self-signed when accurate |
 
 Distribution and signing are separate facts. A self-signed sideloaded MSIX can be a valid development build, but it is not a Store release. A Microsoft Store release should not claim local self-signing as its public trust path.
+
+For Windows GUI projects, `winapp` is the preferred local packaging helper for generating MSIX app assets, maintaining `Package.appxmanifest`, creating development certificates, and packing self-signed sideload builds. `msstore` is the preferred command-line submission helper for Microsoft Store workflows. These tools do not replace DRS verification; the release record must still identify the distribution channel, signing authority, artifact hash evidence, and install/launch/update/uninstall checks.
 
 ### Minimum Manifest Fields
 

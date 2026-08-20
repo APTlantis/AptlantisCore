@@ -150,6 +150,10 @@ For public Windows GUI applications, the default DRS distribution path is MSIX s
 
 Development and tester builds may use sideloaded MSIX packages signed with a self-signed development certificate. These records must state that the build is non-production, for example `signing = "self-signed-development"`.
 
+For cross-platform GUI applications, the Windows package should normally follow the MSIX/Microsoft Store path while other operating systems keep their appropriate native or ecosystem package flow, such as NSIS, DMG, AppImage, deb/rpm, or package-manager distribution.
+
+`winapp` is the preferred local Windows GUI packaging helper for app asset generation, `Package.appxmanifest` management, development certificate creation, and MSIX packing. `msstore` is the preferred Microsoft Store submission helper. Tool output is evidence, not the release decision by itself; DRS records must still distinguish distribution from signing and must verify the resulting package.
+
 Direct MSI/EXE or non-Store distribution is allowed only when the release record explains why that channel is being used. Public direct distribution should use CA-backed signing or Microsoft Trusted Signing where appropriate; internal/private direct distribution may be explicitly `unsigned-internal` or self-signed when that is the real trust model.
 
 DRS records the desktop release evidence. ARHS records the release hash manifest. AAMHS records archive-preservation integrity and detached signatures when the release or evidence bundle is preserved as an archive.
