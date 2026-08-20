@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Restored the `examples/MiniVault/` adopter example from the City Hall reference copy so the active DRS suite's declared reference examples resolve again.
 - Added Microsoft Store MSIX as the default public Windows GUI application distribution path.
 - Clarified that Store-submitted MSIX packages are signed by Microsoft, while sideloaded self-signed MSIX packages are development/test builds only.
 - Added direct MSI/EXE distribution guidance requiring documented rationale and appropriate signing/provenance.

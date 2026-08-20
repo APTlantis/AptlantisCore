@@ -8,27 +8,27 @@ Last reviewed: 2026-08-20
 
 Canonical local manifests are entity-named: the exact containing directory name plus `.manifest.toml`. `Development.manifest.toml` remains the drive-root exception.
 
-## Verified Roots
+## Current Inventory Run
 
-The read-only WGS inventory command passed for every registered root on 2026-07-25. The stricter City Hall standards audit also passed all 25 scopes on 2026-07-25 after child-level manifest and front-door records were reconciled. On 2026-08-20, `D:\Development.manifest.toml` was restored from current physical roots and live entity manifests; rerun the inventory before using older pass/fail results as current proof.
+The read-only WGS inventory command was rerun on 2026-08-20 after `D:\Development.manifest.toml` was restored from current physical roots and live entity manifests.
+The root manifest parses and active standards validate, but several portfolio manifests still have child-list drift against the current filesystem.
 
 | Root | Canonical manifest | Registered children | Physical children | Inventory state |
 | --- | --- | ---: | ---: | --- |
 | `D:\.city_hall` | `CITY-HALL.manifest.toml` | 18 | 18 | pass |
-| `D:\.zoning` | `.zoning.manifest.toml` | 4 | 4 | pass |
-| `D:\LDS` | `LDS.manifest.toml` | 0 | 0 | pass |
-| `D:\WDS` | `WDS.manifest.toml` | 3 | 3 | pass |
-| `D:\CTS` | `CTS.manifest.toml` | 11 | 11 | pass |
-| `D:\.data` | `.data.manifest.toml` | 3 | 3 | pass |
-| `D:\DRS` | `DRS.manifest.toml` | 15 | 15 | pass |
-| `D:\.dpw` | `.dpw.manifest.toml` | 8 | 8 | pass |
+| `D:\.library` | `.library.manifest.toml` | 4 | 4 | pass |
+| `D:\.dpw` | `.dpw.manifest.toml` | 8 | 3 | drift: missing `DockerDesktopWSL`, `Inform`, `Python`, `QB64`, `QB64PE` |
 | `D:\.pnpm-store` | `.pnpm-store.manifest.toml` | 3 | 3 | pass |
-| `D:\.library` | `.library.manifest.toml` | 5 | 5 | pass |
+| `D:\.data` | `.data.manifest.toml` | 3 | 3 | pass |
+| `D:\CTS` | `CTS.manifest.toml` | 12 | 8 | drift: missing `.cts_holding`, `FH-RefToolkit`, `HolyC-Llama`, `LangThemeGenerator`, `ScriptWriters`; unregistered `Single-Project Evaluator` |
+| `D:\DRS` | `DRS.manifest.toml` | 17 | 7 | drift: missing legacy/renamed children; unregistered `Aptlantis Console`, `Chat Archive`, `Chrome Plugin`, `Command Wizard`, `React Workbench` |
+| `D:\LDS` | `LDS.manifest.toml` | 1 | 0 | drift: missing `ReactComponentLibrary` |
+| `D:\WDS` | `WDS.manifest.toml` | 3 | 1 | drift: missing `LinuxGenealogy`, `WebsiteTemplate` |
 
 ## Reconciliation Notes
 
-- `D:\BASIC` is no longer registered because the root is not physically present.
-- `D:\LDS` is registered as the governed portfolio for library-first projects and is currently empty.
+- `D:\BASIC`, `D:\DATA`, `D:\.zoning`, and `D:\.sonar` are not registered in the restored root manifest because they were not physically present during the 2026-08-20 restoration pass.
+- `D:\LDS` is registered as the governed portfolio for library-first projects, but its child registration currently points to missing `ReactComponentLibrary`.
 - `D:\.pnpm-store` is registered as a tool-managed shared PNPM package cache.
 - WDS now registers `.wds_holding`, `LinuxGenealogy`, and `WebsiteTemplate`.
 - CTS now registers the current direct children, including `ArchiveHasher`, `HolyC-Llama`, and `ScriptWriters`; former `DatasetPipelines`, `Llama`, and `UTILITIES` registrations were removed.
@@ -50,5 +50,5 @@ The inventory command is read-only and returns nonzero when registered roots dri
 
 - Perform project-specific build, test, artifact, deployment, release, and lifecycle verification before making release-readiness claims.
 - Review cache/resource retention policies for `.dpw` and `.pnpm-store`.
-- Rerun root inventory and standards audits after the 2026-08-20 `D:\Development.manifest.toml` restoration.
-- Refresh root-governance recovery snapshots if a snapshot update task is explicitly requested.
+- Reconcile child lists for `.dpw`, CTS, DRS, LDS, and WDS against current physical directories.
+- Refresh root-governance recovery snapshots after root/index/agent instruction edits.

@@ -4,6 +4,7 @@
 
 - Normalized the active library manifest to `BlueSlate.manifest.toml` with SFDS-required `[standard]` and `[governance]` metadata while preserving the Blue Slate / blue.slate product identity.
 - Removed the nonexistent `apps` artifact reference from the active manifest and kept `spec/mockups` as the visual-reference artifact.
+- Updated active path references from `D:\.library\aptlantis_core\blue.slate` to the physical `D:\.library\aptlantis_core\BlueSlate` directory.
 
 ## 0.2.0 - 2026-07-25
 

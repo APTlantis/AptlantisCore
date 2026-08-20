@@ -4,6 +4,8 @@
 
 - Promoted the adopted Aptlantis overview path to `D:\.library\aptlantis_core` by adding the library README/map, copying the City Hall Operational Case Study PDF there, and reframing City Hall as workshop/sandbox/lineage rather than the active standards front door.
 - Restored `D:\Development.manifest.toml` from current physical roots and live entity manifests, then updated WGS startup, validation, manifest convention, and inventory guidance to treat it as the active root registry while preserving drift behavior if it goes missing again.
+- Updated live WGS tooling/templates to use `D:\.library\aptlantis_core` active-standard paths, added a local TOML writer fallback for runtimes without `tomli_w`, and moved the root-governance snapshot default into the active WGS suite.
+- Recorded the 2026-08-20 root inventory drift results after the restored root manifest parsed successfully.
 - Added Entity Manifest v2.4 JSON Schema export, WGS CI usage guidance, manifest diff tooling, Markdown link integrity tooling, query-store reference notes, and a minimal static workspace-health dashboard example.
 - Reconciled `D:\Development.manifest.toml`, root/portfolio manifests, and `Workspace-Inventory.md` with the current physical `D:\` root layout; the read-only workspace inventory now passes for every registered root.
 - Added agent closeout requirements for direct and extended documentation updates, including `D:\Development.manifest.toml`, `D:\INDEX.md`, parent manifests, responsibility matrices, inventories, and standards registries when discovery or authority changes.

@@ -45,7 +45,7 @@ wds = "D:\\.library\\aptlantis_core\\WDS"
 arhs = "D:\\.library\\aptlantis_core\\ARHS"
 aamhs = "D:\\.library\\aptlantis_core\\AAMHS"
 sesm = "D:\\.library\\aptlantis_core\\SESM"
-blue_slate = "D:\\.library\\aptlantis_core\\blue.slate"
+blue_slate = "D:\\.library\\aptlantis_core\\BlueSlate"
 blanks = "D:\\.library\\aptlantis_core\\Blanks"
 
 [workshop]

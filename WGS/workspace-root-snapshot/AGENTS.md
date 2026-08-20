@@ -26,7 +26,7 @@ When documents disagree, do not silently blend them. Prefer the narrower active 
 - [Aptlantis Release Hashing Standard](D:/.library/aptlantis_core/ARHS/README.md)
 - [Archive Multi-Hash Standard](D:/.library/aptlantis_core/AAMHS/README.md)
 - [SVG Embedded Semantic Metadata](D:/.library/aptlantis_core/SESM/README.md)
-- [Blue Slate Visual System](D:/.library/aptlantis_core/blue.slate/README.md)
+- [Blue Slate Visual System](D:/.library/aptlantis_core/BlueSlate/README.md)
 - [Blank governance templates](D:/.library/aptlantis_core/Blanks)
 
 `D:\.library\aptlantis_core` is the canonical active standards library for standards and adopted governance overview material that already govern projects. `D:\.city_hall` is the standards workshop and sandbox for incubation, experimentation, historical lineage, review, archive, and promotion. City Hall-only drafts, historical references, and zoning candidates do not govern active projects until deliberately promoted into `aptlantis_core` or explicitly adopted by a governing standard.

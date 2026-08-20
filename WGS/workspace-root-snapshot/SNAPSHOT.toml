@@ -2,22 +2,22 @@
 authoritative = false
 purpose = "Version-controlled recovery copy of D drive root governance records."
 source_root = "D:\\"
-refreshed_utc = "2026-08-20T09:01:21.818778+00:00"
+refreshed_utc = "2026-08-20T09:09:44.005891+00:00"
 
 [[snapshot.files]]
 name = "AGENTS.md"
 source = "D:\\AGENTS.md"
-sha256 = "1833741242e6b9bdf0b83cb466c3d52565f9f6e27022fd9fd1ca3ed0e83434a2"
-size_bytes = 4869
+sha256 = "d4193e2cd6877111197ce708353169a9a13f839ccb95d60c77bd3edb810dc0a3"
+size_bytes = 4868
 
 [[snapshot.files]]
 name = "Development.manifest.toml"
 source = "D:\\Development.manifest.toml"
-sha256 = "450b0fb180973acbd9d55702d2c9a21e82491ba20014e795a5fb54978c703c00"
-size_bytes = 5371
+sha256 = "91235a1066927af1608a371b68bd408dd9e3790eee7c821200ff3248bea770f4"
+size_bytes = 5370
 
 [[snapshot.files]]
 name = "INDEX.md"
 source = "D:\\INDEX.md"
-sha256 = "3b16dcd85329b6f62ff20d624b064d0f5fe4460301ae7727444ae7781c84f207"
-size_bytes = 94775
+sha256 = "08fb8ec7c0121a7a39221a2fa430fdf9ac17ba8a9db31d893602537e1cbc7a40"
+size_bytes = 94878
