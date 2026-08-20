@@ -115,7 +115,7 @@ SHA-256:
 
 * `[UPPERCASE HEX HASH]`
 
-[Optional BLAKE3 hash if applicable.]
+[Optional BLAKE3 hash if applicable. For publishable artifacts, attach the ARHS `.hashmanifest.toml`.]
 
 [One sentence about distribution and signing/provenance status.]
 ```

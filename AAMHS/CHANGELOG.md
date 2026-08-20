@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Clarified that ArchiveHasher and `manifest-signer.exe` are archive-preservation hashing and detached-signing tools.
+- Clarified that AAMHS signatures do not replace Microsoft Store signing, Authenticode signing, or package-ecosystem provenance for release distribution.
+- Updated ARHS relationship language to point to release hash manifests instead of generic minimum release hashes.
 - Refined `HashManifest.schema.toml` with item-level fields, allowed hash algorithms, and signature fields.
 - Added a concrete hash manifest example with computed SHA-256.
 - Added lightweight hash and detached-signature validator scripts.

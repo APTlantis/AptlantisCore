@@ -5,13 +5,13 @@ abbreviation = "CTS"
 status = "active"
 maturity = "candidate"
 version = "0.2.1"
-description = "Governs CLI tools, command contracts, output schemas, exit codes, automation compatibility, and release verification."
+description = "Governs CLI tools, command contracts, output schemas, exit codes, automation compatibility, release distribution, and release verification."
 
 [governance]
 meta_standard = "SFDS"
 workspace_standard = "WGS"
-scope = "Command-line tools, automation utilities, command contracts, output streams, exit codes, and destructive command safety."
-non_goals = ["Desktop GUI release packaging", "website deployment", "dataset provenance"]
+scope = "Command-line tools, automation utilities, command contracts, output streams, exit codes, destructive command safety, and CLI distribution posture."
+non_goals = ["Desktop GUI release packaging", "website deployment", "dataset provenance", "archive-preservation signing policy"]
 
 [artifacts]
 specification = "Command Tool Standard.md"
@@ -48,9 +48,9 @@ document_templates = [
 
 [lifecycle]
 created = "2026-06-10"
-last_updated = "2026-06-11"
+last_updated = "2026-08-20"
 maintainer = "Herb"
 
 [agent]
 read_first = ["README.md", "Command Tool Standard.md", "CTS.manifest.toml"]
-notes = "Use CTS for ArchiveHasher, AnalyzeProjects, ScriptWriters, LangThemeGenerator, CloneCratesio, ClipboardFilter, and Llama tooling."
+notes = "Use CTS for ArchiveHasher, ReleaseHasher, AnalyzeProjects, ScriptWriters, LangThemeGenerator, CloneCratesio, ClipboardFilter, and Llama tooling. Use ARHS for publishable CLI release hash manifests and AAMHS for archive-preservation signing."

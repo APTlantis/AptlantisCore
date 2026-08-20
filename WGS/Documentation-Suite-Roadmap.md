@@ -17,7 +17,7 @@ Detailed action items from the 2026-07-30 standards evaluation are tracked in `S
 | DDS | Candidate v0.2.1 | Dataset classes, provenance, validation, splits, integrity, release blockers, schema, and license/split examples defined | Add production dataset snapshots as real datasets mature. |
 | ATS | Candidate v0.2.1 | Task lifecycle, context capture, validation records, handoffs, replayability, examples, and lightweight schema defined | Use ATS records for long-running standards work. |
 | AAS | Candidate v0.2.1 | Analysis manifests, metric rules, comparisons, interpretation boundaries, blockers, example run records, and schema defined | Use AAS for standards-health trend analysis. |
-| ARHS | Candidate v0.2.1 | Minimum release-artifact hash requirements, release hash template, example, and schema defined | Add validator support when release tooling is finalized. |
+| ARHS | Candidate v0.3.0 | Active library copy promoted; release hash manifests aligned with ReleaseHasher, SHA256, BLAKE3-256, KT128, distribution channel, and signing/provenance authority | Add validator support for `.hashmanifest.toml` when release tooling is finalized. |
 | AAMHS | Candidate v1.0.3 | Archive preservation integrity boundary clarified against ARHS with example records and hash manifest schema | Add archive validator support when preservation workflow stabilizes. |
 | AADR | Candidate v1.0.3 | Representation record, levels, compatibility, validation boundaries, example, and schema defined | Add richer component-map examples as representations mature. |
 | SESM | Candidate v0.3.0 | Public-review candidate with metadata spec, schema, safe profile, privacy/conformance materials, threat model, validator, fixtures, tests, and non-authoritative `llm.interpretation_hints` vocabulary registered | Seek external review on safety, privacy, validator behavior, and interoperability. |
@@ -50,7 +50,7 @@ The standards suite now uses entity-named manifests and updated maturity states:
 - SFDS is stable and defines the standard-suite contract.
 - DRS is the reference implementation.
 - WGS, PPS, CTS, SIS, WDS, DDS, ATS, AAS, ARHS, AAMHS, AADR, SESM, and NeonInk are active candidate standards or mature candidate suites.
-- ARHS owns minimum release-artifact hashes; AAMHS owns archive preservation integrity.
+- ARHS owns release hash manifests and distribution/signing provenance records; AAMHS owns archive preservation integrity.
 - ATS records agent task history; AAS records analytical credibility.
 - PPS owns project intent before implementation; WGS owns placement, lifecycle visibility, and workspace metadata.
 - SIS fills the service and infrastructure delivery-standard gap for WGS shared services.

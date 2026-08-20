@@ -10,7 +10,7 @@ AAMHS governs archive hash suites, manifest formats, detached signatures, valida
 
 ## Does Not Govern
 
-AAMHS does not govern UI design, project proposals, workspace root layout, or dataset licensing.
+AAMHS does not govern UI design, project proposals, workspace root layout, dataset licensing, release distribution channels, or platform/package signing.
 
 ## Required Archive Artifacts
 
@@ -23,7 +23,7 @@ AAMHS does not govern UI design, project proposals, workspace root layout, or da
 
 ## Relationship to ARHS
 
-ARHS defines the minimum hash requirements for release artifacts.
+ARHS defines release hash manifest requirements for release artifacts.
 AAMHS governs richer archive preservation records.
 
 Use ARHS when publishing a release artifact.
@@ -33,7 +33,7 @@ Quick boundary:
 
 | Use case | Standard |
 | --- | --- |
-| Single release artifact hash in a release note | ARHS or DRS minimum hash rule |
+| Single release artifact hash manifest | ARHS |
 | Archive, collection, evidence bundle, or snapshot with multiple files | AAMHS |
 | Detached signature policy for preserved archive material | AAMHS |
 | Long-term revalidation procedure for preserved bytes | AAMHS |
@@ -74,6 +74,8 @@ When signatures are used, the record must identify:
 - Signing identity or key reference.
 - Verification procedure.
 - Trust limitations.
+
+ArchiveHasher and `manifest-signer.exe` are the current Aptlantis AAMHS tooling references for archive hashing and detached manifest signing. Their PGP and SLH-DSA signatures are archive-preservation evidence. They do not replace Microsoft Store signing for Store MSIX packages, Authenticode signing for direct Windows binaries, or provenance supplied by package ecosystems such as crates.io, PyPI, Go modules, or GitHub releases.
 
 ## Validation Rules
 

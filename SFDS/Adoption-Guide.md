@@ -45,6 +45,7 @@ These standard suites currently use the SFDS suite model:
 | CTS | Candidate command-tool standard suite using SFDS structure | `CTS/CTS.manifest.toml` |
 | WDS | Candidate website standard suite using SFDS structure | `WDS/WDS.manifest.toml` |
 | AAMHS | Candidate archive-integrity standard suite using SFDS structure | `AAMHS/AAMHS.manifest.toml` |
+| ARHS | Candidate active release-hash standard suite using SFDS structure | `ARHS/ARHS.manifest.toml` |
 | SESM | Candidate metadata standard suite using SFDS structure | `SESM/SESM.manifest.toml` |
 | LDS | Candidate-active library standard suite using SFDS structure | `LDS/LDS.manifest.toml` |
 

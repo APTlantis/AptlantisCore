@@ -8,7 +8,9 @@
 
 AAMHS defines long-term archive verification and integrity validation for Aptlantis archival systems.
 
-AAMHS is the preservation integrity standard. ARHS defines the minimum release-artifact hash set; AAMHS adds archive manifests, validation records, detached signature policy, and preservation notes.
+AAMHS is the preservation integrity standard. ARHS defines release-artifact hash manifests; AAMHS adds archive manifests, validation records, detached signature policy, and preservation notes.
+
+ArchiveHasher and `manifest-signer.exe` are AAMHS archive-preservation tools. `archive-hasher` computes preservation hash manifests; `manifest-signer.exe` signs manifests for archive evidence with detached PGP and optional SLH-DSA workflows. These signatures do not replace Microsoft Store signing, Authenticode signing, or package-ecosystem provenance for release distribution.
 
 ## Document Suite
 

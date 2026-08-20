@@ -14,4 +14,5 @@ This checklist validates archive integrity readiness under AAMHS. SFDS suite con
 - [ ] Detached signatures are checked with `tools/aamhs_signature_check.py` when signatures are used.
 - [ ] Integrity record states what archive or collection is covered.
 - [ ] Missing files, known gaps, or validation limits are documented.
-- [ ] ARHS is used separately for minimum release-artifact hashes when applicable.
+- [ ] ARHS is used separately for release hash manifests when applicable.
+- [ ] AAMHS detached signatures are not described as replacing Store, Authenticode, or package-ecosystem signing/provenance.
