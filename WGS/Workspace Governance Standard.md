@@ -44,7 +44,8 @@ The goal is to prevent architectural entropy: orphaned repositories, forgotten p
 
 ## Required Artifacts
 
-- `D:\AGENTS.md` and `D:\Development.manifest.toml`.
+- `D:\AGENTS.md` and `D:\INDEX.md`.
+- `D:\Development.manifest.toml`, when present; if absent, record root-governance drift and restore it only through a dedicated root-governance pass.
 - `[DirectoryName].manifest.toml` and `AGENTS.md` for governed portfolios and containers.
 - `[ProjectName].manifest.toml`, `Project-README.md`, and `AGENTS.md` for project and project-group roots.
 - `[StandardName].manifest.toml` for standards.
@@ -146,12 +147,13 @@ An agent entering the workspace must be able to recover context through standard
 
 For workspace or project work, agents read:
 
-1. `D:\AGENTS.md` and each nearer `AGENTS.md` toward the target.
-2. `D:\Development.manifest.toml` for drive-wide identity and registration.
-3. Nearest entity-named manifest matching its containing directory.
-4. `Project-README.md`, when working in a project or group.
-5. Canonical governing standards linked by the manifests.
-6. Roadmap, current task note, release note, or handoff record.
+1. `D:\AGENTS.md`, `D:\INDEX.md`, and each nearer `AGENTS.md` toward the target.
+2. `D:\Development.manifest.toml` for drive-wide identity and registration, when present.
+3. `D:\.library\aptlantis_core\README.md` and the relevant active standard suite when the root manifest is absent or the task concerns active governance.
+4. Nearest entity-named manifest matching its containing directory.
+5. `Project-README.md`, when working in a project or group.
+6. Canonical governing standards linked by the manifests.
+7. Roadmap, current task note, release note, or handoff record.
 
 Agents must record missing entry-point documents before making broad changes.
 
@@ -161,7 +163,7 @@ An agent leaving a substantial workspace, project, standard, promotion, relocati
 
 Direct records are the documents beside the changed entity: manifest, `AGENTS.md`, `Project-README.md`, README, changelog, validation checklist, release note, adoption note, or standard-specific record.
 
-Extended records are the navigation and authority documents that make the changed entity discoverable from outside itself: `D:\Development.manifest.toml`, `D:\INDEX.md`, City Hall README/workshop maps, WGS responsibility matrices, workspace inventories, target maps, parent manifests, standards registries, or promotion notes.
+Extended records are the navigation and authority documents that make the changed entity discoverable from outside itself: `D:\INDEX.md`, `D:\Development.manifest.toml` when present, library README/maps, City Hall README/workshop maps, WGS responsibility matrices, workspace inventories, target maps, parent manifests, standards registries, or promotion notes.
 
 If the direct or extended records do not need changes, the handoff should say so.
 If they should change but cannot be updated in the current task, the gap must be recorded plainly.
@@ -202,7 +204,7 @@ A WGS workspace is valid enough for planning when:
 
 A WGS workspace is governed when:
 
-- `D:\Development.manifest.toml` exists and names governed roots.
+- `D:\Development.manifest.toml` exists and names governed roots, or its absence is explicitly recorded as root-governance drift with a dedicated restoration path.
 - Governed portfolios and containers have entity-named directory manifests and inherited instructions.
 - Projects and project groups have entity-named manifests, instructions, and project orientation documents.
 - Standards have entity-named standard manifests and SFDS conformance.

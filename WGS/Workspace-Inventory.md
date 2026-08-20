@@ -1,16 +1,16 @@
 # D:\ Workspace Inventory
 
-Last reviewed: 2026-07-25
+Last reviewed: 2026-08-20
 
 ## Authority
 
-`D:\Development.manifest.toml` is the machine-readable root registry. `D:\AGENTS.md` is the operational constitution. `D:\INDEX.md` is the human-readable map.
+`D:\Development.manifest.toml` is the intended machine-readable root registry, but it is currently absent. `D:\AGENTS.md` is the operational constitution. `D:\INDEX.md` is the human-readable map. `D:\.library\aptlantis_core` is the active standards and adopted overview library.
 
-Canonical local manifests are entity-named: the exact containing directory name plus `.manifest.toml`. `Development.manifest.toml` remains the drive-root exception.
+Canonical local manifests are entity-named: the exact containing directory name plus `.manifest.toml`. `Development.manifest.toml` remains the intended drive-root exception and should be restored through a dedicated root-governance pass.
 
 ## Verified Roots
 
-The read-only WGS inventory command passed for every registered root on 2026-07-25. The stricter City Hall standards audit also passed all 25 scopes on 2026-07-25 after child-level manifest and front-door records were reconciled.
+The read-only WGS inventory command passed for every registered root on 2026-07-25. The stricter City Hall standards audit also passed all 25 scopes on 2026-07-25 after child-level manifest and front-door records were reconciled. On 2026-08-20, `D:\Development.manifest.toml` was confirmed absent during standards cleanup, so these results should be treated as historical evidence until the root registry is restored and inventory is rerun.
 
 | Root | Canonical manifest | Registered children | Physical children | Inventory state |
 | --- | --- | ---: | ---: | --- |
@@ -50,4 +50,5 @@ The inventory command is read-only and returns nonzero when registered roots dri
 
 - Perform project-specific build, test, artifact, deployment, release, and lifecycle verification before making release-readiness claims.
 - Review cache/resource retention policies for `.dpw` and `.pnpm-store`.
+- Restore or recreate `D:\Development.manifest.toml` through a dedicated root-governance pass.
 - Refresh root-governance recovery snapshots if a snapshot update task is explicitly requested.

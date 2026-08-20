@@ -17,7 +17,10 @@ Every v2.4 manifest starts with:
 | Development drive | `Development.manifest.toml` | `D:\Development.manifest.toml` |
 | Governed directory or container | `[DirectoryName].manifest.toml` | `D:\CTS\CTS.manifest.toml` |
 | Project or project group | `[ProjectName].manifest.toml` | `D:\CTS\CloneCratesio\CloneCratesio.manifest.toml` |
-| Standard suite | `[StandardName].manifest.toml` | `D:\.city_hall\WGS\WGS.manifest.toml` |
+| Standard suite | `[StandardName].manifest.toml` | `D:\.library\aptlantis_core\WGS\WGS.manifest.toml` |
+
+`D:\Development.manifest.toml` is the intended drive-root manifest name, but the file is currently absent.
+Record that as root-governance drift and restore it only through an explicit root-governance pass.
 
 The entity name is the exact containing directory name, preserving casing and punctuation. A hidden directory therefore uses names such as `.dpw.manifest.toml` or `.cts_holding.manifest.toml`.
 
@@ -40,7 +43,8 @@ Project manifests record identity, project class, lifecycle/status, version or `
 
 ## Authority and links
 
-- Canonical standard suites live under `D:\.city_hall`.
+- Canonical active standard suites live under `D:\.library\aptlantis_core`.
+- City Hall-only suites and references are workshop, lineage, or candidate material until promoted or explicitly adopted.
 - Manifests use resolvable absolute paths for canonical standards.
 - `AGENTS.md` and README documents use Markdown links.
 - Windows `.lnk` files and copied standard documents are not governance dependencies.
