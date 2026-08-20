@@ -1,6 +1,6 @@
 # Desktop Application Release Standard
 
-This document defines the release model used across local-first Windows desktop applications in this organization. It was derived from practices established in FileCabinet and refined through the Aegis project.
+This document defines the release model used across local-first Windows desktop applications in this organization. It was derived from practices established in Filing Cabinet and refined through the Aegis project.
 
 The goal is a release process that is honest, inspectable, and reproducible — one that leaves a clear record of what shipped, how it was verified, and what it deliberately does not do.
 
@@ -148,7 +148,7 @@ Installer and release artifacts follow this naming pattern:
 
 Examples:
 ```
-FileCabinet-1.3.1.0-win-x64.msi
+FilingCabinet-1.3.1.0-win-x64.msi
 Aegis-0.1.2.0-win-x64.msix
 ```
 
@@ -449,22 +449,22 @@ If the release note, manifest, and checklist are not ready, the release is not r
 
 ---
 
-## 13. Reference: FileCabinet Lineage
+## 13. Reference: Filing Cabinet Lineage
 
-This standard was derived from the FileCabinet release history. The following practices were established in FileCabinet and should be considered validated:
+This standard was derived from the Filing Cabinet release history. The following practices were established in Filing Cabinet and should be considered validated:
 
 | Practice | First Established | Evidence |
 |---|---|---|
 | Release theme naming | v1.0.0 | "Initial Stable Release", "Preview and Recall Release", etc. |
 | Design Boundaries as a required section | v1.1.0 | Explicit list of intentional exclusions in every release note |
-| SHA-256 in release document | v1.1.0 | `FileCabinet-1.1.0.0-win-x64.msi` hash in v1.1.0 note |
+| SHA-256 in release document | v1.1.0 | `FilingCabinet-1.1.0.0-win-x64.msi` hash in v1.1.0 note |
 | `docs/` folder in publish output | v1.0.0 | Docs folder present in `artifacts/publish/win-x64/docs/` |
-| Machine-readable manifest | v1.4.x | `FileCabinet.manifest.json` with full release and verification record |
+| Machine-readable manifest | v1.4.x | `Filing Cabinet.manifest.json` with full release and verification record |
 | Test count in verification record | v1.0.0 | "passed N tests" recorded per version |
 | Repair log as trust artifact | v1.2.0 | `catalog/repair-log.jsonl` logged and surfaced in UI |
-| Headless CLI verification | v1.2.0+ | `FileCabinet.Cli.exe verify --fail-on medium` |
-| Trust and verification model document | v1.2.0 | `FileCabinet — Trust and Verification Model.md` |
-| Integrity validation matrix | v1.2.0 | `FileCabinet — Vault Integrity Validation Matrix.md` |
+| Headless CLI verification | v1.2.0+ | `FilingCabinet.Cli.exe verify --fail-on medium` |
+| Trust and verification model document | v1.2.0 | `Filing Cabinet — Trust and Verification Model.md` |
+| Integrity validation matrix | v1.2.0 | `Filing Cabinet — Vault Integrity Validation Matrix.md` |
 
 The Aegis project extended this model with:
 

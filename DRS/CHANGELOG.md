@@ -6,6 +6,8 @@
 - Added Microsoft Store MSIX as the default public Windows GUI application distribution path.
 - Clarified that Store-submitted MSIX packages are signed by Microsoft, while sideloaded self-signed MSIX packages are development/test builds only.
 - Added `winapp` and `msstore` workflow guidance for Windows GUI packaging and Store submission.
+- Clarified that Microsoft Store product identity should be reserved before building the submission package and that first submissions may use Partner Center website upload for certification feedback.
+- Clarified that ARHS hash evidence for Store packages is generated after the final Store candidate passes package acceptance, not before identity/display/asset corrections.
 - Clarified cross-platform GUI packaging: use MSIX/Microsoft Store for the Windows build while keeping native or ecosystem package flows for other platforms.
 - Added direct MSI/EXE distribution guidance requiring documented rationale and appropriate signing/provenance.
 - Linked publishable desktop artifacts to ARHS `.hashmanifest.toml` release hash manifests.

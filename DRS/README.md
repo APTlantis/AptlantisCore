@@ -8,7 +8,7 @@
 
 A release framework for local-first Windows desktop applications. Defines what a release is, how it is verified, and what documentation it requires — so that someone who did not build the application can understand what changed, why it changed, and how to verify the artifact they received.
 
-Derived from practices established in FileCabinet. Extended through the Aegis project.
+Derived from practices established in Filing Cabinet. Extended through the Aegis project.
 
 DRS conforms to SFDS at the standard-suite governance layer and is the first reference implementation of the mature City Hall standard-suite pattern. SFDS describes how this documentation suite is indexed, validated, and normalized; DRS remains authoritative for desktop application release behavior, release manifests, release notes, artifact integrity, and verification gates.
 
@@ -109,7 +109,7 @@ Not every project needs every document immediately. Use the tier that matches yo
 | **Security-sensitive** | Vaults, encryption, credentials, key management | + Trust/Security Model, Threat Model, Integrity Validation Matrix |
 | **Distribution-grade** | Microsoft Store MSIX, documented direct distribution, signing/provenance, auto-update | + SBOM, Withdrawn Release policy, Data Migration Contracts |
 
-Aegis and FileCabinet operate at the Security-sensitive tier. Most tools can start at Minimal and promote as they mature.
+Aegis and Filing Cabinet operate at the Security-sensitive tier. Most tools can start at Minimal and promote as they mature.
 
 ---
 
@@ -153,6 +153,10 @@ Development and tester builds may use sideloaded MSIX packages signed with a sel
 For cross-platform GUI applications, the Windows package should normally follow the MSIX/Microsoft Store path while other operating systems keep their appropriate native or ecosystem package flow, such as NSIS, DMG, AppImage, deb/rpm, or package-manager distribution.
 
 `winapp` is the preferred local Windows GUI packaging helper for app asset generation, `Package.appxmanifest` management, development certificate creation, and MSIX packing. `msstore` is the preferred Microsoft Store submission helper. Tool output is evidence, not the release decision by itself; DRS records must still distinguish distribution from signing and must verify the resulting package.
+
+For Store releases, reserve the product identity in Partner Center before building the submission package. The MSIX manifest must match the Store-provided `Package/Identity/Name`, `Package/Identity/Publisher`, and `Package/Properties/PublisherDisplayName`. First submissions may use Partner Center website upload so Microsoft certification feedback can identify package, identity, asset, or metadata mismatches before the flow is automated.
+
+Compute ARHS release hashes after the final Store candidate package is built and accepted by Partner Center package validation. Identity, display-name, asset, or package-structure corrections change the MSIX and invalidate earlier package hashes.
 
 Direct MSI/EXE or non-Store distribution is allowed only when the release record explains why that channel is being used. Public direct distribution should use CA-backed signing or Microsoft Trusted Signing where appropriate; internal/private direct distribution may be explicitly `unsigned-internal` or self-signed when that is the real trust model.
 
@@ -222,4 +226,4 @@ If the release note, manifest, and checklist are not ready, the release is not r
 
 ## Lineage
 
-This standard was derived from practices established in FileCabinet and extended through the Aegis project. See Section 13 of the standard for the full provenance record.
+This standard was derived from practices established in Filing Cabinet and extended through the Aegis project. See Section 13 of the standard for the full provenance record.
