@@ -73,6 +73,7 @@ Every PPS proposal must include:
 - Constraints.
 - Risk assessment.
 - Roadmap.
+- Version milestone sketch.
 - Entity-named project manifest.
 - Governing standard.
 
@@ -219,6 +220,22 @@ Recommended phase model:
 
 The roadmap should help agents choose the next logical step instead of generating unrelated features.
 
+## Version Milestone Sketch
+
+The version milestone sketch gives the project an initial stopping frame for early releases.
+It is a lightweight planning aid, not a rigid release contract.
+
+Every ready proposal should identify at least the first intended version and, when practical, the next one or two likely milestones.
+Each milestone should describe:
+
+- The version label or milestone name.
+- The purpose of that version.
+- The rough completion shape for that version.
+- Work that is plausible but intentionally deferred.
+
+The milestone sketch may change as the project takes shape.
+Its purpose is to make clear that the project will mature through versions, and that each version has a final state that can be evaluated without treating every useful future refinement as current-version incompletion.
+
 ## Project Manifest
 
 Every PPS-governed project must have or queue an entity-named project manifest, such as `FileCabinet.manifest.toml`.
@@ -258,6 +275,7 @@ A proposal is complete when:
 - Constraints exist.
 - Risks exist.
 - Roadmap exists.
+- Version milestone sketch exists.
 - Governing standard is identified.
 - Entity-named project manifest exists or is queued.
 
@@ -273,6 +291,7 @@ A project is blocked from broad implementation when:
 - Failure criteria are missing.
 - Constraints are missing or contradicted by the technical direction.
 - Out-of-scope work is not explicit.
+- No initial version milestone or completion shape is described.
 - The governing delivery standard is unknown.
 - No entity-named project manifest exists or is queued.
 - The project has drifted beyond the proposal boundary.
@@ -283,6 +302,9 @@ Agents should use PPS as the north star document.
 When a proposed feature or cleanup appears, the agent should ask:
 
 Does this move the project closer to its success criteria without violating its failure criteria or design boundaries?
+
+When evaluating completion, agents should also ask whether the work is required for the current milestone's stated completion shape.
+Useful but undeclared refinements should be recorded as later-version candidates unless they reveal a defect, missing requirement, governance failure, or invalid evidence.
 
 If the answer is unclear, the next safe action is to update the proposal rather than broaden the implementation.
 

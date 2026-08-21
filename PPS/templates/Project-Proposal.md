@@ -54,3 +54,17 @@ What does not belong?
 2. Prototype.
 3. Validation.
 4. Release or adoption.
+
+## Version Milestone Sketch
+
+### v0.1
+
+- Purpose:
+- Completion shape:
+- Deferred:
+
+### v0.2
+
+- Purpose:
+- Completion shape:
+- Deferred:

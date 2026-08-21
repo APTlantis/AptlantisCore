@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Added lightweight version milestone sketches so PPS proposals can define flexible early-version completion shapes.
 - Added proposal manifest validator, readiness/persona schema vocabulary, CI usage guidance, JSONL export format, and delivery-standard mapping examples.
 - Added `tools/pps_new.py` to generate proposal and entity-manifest skeletons.
 - Added PPS to WGS lifecycle mapping guidance.

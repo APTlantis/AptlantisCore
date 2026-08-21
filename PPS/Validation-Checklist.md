@@ -9,6 +9,9 @@ This checklist validates proposal readiness under PPS. SFDS suite conformance fo
 - [ ] Failure criteria are documented.
 - [ ] Constraints are documented.
 - [ ] Roadmap describes phases, not just features.
+- [ ] Version milestone sketch identifies at least the first intended version.
+- [ ] Each sketched version has a rough purpose and completion shape.
+- [ ] Plausible later-version work is separated from current-version completion.
 - [ ] An entity-named project manifest such as `FileCabinet.manifest.toml` exists or is queued.
 - [ ] Governing delivery standard is identified.
 - [ ] Proposal readiness level is assigned.
